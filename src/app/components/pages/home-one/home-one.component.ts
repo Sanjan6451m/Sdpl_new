@@ -1,16 +1,124 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
     selector: 'app-home-one',
     templateUrl: './home-one.component.html',
-    styleUrls: ['./home-one.component.scss']
+    styleUrls: ['./home-one.component.scss'],
+    animations: [
+        trigger('circleAnimation', [
+            state('small', style({
+                transform: 'scale(1) translate(-50%, -50%)',
+                opacity: 0.8
+            })),
+            state('large', style({
+                transform: 'scale(2.5) translate(-50%, -50%)',
+                opacity: 1
+            })),
+            transition('small <=> large', animate('800ms cubic-bezier(0.4, 0, 0.2, 1)'))
+        ]),
+        trigger('statAnimation', [
+            state('hidden', style({
+                opacity: 0,
+                transform: 'translateY(20px)'
+            })),
+            state('visible', style({
+                opacity: 1,
+                transform: 'translateY(0)'
+            })),
+            transition('hidden => visible', animate('500ms ease-out'))
+        ])
+    ]
 })
 export class HomeOneComponent implements OnInit {
+    circleState = 'small';
+    statState = 'hidden';
+    contentVisible = true; // Always keep content visible
+    
+    stats = [
+        { icon: 'bx bx-user', value: '1000+', label: 'Happy Clients' },
+        { icon: 'bx bx-check-circle', value: '500+', label: 'Projects Completed' },
+        { icon: 'bx bx-award', value: '50+', label: 'Awards Won' },
+        { icon: 'bx bx-support', value: '24/7', label: 'Support' }
+    ];
+    
+    private lastScrollTop = 0;
+    private scrollThreshold = 5; // Low threshold for responsive animation
+    private isWeb = window.innerWidth >= 768;
+    private heroHeight: number;
 
-    constructor() { }
+    constructor(
+        private el: ElementRef,
+        private renderer: Renderer2
+    ) { }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        // Calculate hero height
+        setTimeout(() => {
+            const heroSection = this.el.nativeElement.querySelector('.hero-section');
+            if (heroSection) {
+                this.heroHeight = heroSection.offsetHeight;
+            }
+            
+            // Initial animation for stats
+            this.statState = 'visible';
+            
+            // Initial animation for circles
+            this.circleState = 'small';
+        }, 100);
+
+        // Check if web or mobile
+        this.isWeb = window.innerWidth >= 768;
+        
+        // Always make content visible
+        this.contentVisible = true;
+    }
+    
+    ngOnDestroy(): void {
+        // No event listeners to clean up
+    }
+
+    @HostListener('window:scroll', ['$event'])
+    onScroll() {
+        if (!this.isWeb) return; // Skip animation for mobile
+
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const logoContainer = this.el.nativeElement.querySelector('.logo-container');
+        const circles = this.el.nativeElement.querySelectorAll('.circle');
+        
+        // If we've scrolled past threshold, expand the circles
+        if (scrollTop > this.scrollThreshold) {
+            if (this.circleState !== 'large') {
+                this.circleState = 'large';
+                this.renderer.addClass(logoContainer, 'scrolled');
+                
+                circles.forEach((circle: HTMLElement) => {
+                    this.renderer.addClass(circle, 'scrolled');
+                });
+            }
+        } else if (scrollTop === 0) { // Reset only when back at the very top
+            this.circleState = 'small';
+            this.renderer.removeClass(logoContainer, 'scrolled');
+            
+            circles.forEach((circle: HTMLElement) => {
+                this.renderer.removeClass(circle, 'scrolled');
+            });
+        }
+        
+        this.lastScrollTop = scrollTop;
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize() {
+        this.isWeb = window.innerWidth >= 768;
+        
+        // Update hero height
+        const heroSection = this.el.nativeElement.querySelector('.hero-section');
+        if (heroSection) {
+            this.heroHeight = heroSection.offsetHeight;
+        }
+    }
 
     teamSlides: OwlOptions = {
 		loop: true,
@@ -110,5 +218,4 @@ export class HomeOneComponent implements OnInit {
         event.preventDefault();
         this.currentTab = tab;
     }
-
 }
