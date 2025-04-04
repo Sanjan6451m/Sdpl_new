@@ -1,4 +1,4 @@
-<div class="cards-wrapper">
+<!-- <div class="cards-wrapper">
   <button class="nav-arrow left-arrow" (click)="scrollLeft()">‹</button>
   <div class="flip-cards-container" #cardsContainer>
     <div class="flip-card" *ngFor="let card of cards">
@@ -20,7 +20,7 @@
     </div>
   </div>
   <button class="nav-arrow right-arrow" (click)="scrollRight()">›</button>
-</div>
+</div> -->
 
 
 <div class="services-section">
@@ -37,8 +37,8 @@
         <img src="assets/images/logo.png" alt="Logo">
       </div>
       <div class="service-items" #serviceItemsContainer>
-        <div class="service-item" *ngFor="let service of services" [style.transform]="service.transform" 
-        (click)="selectService(service)">
+        <div class="service-item" *ngFor="let service of services" [style.transform]="service.transform"
+          (click)="selectService(service)" [class.selected]="service === selectedService">
           <div class="item-content">
             <img [src]="service.icon" [alt]="service.title">
           </div>
