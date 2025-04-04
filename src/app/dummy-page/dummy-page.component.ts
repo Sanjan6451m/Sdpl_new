@@ -5,6 +5,7 @@ interface ServiceItem {
   icon: string;
   title: string;
   transform: string;
+  description: string;
 }
 
 @Component({
@@ -51,14 +52,15 @@ export class DummyPageComponent implements OnInit {
   ];
 
   services: ServiceItem[] = [
-    { icon: 'assets/infographics/service1.png', title: 'Audio & Video Solutions', transform: '' },
-    { icon: 'assets/infographics/service2.png', title: 'IT Consulting', transform: '' },
-    { icon: 'assets/infographics/service3.png', title: 'Cloud Solutions', transform: '' },
-    { icon: 'assets/infographics/service4.png', title: 'Networking', transform: '' },
-    { icon: 'assets/infographics/service5.png', title: 'Leasing', transform: '' }
+    { icon: 'assets/infographics/service1.png', title: 'Audio & Video Solutions', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
+    { icon: 'assets/infographics/service2.png', title: 'IT Consulting', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
+    { icon: 'assets/infographics/service3.png', title: 'Cloud Solutions', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
+    { icon: 'assets/infographics/service4.png', title: 'Networking', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
+      { icon: 'assets/infographics/service5.png', title: 'Leasing', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' }
   ];
 
   selectedService: ServiceItem | null = null;
+  activeAccordionIndex: number | null = null;
 
   ngOnInit() {
     this.calculateServiceItemPositions();
@@ -102,5 +104,9 @@ export class DummyPageComponent implements OnInit {
 
   selectService(service: ServiceItem) {
     this.selectedService = service;
+  }
+
+  toggleAccordion(index: number) {
+    this.activeAccordionIndex = this.activeAccordionIndex === index ? null : index;
   }
 }

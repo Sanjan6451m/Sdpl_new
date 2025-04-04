@@ -47,11 +47,19 @@
     </div>
     <div class="content-section">
       <h1 class="main-title">Our Services</h1>
-      <h2 class="service-title">{{ selectedService?.title || 'Comprehensive Solutions' }}</h2>
-      <h3 class="subtitle">Tailored to Your Needs</h3>
-      <p class="description">
-        {{ selectedService ? 'Explore our ' + selectedService.title + ' service in detail.' : 'We offer a wide range of services designed to meet your specific requirements. Our team of experts is dedicated to delivering exceptional results that drive your success. Scroll to explore our service offerings and discover how we can help you achieve your goals.' }}
-      </p>
+      <div class="accordion-container">
+        <div class="accordion" *ngFor="let service of services; let i = index">
+          <div class="accordion-item" [class.active]="activeAccordionIndex === i">
+            <div class="accordion-header" (click)="toggleAccordion(i)">
+              <h3>{{ service.title }}</h3>
+              <i class="fas" [ngClass]="{'fa-chevron-down': activeAccordionIndex !== i, 'fa-chevron-up': activeAccordionIndex === i}"></i>
+            </div>
+            <div class="accordion-content" [style.maxHeight]="activeAccordionIndex === i ? '200px' : '0'">
+              <p>{{ service.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
