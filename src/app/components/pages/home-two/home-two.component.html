@@ -519,95 +519,32 @@
         <div class="section-title">
             <!-- <span>Case Studies</span> -->
             <!-- <span>Services</span> -->
-            <h2>Services</h2>
-            <p>At Superior Digital, we deliver technical, commercial, and operational expertise on a larger scale. Our dedicated Apple Practice supports various aspects of the broader Superior Digital business, ensuring that at every stage of the lifecycle, we are optimally positioned to assist enterprise organisations in adopting Apple technology and achieving their business goals.</p>
+            <h2>Solutions</h2>
+            
         </div>
-        <div class="case">
-            <div class="tabs-container">
-                <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
-                    <div class="row case-list">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/postsales"><img src="assets/images/case/m2.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/postsales"><h3>Post Sales Support</h3></a>
-                                    <p>When you need any repair OR Service on your Apple Device, We are just a call away for you to fetch our onsite support at your location.</p>
-                                    <a routerLink="/postsales" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/annualmaintenance"><img src="assets/images/case/m9.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/annualmaintenance"><h3>Annual Maintenance Contract</h3></a>
-                                    <p>As an Associated Apple Service Provider, we are equipped to support you whether you manage a fleet of Macs, iPhones, or iPads.</p>
-                                    <a routerLink="/annualmaintenance" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/perincident"><img src="assets/images/case/m1.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/perincident"><h3>Per Incident Support</h3></a>
-                                    <p>At Superior Digital, our commitment to customer satisfaction is unwavering, as we prioritise your needs above all else. </p>
-                                    <a routerLink="/perincident" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/onsite-support"><img src="assets/images/case/c4.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/onsite-support"><h3>Apple Services with Onsite Support </h3></a>
-                                    <p>Superior Digital boasts a dedicated team of Apple Certified Technicians who excel in delivering onsite support.</p>
-                                    <a routerLink="/onsite-support" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/partnering"><img src="assets/images/case/c5.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/partnering"><h3>Our Partnering with Multiple Brands</h3></a>
-                                    <p>Advantages of Partnering with Multiple MDM Brands In today's digital landscape, organisations need effective device management for security. </p>
-                                    <a routerLink="/partnering" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/purchase-program"><img src="assets/images/case/c6.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/purchase-program"><h3>Purchase Programs by Apple</h3></a>
-                                    <p>Welcome to Our Purchase Programs for Apple Developers! Are you new to Mac or looking to enhance your skills as a developer?</p>
-                                    <a routerLink="/purchase-program" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
+        <div class="content-container">
+            <div class="service-wheel" #serviceWheel>
+              <div class="center-circle">
+                <img src="assets/images/logo.png" alt="Logo">
+              </div>
+              <div class="service-items" #serviceItemsContainer>
+                <div class="service-item" *ngFor="let service of services" [style.transform]="service.transform"
+                  (click)="selectService(service)" [class.selected]="service === selectedService">
+                  <div class="item-content">
+                    <img [src]="service.icon" [alt]="service.title">
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+            <div class="content-section">
+              <h1 class="main-title">Our Services</h1>
+              <h2 class="service-title">{{ selectedService?.title || 'Comprehensive Solutions' }}</h2>
+              <!-- <h3 class="subtitle">Tailored to Your Needs</h3> -->
+              <p class="description">
+                {{ selectedService ? 'Explore our ' + selectedService.title + ' service in detail.' : 'We offer a wide range of services designed to meet your specific requirements. Our team of experts is dedicated to delivering exceptional results that drive your success. Scroll to explore our service offerings and discover how we can help you achieve your goals.' }}
+              </p>
+            </div>
+          </div>
     </div>
 </section>
 

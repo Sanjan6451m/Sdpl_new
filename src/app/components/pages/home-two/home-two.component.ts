@@ -10,6 +10,12 @@ interface FeatureCard {
     icon?: string;
   }
 
+  interface ServiceItem {
+    icon: string;
+    title: string;
+    transform: string;
+  }
+
 @Component({
     selector: 'app-home-two',
     templateUrl: './home-two.component.html',
@@ -31,7 +37,9 @@ export class HomeTwoComponent implements OnInit {
         emailjs.init("PTmfxUAnOlAZlyhRB");
     }
 
-    ngOnInit(): void {}
+    ngOnInit() {
+        this.calculateServiceItemPositions();
+    }
 
     images: string[] = [
         'assets/images/marquee/hexnode-logo.png',
@@ -270,5 +278,39 @@ export class HomeTwoComponent implements OnInit {
     
       nextSlide() {
         this.activeIndex = (this.activeIndex + 1) % this.features.length;
+      }
+
+      services: ServiceItem[] = [
+        { icon: 'assets/infographics/service1.png', title: 'Cloud Solutions', transform: '' },
+        { icon: 'assets/infographics/service2.png', title: 'IT Consulting', transform: '' },
+        { icon: 'assets/infographics/service3.png', title: 'Repair and Support', transform: '' },
+        // { icon: 'assets/infographics/service4.png', title: 'Networking', transform: '' },
+        { icon: 'assets/infographics/service5.png', title: 'Leasing', transform: '' }
+      ];
+
+      selectedService: ServiceItem | null = null;
+
+      private calculateServiceItemPositions() {
+        const totalItems = this.services.length;
+        const radius = 220; // Adjust this value to change the wheel size
+        
+        this.services = this.services.map((item, index) => {
+          // Calculate angle for semi-circle (180 degrees or π radians)
+          const angle = (index * Math.PI) / (totalItems - 1);
+          
+          // Calculate x and y positions
+          // We use -Math.cos for y to make the semi-circle face upward
+          const x = radius * Math.sin(angle);
+          const y = -radius * Math.cos(angle);
+          
+          return {
+            ...item,
+            transform: `translate(${x}px, ${y}px)`
+          };
+        });
+      }
+    
+      selectService(service: ServiceItem) {
+        this.selectedService = service;
       }
 }
