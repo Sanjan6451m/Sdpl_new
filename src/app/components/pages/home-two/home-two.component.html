@@ -490,6 +490,30 @@
     </div>
 </section>
 
+<div class="features-section">
+    <h2 class="section-title">Our Services</h2>
+    <div class="cards-wrapper">
+      <button class="nav-arrow left-arrow" (click)="prevSlide()">‹</button>
+      <div class="cards-container">
+        <div class="card" 
+             *ngFor="let feature of features; let i = index"
+             [class.active]="i === activeIndex"
+             [class.prev]="i === (activeIndex - 1 + features.length) % features.length"
+             [class.next]="i === (activeIndex + 1) % features.length">
+          <div class="card-content">
+            <div class="icon-container">
+              <i [class]="feature.icon"></i>
+            </div>
+            <h3>{{feature.title}}</h3>
+            <p>{{feature.description}}</p>
+          </div>
+        </div>
+      </div>
+      <button class="nav-arrow right-arrow" (click)="nextSlide()">›</button>
+    </div>
+  </div>
+    
+
 <section class="home-case ptb-100 bg-color">
     <div class="container">
         <div class="section-title">

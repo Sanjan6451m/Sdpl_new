@@ -4,6 +4,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import emailjs from '@emailjs/browser';
 
+interface FeatureCard {
+    title: string;
+    description: string;
+    icon?: string;
+  }
+
 @Component({
     selector: 'app-home-two',
     templateUrl: './home-two.component.html',
@@ -199,4 +205,70 @@ export class HomeTwoComponent implements OnInit {
     closePopup(): void {
         this.isOpen = false;
     }
+
+
+    features: FeatureCard[] = [
+        {
+          title: 'Logistics',
+          description: ' Our Logistics service handles the efficient coordination and management of resources to ensure timely delivery and setup of your solutions. We focus on minimising downtime and disruption to keep your business running smoothly.',
+          icon: 'bx bx-package'
+        },
+        {
+          title: 'Deployment',
+          description: 'Through our Deployment service, we ensure a seamless and efficient implementation of solutions, with minimal impact on your daily operations. Our team ensures everything is set up correctly and functioning optimally from day one.',
+          icon: 'bx bx-rocket'
+        },
+        {
+          title: 'Training',
+          description: 'We offer comprehensive Training services to equip your team with the skills needed to effectively use new systems and technologies. Our support ensures a smooth transition and maximises the return on your technology investments.',
+          icon: 'bx bx-book-open'
+        },
+        {
+          title: 'Perpetual Support',
+          description: 'Our Perpetual Support service provides ongoing assistance to ensure your systems remain secure, up-to-date, and running efficiently. We are committed to delivering continuous improvements and support to optimise your business operations.',
+          icon: 'bx bx-support'
+        },
+        {
+            title: 'Discover Needs',
+            description: 'Our Discover Needs service involves a thorough analysis of your current business operations to identify specific challenges and opportunities for improvement. We work closely with you to understand your goals, ensuring tailored solutions that meet your unique requirements.',
+            icon: 'bx bx-search-alt'
+        },
+        {
+            title: 'PreSales Consulting',
+            description: 'With our PreSales Consulting, our team of experts evaluates your requirements and provides strategic advice to help you choose the right solutions. This service ensures informed decision-making, optimising your investments while aligning with your business objectives.',
+            icon: 'bx bx-conversation'
+        },
+        {
+            title: 'Architect Solution',
+            description: 'The Architect Solution service designs a comprehensive blueprint tailored to your business requirements, ensuring seamless integration of technologies and systems. Our skilled architects work to create scalable and efficient solutions that drive innovation and growth.',
+            icon: 'bx bx-layer'
+        },
+        {
+            title: 'Finance Options',
+            description: ' We offer a variety of flexible finance options to support your investment in cutting-edge technology solutions. Our team helps you choose the best payment plans that suit your financial strategy and budget.',
+            icon: 'bx bx-money'
+        },
+        {
+            title: 'Proposal and Quotes',
+            description: 'Our Proposal and Quotes service provides detailed, easy-to-understand documentation outlining the costs and benefits of proposed solutions. This transparency ensures you have all the information needed to make confident, informed decisions.',
+            icon: 'bx bx-file'
+        },
+        {
+            title: 'Proof of Concept',
+            description: ' Our Proof of Concept service allows you to test and validate potential solutions in a controlled environment before full-scale implementation. This helps mitigate risks and ensures that the chosen solutions are the best fit for your business needs.',
+            icon: 'bx bx-test-tube'
+        }
+      ];
+      
+      activeIndex = 0;
+    
+      
+    
+      prevSlide() {
+        this.activeIndex = (this.activeIndex - 1 + this.features.length) % this.features.length;
+      }
+    
+      nextSlide() {
+        this.activeIndex = (this.activeIndex + 1) % this.features.length;
+      }
 }
