@@ -32,6 +32,7 @@ import { RepairComponent } from './components/pages/repair/repair.component';
 import { DeploymentComponent } from './components/pages/deployment/deployment.component';
 import { HardwareComponent } from './components/pages/hardware/hardware.component';
 import { SoftwareComponent } from './components/pages/software/software.component';
+import { DummyPageComponent } from './dummy-page/dummy-page.component';
 
 const routes: Routes = [
     {path: 'home-one', component: HomeOneComponent},
@@ -66,6 +67,7 @@ const routes: Routes = [
     {path: 'deployment', component: DeploymentComponent},
     {path: 'hardware', component: HardwareComponent},
     {path: 'software', component: SoftwareComponent},
+    {path: 'dummy-page', component: DummyPageComponent},
 
     // Here add new pages component
 

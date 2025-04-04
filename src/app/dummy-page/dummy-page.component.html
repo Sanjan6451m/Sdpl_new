@@ -1,0 +1,23 @@
+<div class="cards-wrapper">
+  <button class="nav-arrow left-arrow" (click)="scrollLeft()">‹</button>
+  <div class="flip-cards-container" #cardsContainer>
+    <div class="flip-card" *ngFor="let card of cards">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img [src]="card.image" [alt]="card.title">
+          <div class="content">
+            <h2>{{card.title}}</h2>
+            <p>{{card.frontContent}}</p>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <div class="content">
+            <h2>{{card.title}}</h2>
+            <p>{{card.backContent}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="nav-arrow right-arrow" (click)="scrollRight()">›</button>
+</div>
