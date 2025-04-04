@@ -6,6 +6,10 @@ interface ServiceItem {
   title: string;
   transform: string;
   description: string;
+  description1: string;
+  description2: string;
+  description3: string;
+  description4: string;
 }
 
 @Component({
@@ -52,11 +56,11 @@ export class DummyPageComponent implements OnInit {
   ];
 
   services: ServiceItem[] = [
-    { icon: 'assets/infographics/service1.png', title: 'Audio & Video Solutions', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
-    { icon: 'assets/infographics/service2.png', title: 'IT Consulting', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
-    { icon: 'assets/infographics/service3.png', title: 'Cloud Solutions', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
-    { icon: 'assets/infographics/service4.png', title: 'Networking', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
-      { icon: 'assets/infographics/service5.png', title: 'Leasing', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' }
+    // { icon: 'assets/infographics/service1.png', title: 'Audio & Video Solutions', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description3: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description4: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
+    { icon: 'https://ik.imagekit.io/xic57rvk8yp/consultant_OJETVCvZ5W.png?updatedAt=1743764966182', title: 'IT Consulting', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description3: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description4: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
+    { icon: 'https://ik.imagekit.io/xic57rvk8yp/cloud_n-oQmCmr-.png?updatedAt=1743764966503', title: 'Cloud Solutions', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description3: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description4: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
+    { icon: 'https://ik.imagekit.io/xic57rvk8yp/repair_ub9f93pCHW.png?updatedAt=1743764966563', title: 'Repair & Support', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description3: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description4: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' },
+      { icon: 'https://ik.imagekit.io/xic57rvk8yp/leasing_wKaUgRUuK.png?updatedAt=1743764966653', title: 'Leasing', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description3: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description4: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' }
   ];
 
   selectedService: ServiceItem | null = null;

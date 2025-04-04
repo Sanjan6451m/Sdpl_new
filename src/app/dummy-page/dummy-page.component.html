@@ -34,13 +34,15 @@
   <div class="content-container">
     <div class="service-wheel" #serviceWheel>
       <div class="center-circle">
-        <img src="assets/images/logo.png" alt="Logo">
+        <img src="assets/images/Minimal-Business-Logo-Reveal-f-unscreen.gif" alt="logo" />
+
+        <!-- <img src="assets/images/logogif.gif" alt="Logo"> -->
       </div>
       <div class="service-items" #serviceItemsContainer>
         <div class="service-item" *ngFor="let service of services" [style.transform]="service.transform"
           (click)="selectService(service)" [class.selected]="service === selectedService">
           <div class="item-content">
-            <img [src]="service.icon" [alt]="service.title">
+            <img [src]="service.icon" [alt]="service.title" width="100px" height="100px">
           </div>
         </div>
       </div>
@@ -56,6 +58,10 @@
             </div>
             <div class="accordion-content" [style.maxHeight]="activeAccordionIndex === i ? '200px' : '0'">
               <p>{{ service.description }}</p>
+              <p>{{ service.description1 }}</p>
+              <p>{{ service.description2 }}</p>
+              <p>{{ service.description3 }}</p>
+              <p>{{ service.description4 }}</p>
             </div>
           </div>
         </div>
