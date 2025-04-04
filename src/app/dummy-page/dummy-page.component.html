@@ -21,3 +21,37 @@
   </div>
   <button class="nav-arrow right-arrow" (click)="scrollRight()">›</button>
 </div>
+
+
+<div class="services-section">
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <div class="content-container">
+    <div class="service-wheel" #serviceWheel>
+      <div class="center-circle">
+        <img src="assets/images/logo.png" alt="Logo">
+      </div>
+      <div class="service-items" #serviceItemsContainer>
+        <div class="service-item" *ngFor="let service of services" [style.transform]="service.transform" 
+        (click)="selectService(service)">
+          <div class="item-content">
+            <img [src]="service.icon" [alt]="service.title">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-section">
+      <h1 class="main-title">Our Services</h1>
+      <h2 class="service-title">{{ selectedService?.title || 'Comprehensive Solutions' }}</h2>
+      <h3 class="subtitle">Tailored to Your Needs</h3>
+      <p class="description">
+        {{ selectedService ? 'Explore our ' + selectedService.title + ' service in detail.' : 'We offer a wide range of services designed to meet your specific requirements. Our team of experts is dedicated to delivering exceptional results that drive your success. Scroll to explore our service offerings and discover how we can help you achieve your goals.' }}
+      </p>
+    </div>
+  </div>
+</div>

@@ -4025,7 +4025,9 @@ Blog Details Area Style
                     left: 0;
                     width: 2px;
                     height: 100%;
-                    background-color: var(--mainColor);
+                    background: #e6335a;
+                    left: -15px;
+                    z-index: -1;
                 }
             }
         }
@@ -6232,4 +6234,39 @@ Banner Area Three Style
 
 .header-area .header-content-right .header-contact::before{
     background: transparent !important;
+}
+
+.service-items {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.service-item:hover {
+    transform: none;
+    transition: none;
+}
+
+.service-wheel {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+
+.content-section {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin-left: 5%;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
 }
