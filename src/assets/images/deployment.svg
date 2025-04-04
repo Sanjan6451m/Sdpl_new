@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .primary { fill: #9C27B0; }
+    .secondary { fill: #BA68C8; }
+  </style>
+  <!-- Cloud Shape -->
+  <path d="M35 45c0-8.3 6.7-15 15-15 5.5 0 10.3 3 12.8 7.4 2.5-2.2 5.8-3.4 9.2-3.4 8.3 0 15 6.7 15 15 0 .5 0 1-.1 1.5C92.3 52 96 56.9 96 62.5c0 7.5-6 13.5-13.5 13.5h-45C30 76 24 70 24 62.5c0-5.6 3.7-10.5 9.1-12C33 49.5 33 49 33 48.5c0-1.9 1.6-3.5 3.5-3.5" class="secondary"/>
+  <!-- Upload Arrow -->
+  <path d="M60 85V55M45 70l15-15 15 15" stroke="#9C27B0" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Server Lines -->
+  <rect x="50" y="85" width="20" height="4" rx="2" class="primary"/>
+  <rect x="45" y="93" width="30" height="4" rx="2" class="primary"/>
+</svg> 

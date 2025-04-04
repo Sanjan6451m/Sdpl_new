@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .primary { fill: #FF9800; }
+    .secondary { fill: #FFB74D; }
+  </style>
+  <!-- Graduation Cap -->
+  <path d="M60 30L20 50l40 20 40-20z" class="secondary"/>
+  <!-- Tassel -->
+  <path d="M60 70v20M60 90l5-15h-10z" class="primary"/>
+  <!-- Book Pages -->
+  <path d="M40 60v25c0 2.8 2.2 5 5 5h30c2.8 0 5-2.2 5-5V60" class="secondary"/>
+  <!-- Book Cover -->
+  <path d="M85 85H35c-2.8 0-5-2.2-5-5V55c0-2.8 2.2-5 5-5h50c2.8 0 5 2.2 5 5v25c0 2.8-2.2 5-5 5z" class="primary"/>
+  <!-- Book Lines -->
+  <path d="M45 60h30M45 70h30M45 80h20" stroke="#fff" stroke-width="2"/>
+</svg> 
