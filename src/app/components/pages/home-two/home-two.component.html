@@ -1,4 +1,34 @@
-<section class="slider-area-2">
+<section class="hero-section">
+    <div class="container">
+        <div class="circles-container">
+            <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
+                <i class="bx bx-devices"></i>
+            </a>
+                
+            <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
+                <i class="bx bx-mobile-alt"></i>
+            </a>
+                
+            <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
+                <i class="bx bx-laptop"></i>
+            </a>
+                
+            <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
+                <i class="bx bx-network-chart"></i>
+            </a>
+                
+            <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
+                <i class="bx bx-video"></i>
+            </a>
+        </div>
+        
+        <div class="logo-container">
+            <img src="assets/images/Minimal-Business-Logo-Reveal-f-unscreen.gif" alt="Superior Digital Logo" class="main-logo">
+        </div>
+    </div>
+</section>
+
+<!-- <section class="slider-area-2">
     <div class="home-slider">
         <owl-carousel-o [options]="homeSlides">
             <ng-template carouselSlide>
@@ -69,12 +99,12 @@
             </ng-template>
         </owl-carousel-o>
     </div>
-</section>
+</section> -->
 
-<div class="info-area pt-100 pb-70">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-sm-6">
+<!-- <div class="info-area pt-100 pb-70"> -->
+    <!-- <div class="container">
+        <div class="row justify-content-center"> -->
+            <!-- <div class="col-lg-5 col-sm-6">
                 <div class="single-info">
                     <div class="info-img">
                         <img src="assets/images/info/info1.png" alt="info" />
@@ -90,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- <div class="col-lg-4 col-sm-6">
                 <div class="single-info">
@@ -110,7 +140,7 @@
                 </div>
             </div> -->
             
-            <div class="col-lg-5 col-sm-6 offset-sm-3 offset-lg-0">
+            <!-- <div class="col-lg-5 col-sm-6 offset-sm-3 offset-lg-0">
                 <div class="single-info si-30">
                     <div class="info-img">
                         <img src="assets/images/info/info2.png" alt="info" />
@@ -126,412 +156,144 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+            </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+<!-- </div> -->
 
 <section class="home-case ptb-100 bg-color">
     <div class="container">
         <div class="section-title">
             <!-- <span>Case Studies</span> -->
-            <h2>Apple Authorised Reseller</h2>
-            <p>At Superior Digital, we deliver technical, commercial, and operational expertise on a larger scale. Our dedicated Apple Practice supports various aspects of the broader Superior Digital business, ensuring that at every stage of the lifecycle, we are optimally positioned to assist enterprise organisations in adopting Apple technology and achieving their business goals.</p>
+            <h2>About Us</h2>
         </div>
-        <div class="case">
-            <!-- <ul class="nav-tabset">
-                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab1'}">
-                    <span (click)="switchTab($event, 'tab1')">
-                        All
-                    </span>
-                </li>
-                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab2'}">
-                    <span (click)="switchTab($event, 'tab2')">
-                        Design
-                    </span>
-                </li>
-                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab3'}">
-                    <span (click)="switchTab($event, 'tab3')">
-                        Development
-                    </span>
-                </li>
-                <li class="nav-tab" [ngClass]="{'active': currentTab === 'tab4'}">
-                    <span (click)="switchTab($event, 'tab4')">
-                        Cyber Security
-                    </span>
-                </li>
-            </ul> -->
-            <div class="tabs-container">
-                <div class="pane" id="tab1" *ngIf="currentTab === 'tab1'">
-                    <div class="row case-list">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/presales-support"><img src="assets/images/case/m3.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/presales-support"><h3>Apple Pre Sales Support</h3></a>
-                                    <p>We take pride in offering exceptional Apple PreSales support, delivered by our team of certified experts to understand your needs.</p>
-                                    <a routerLink="/presales-support" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/demo"><img src="assets/images/case/m7.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/demo"><h3>Demo and Proof of Concept </h3></a>
-                                    <p>Superior Digital is offering cutting-edge demo and proof of concept services with Apple Business Manager and Mobile Device Management (MDM).</p>
-                                    <a routerLink="/demo" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/buy-back"><img src="assets/images/case/m8.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/buy-back"><h3>Apple Buy Back Program </h3></a>
-                                    <p>The Apple Buy Back Programme offers an opportunity to exchange your old Apple devices for new ones.</p>
-                                    <a routerLink="/buy-back" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/onsite-support"><img src="assets/images/case/m6.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/onsite-support"><h3>Apple Services with Onsite Support </h3></a>
-                                    <p>Superior Digital boasts a dedicated team of Apple Certified Technicians who excel in delivering onsite support.</p>
-                                    <a routerLink="/onsite-support" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/partnering"><img src="assets/images/case/m5.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/partnering"><h3>Our Partnering with Multiple Brands</h3></a>
-                                    <p>Advantages of Partnering with Multiple MDM Brands In today's digital landscape, organisations need effective device management for security. </p>
-                                    <a routerLink="/partnering" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/purchase-program"><img src="assets/images/case/m4.png" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/purchase-program"><h3>Purchase Programs by Apple</h3></a>
-                                    <p>Welcome to Our Purchase Programs for Apple Developers! Are you new to Mac or looking to enhance your skills as a developer?</p>
-                                    <a routerLink="/purchase-program" class="line-bnt">Read More -></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <div class="about-section">
+                    <h3>Superior Story</h3>
+                    <p>We started our journey in 2013 with a passionate team of three, driven by a commitment to 
+                    excellence and innovation. Through dedication and visionary leadership, we have grown into a 
+                    team of over 100 skilled professionals, delivering exceptional solutions. Today, we proudly serve 
+                    more than 900 enterprise customers, providing tailored services that enhance productivity and 
+                    efficiency.</p>
+                    
+                    <p>With strong partnerships across 30+ premium brands, we continue to expand our industry 
+                    presence, offering cutting-edge technology solutions. Our success is reflected in the trust of over 
+                    1,000 satisfied customers who have remained loyal to Superior over the years. As we grow, our 
+                    focus remains on delivering quality, innovation, and customer-centric solutions that drive 
+                    businesses forward.</p>
                 </div>
-                <!-- <div class="pane" id="tab2" *ngIf="currentTab === 'tab2'">
-                    <div class="row case-list">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c4.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>IT Software Company Development Case</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c5.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>Parking Management & Web Developing</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c6.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>Temperature App UX Studies & Development Case</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="pane" id="tab3" *ngIf="currentTab === 'tab3'">
-                    <div class="row case-list">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c2.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>Ride Share App UX Studies & Development Case</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c3.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>Restaurant Management & Web Developing</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c4.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>IT Software Company Development Case</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="pane" id="tab4" *ngIf="currentTab === 'tab4'">
-                    <div class="row case-list">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c6.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>Temperature App UX Studies & Development Case</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c4.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>IT Software Company Development Case</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single-case">
-                                <div class="case-img">
-                                    <a routerLink="/case-studies-details"><img src="assets/images/case/c5.jpg" alt="case"/></a>
-                                </div>
-            
-                                <div class="content">
-                                    <a routerLink="/case-studies-details"><h3>Parking Management & Web Developing</h3></a>
-                                    <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod tempor incididunt ipsum dolor.</p>
-                                    <a routerLink="/case-studies-details" class="line-bnt">View Project Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
-        <!-- <div class="case-btn text-center">
-            <p>We Have More Amazing Cases. <a routerLink="/">View More</a></p>
-        </div> -->
+        
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <div class="about-section">
+                    <h3>Our Approach</h3>
+                    <p>Our approach to addressing customer IT Infrastructure challenges begins with a clear 
+                    understanding of their specific needs. We ensure top-notch quality and reliability in every solution, 
+                    fostering a long-term business relationship built on trust and mutual respect.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row approach-cards">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-case">
+                    <div class="case-img">
+                        <i class="bx bx-dollar-circle"></i>
+                    </div>
+        
+                    <div class="content">
+                        <h3>Cost-Effective Solutions</h3>
+                        <p>Our services are designed to fit within a competitive budget, ensuring 
+                        affordability without sacrificing quality.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="single-case">
+                    <div class="case-img">
+                        <i class="bx bx-time-five"></i>
+                    </div>
+        
+                    <div class="content">
+                        <h3>Long-Term Benefits</h3>
+                        <p>We focus on providing durable and sustainable IT infrastructure solutions 
+                        that offer long-lasting advantages.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="single-case">
+                    <div class="case-img">
+                        <i class="bx bx-medal"></i>
+                    </div>
+        
+                    <div class="content">
+                        <h3>Commitment to Excellence</h3>
+                        <p>We are dedicated to delivering outstanding service, ensuring 
+                        reliability and trust as your IT infrastructure partner.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <section class="home-service-area pb-70">
     <div class="container">
-        <div class="section-title">
-            <!-- <p>"Superior Digital: Expert Apple Device Support at Your Convenience"Experience certified expertise, genuine parts, and comprehensive services with tailored solutions for all your Apple device needs "</p> -->
-            <h2 style="padding-top: 60px;">What we offer - </h2>
+        <div class="features-section">
+            <div class="section-title">
+            <h2>Our Services</h2>
         </div>
-
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/onsite.png" alt="service" />
+            <div class="cards-wrapper">
+              <button class="nav-arrow left-arrow" (click)="prevSlide()">‹</button>
+              <div class="cards-container">
+                <div class="card" 
+                     *ngFor="let feature of features; let i = index"
+                     [class.active]="i === activeIndex"
+                     [class.prev]="i === (activeIndex - 1 + features.length) % features.length"
+                     [class.next]="i === (activeIndex + 1) % features.length">
+                  <div class="card-content">
+                    <div class="icon-container">
+                      <i [class]="feature.icon"></i>
                     </div>
-
-                    <div class="service-content">
-                        <h3>Onsite Support Convenience</h3>
-                        <p>Superior Digital offers onsite support, bringing expert technicians directly to your location for swift repairs and services on your Apple devices, ensuring maximum convenience.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
-                    </div>
+                    <h3>{{feature.title}}</h3>
+                    <p>{{feature.description}}</p>
+                  </div>
                 </div>
+              </div>
+              <button class="nav-arrow right-arrow" (click)="nextSlide()">›</button>
             </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/certified.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>Certified Expertise</h3>
-                        <p>Our technicians are Apple Certified, ensuring that your devices are handled by professionals with advanced skills and training necessary for top-notch service.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/apple-parts.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>Genuine Apple Parts</h3>
-                        <p>We exclusively use genuine Apple parts in all repairs, guaranteeing quality and durability, aligning with the high standards expected from Apple products.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/repair-services.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>Comprehensive Repair Services</h3>
-                        <p>Whether under AppleCare+ or out of warranty, we cover all repair needs, providing prompt and efficient solutions to keep your devices in optimal condition.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/maintanance.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>Tailored Maintenance Contracts</h3>
-                        <p>As an Associated Apple Service Provider, Superior Digital offers bespoke Annual Maintenance Contracts to meet the unique needs of businesses and individual customers.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/per-incident.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>Per Incident Support</h3>
-                        <p>Our flexible per incident support allows you to access expert service without long-term commitments, providing peace of mind and reliability whenever unexpected issues arise.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/customer-centric.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>Customer-Centric Approach</h3>
-                        <p>Superior Digital is committed to delivering personalised service, expert advice, and quick turnaround times, ensuring customer satisfaction is at the forefront of all our interactions.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> 
     </div>
 </section>
 
-<div class="features-section">
-    <h2 class="section-title">Our Services</h2>
-    <div class="cards-wrapper">
-      <button class="nav-arrow left-arrow" (click)="prevSlide()">‹</button>
-      <div class="cards-container">
-        <div class="card" 
-             *ngFor="let feature of features; let i = index"
-             [class.active]="i === activeIndex"
-             [class.prev]="i === (activeIndex - 1 + features.length) % features.length"
-             [class.next]="i === (activeIndex + 1) % features.length">
-          <div class="card-content">
-            <div class="icon-container">
-              <i [class]="feature.icon"></i>
-            </div>
-            <h3>{{feature.title}}</h3>
-            <p>{{feature.description}}</p>
-          </div>
-        </div>
-      </div>
-      <button class="nav-arrow right-arrow" (click)="nextSlide()">›</button>
-    </div>
-  </div>
+
     
 
 <section class="home-case ptb-100 bg-color">
     <div class="container">
         <div class="section-title">
-            <!-- <span>Case Studies</span> -->
-            <!-- <span>Services</span> -->
+
             <h2>Solutions</h2>
             
         </div>
-        <div class="content-container">
+        <!-- style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;" -->
+        <div class="content-container" >
             <div class="service-wheel" #serviceWheel>
               <div class="center-circle">
-                <img src="assets/images/logo.png" alt="Logo">
+                <img src="assets/images/Minimal-Business-Logo-Reveal-f-unscreen.gif" alt="Logo">
               </div>
               <div class="service-items" #serviceItemsContainer>
                 <div class="service-item" *ngFor="let service of services" [style.transform]="service.transform"
                   (click)="selectService(service)" [class.selected]="service === selectedService">
                   <div class="item-content">
-                    <img [src]="service.icon" [alt]="service.title">
+                    <img [src]="service.icon" [alt]="service.title" width="100px" height="100px">
                   </div>
                 </div>
               </div>
@@ -540,9 +302,10 @@
               <h1 class="main-title">Our Services</h1>
               <h2 class="service-title">{{ selectedService?.title || 'Comprehensive Solutions' }}</h2>
               <!-- <h3 class="subtitle">Tailored to Your Needs</h3> -->
-              <p class="description">
-                {{ selectedService ? 'Explore our ' + selectedService.title + ' service in detail.' : 'We offer a wide range of services designed to meet your specific requirements. Our team of experts is dedicated to delivering exceptional results that drive your success. Scroll to explore our service offerings and discover how we can help you achieve your goals.' }}
-              </p>
+              <div class="description" *ngIf="!selectedService">
+                <p>We offer a wide range of services designed to meet your specific requirements. Our team of experts is dedicated to delivering exceptional results that drive your success. Scroll to explore our service offerings and discover how we can help you achieve your goals.</p>
+              </div>
+              <div class="description" *ngIf="selectedService" [innerHTML]="selectedService.description"></div>
             </div>
           </div>
     </div>
@@ -615,12 +378,10 @@
     </div>
 </section> -->
 
-<section class="home2-choose-area pt-100 pb-70">
+<!-- <section class="home2-choose-area pt-100 pb-70">
     <div class="container">
         <div class="section-title">
-            <!-- <span>Choose Aiva</span> -->
             <h2>We Achieved People's Trust by Our Great Service</h2>
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p> -->
         </div>
 
         <div class="row">
@@ -679,7 +440,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- <section class="technology-area ptb-100 bg-color">
     <div class="container">
@@ -986,10 +747,9 @@
     </div>
 </section> -->
 
-<section class="home-service-area pb-70 bg-color">
+<!-- <section class="home-service-area pb-70 bg-color">
     <div class="container">
         <div class="section-title">
-            <!-- <p>"Superior Digital: Expert Apple Device Support at Your Convenience"Experience certified expertise, genuine parts, and comprehensive services with tailored solutions for all your Apple device needs "</p> -->
             <h2 style="padding-top: 60px;">Developer Program Benefits </h2>
             <p>As a developer, purchasing an Apple device from Superior Digital means gaining more than just cutting-edge hardware—you're entering a professional partnership. Enjoy exclusive benefits, including special purchase offers, on-premise support, and expert training to enhance your skills.</p>
             <p>Gain priority access to Apple Developer Sessions and stay ahead with the latest innovations. We also provide Enterprise Connect support, ensuring seamless integration for your development needs. Elevate your Apple experience with tailored support and resources designed for developers!</p>
@@ -1005,7 +765,6 @@
                     <div class="service-content">
                         <h3>Purchase Benefits </h3>
                         <p>Get exclusive offers and flexible purchase options tailored for developers investing in all Apple devices.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
                     </div>
                 </div>
             </div>
@@ -1019,7 +778,6 @@
                     <div class="service-content">
                         <h3>On-Premise Support</h3>
                         <p>Enjoy dedicated technical assistance and troubleshooting at your location for seamless device performance.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
                     </div>
                 </div>
             </div>
@@ -1033,7 +791,6 @@
                     <div class="service-content">
                         <h3>Training and Enablement</h3>
                         <p>Gain expert-led training on Apple technologies, empowering you to optimize your development workflow.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
                     </div>
                 </div>
             </div>
@@ -1047,7 +804,6 @@
                     <div class="service-content">
                         <h3>Priority Access for Apple Developer</h3>
                         <p>Stay ahead with early access to Apple Developer Sessions, ensuring you leverage the latest tools and innovations.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
                     </div>
                 </div>
             </div>
@@ -1061,20 +817,17 @@
                     <div class="service-content">
                         <h3>Enterprise Connect </h3>
                         <p>Benefit from seamless integration support for Apple devices within enterprise environments, enhancing efficiency and security.</p>
-                        <!-- <a routerLink="/solutions-details" class="line-bnt">Read More</a> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="home-contact-area home-2-contact ptb-100">
     <div class="container">
         <div class="section-title">
-            <!-- <span>Contact Us</span> -->
             <h2>Contact Us</h2>
-            <!-- <p>It is a long established fact that a reader will be distracted by the rea dable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more.</p> -->
         </div>
 
         <div class="row">

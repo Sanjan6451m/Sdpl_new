@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import emailjs from '@emailjs/browser';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 interface FeatureCard {
     title: string;
@@ -14,17 +15,32 @@ interface FeatureCard {
     icon: string;
     title: string;
     transform: string;
+    description: string;
   }
 
 @Component({
     selector: 'app-home-two',
     templateUrl: './home-two.component.html',
-    styleUrls: ['./home-two.component.scss']
+    styleUrls: ['./home-two.component.scss'],
+    animations: [
+      trigger('circleAnimation', [
+        state('initial', style({
+          opacity: 0,
+          transform: 'scale(0.5)'
+        })),
+        state('visible', style({
+          opacity: 1,
+          transform: 'scale(1)'
+        })),
+        transition('initial => visible', animate('0.6s ease'))
+      ])
+    ]
 })
 export class HomeTwoComponent implements OnInit {
     contactForm: FormGroup;
     message: string = '';
     selectedDevice = ''; 
+    circleState = 'initial';
 
     constructor(private fb: FormBuilder, private http: HttpClient) {
         this.contactForm = this.fb.group({
@@ -39,6 +55,22 @@ export class HomeTwoComponent implements OnInit {
 
     ngOnInit() {
         this.calculateServiceItemPositions();
+        // Trigger the animation after a delay
+        setTimeout(() => {
+          this.circleState = 'visible';
+        }, 500);
+    }
+
+    @HostListener('window:scroll', ['$event'])
+    onScroll() {
+      // Check scroll position and update circle scale if needed
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 100) {
+        // When scrolling down, make circles larger
+        document.querySelectorAll('.circle').forEach(circle => {
+          (circle as HTMLElement).style.transform = `scale(${1 + (scrollPosition * 0.001)})`;
+        });
+      }
     }
 
     images: string[] = [
@@ -281,11 +313,104 @@ export class HomeTwoComponent implements OnInit {
       }
 
       services: ServiceItem[] = [
-        { icon: 'assets/infographics/service1.png', title: 'Cloud Solutions', transform: '' },
-        { icon: 'assets/infographics/service2.png', title: 'IT Consulting', transform: '' },
-        { icon: 'assets/infographics/service3.png', title: 'Repair and Support', transform: '' },
-        // { icon: 'assets/infographics/service4.png', title: 'Networking', transform: '' },
-        { icon: 'assets/infographics/service5.png', title: 'Leasing', transform: '' }
+        { 
+          icon: 'https://ik.imagekit.io/xic57rvk8yp/cloud_n-oQmCmr-.png?updatedAt=1743764966503', 
+          title: 'Cloud Solutions', 
+          transform: '',
+          description: `Cloud solutions have transformed the way organisations operate by providing a flexible, cost
+effective, and scalable platform for storing, managing, and processing data. These solutions 
+leverage remote servers hosted on the internet to store and process data, which can be accessed 
+from anywhere at any time. Here are five top benefits of adopting cloud solutions for organisations:
+<br><br>
+<strong>Cost Efficiency:</strong> By moving to the cloud, organisations can significantly reduce their IT costs. 
+They eliminate the need for purchasing and maintaining expensive hardware and infrastructure 
+since cloud services operate on a pay-as-you-go model, allowing businesses to pay only for the 
+resources they use.
+<br><br>
+<strong>Scalability:</strong> Cloud solutions allow organisations to easily scale their resources up or down based 
+on their needs. This flexibility ensures that businesses can handle increased loads during peak 
+times without the need for permanent infrastructure additions, thus maintaining operational 
+efficiency.
+<br><br>
+<strong>Improved Collaboration and Accessibility:</strong> With cloud solutions, employees can access data 
+and applications from anywhere with an internet connection. This enhances collaboration among 
+team members, especially in a world where remote work is becoming increasingly common, and 
+ensures that everyone has access to the latest information.
+<br><br>
+<strong>Enhanced Security:</strong> Leading cloud providers invest heavily in security measures to protect data 
+against breaches and cyber threats. Cloud solutions offer robust security features like encryption, 
+authentication, and access control, ensuring that organisational data remains secure.
+<br><br>
+<strong>Disaster Recovery and Backup:</strong> Cloud solutions provide reliable data backup and disaster 
+recovery options. In the event of a system failure or any disaster, organisations can quickly recover 
+their data without losing valuable information, ensuring business continuity.`
+        },
+        { 
+          icon: 'https://ik.imagekit.io/xic57rvk8yp/consultant_OJETVCvZ5W.png?updatedAt=1743764966182', 
+          title: 'IT Consulting', 
+          transform: '',
+          description: `Whether you're a startup, small, medium, or large organisation, our journey together begins with a 
+free consultation. We focus on understanding your unique needs and preferences, as well as your 
+future expansion plans. Our team provides comprehensive solutions from start to finish, ensuring 
+seamless integration and execution. With our expertise in IT consulting, we customise our services 
+to align with your business goals, driving efficiency and growth. 
+<br><br>
+Partner with us to transform your technology strategies and stay ahead in the competitive market.`
+        },
+        { 
+          icon: 'https://ik.imagekit.io/xic57rvk8yp/repair_ub9f93pCHW.png?updatedAt=1743764966563', 
+          title: 'Repair and Support', 
+          transform: '',
+          description: `Our Superior service team comprises highly skilled engineers who are certified by leading 
+brands such as Apple, Microsoft, HP, Dell, and Lenovo, ensuring top-notch software and 
+hardware repair and support.
+<br><br>
+<strong>Rapid Incident Support:</strong> Our expertise allows us to provide swift diagnosis and resolution 
+per incident, minimising downtime and ensuring your operations continue smoothly.
+<br><br>
+<strong>Comprehensive Annual Maintenance Contracts:</strong> With our annual maintenance 
+contracts, you can expect ongoing, reliable support tailored to prevent and address issues 
+promptly, enhancing the productivity of your business.
+<br><br>
+<strong>Dedicated On-Premise Engineer:</strong> Benefit from having a dedicated engineer on-site who 
+is familiar with your systems, ensuring immediate support and personalised service for any 
+technical needs.
+<br><br>
+<strong>Scheduled Free Health Checkups:</strong> Take advantage of planned health checkups to 
+proactively identify potential issues before they impact your operations, ensuring 
+continuous optimal performance.`
+        },
+        { 
+          icon: 'https://ik.imagekit.io/xic57rvk8yp/leasing_wKaUgRUuK.png?updatedAt=1743764966653', 
+          title: 'Leasing', 
+          transform: '',
+          description: `Leasing technology equipment enables organisations to access the latest technology 
+without incurring a significant upfront cost, and offers flexibility for upgrades. It generally 
+includes maintenance and support services to keep the equipment in optimal condition. At 
+the end of the lease, organisations have the option to return the equipment, continue 
+leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
+usage.
+<br><br>
+<strong>Benefits to Organisations:</strong>
+<br><br>
+<strong>Cost Management:</strong> Leasing avoids the substantial initial cost associated with purchasing 
+IT devices, allowing businesses to conserve capital for other operational needs.
+<br><br>
+<strong>Technology Upgrades:</strong> Organisations can regularly upgrade to the latest technology 
+without the financial burden of replacing outdated equipment.
+<br><br>
+<strong>Predictable Expenses:</strong> Leasing provides fixed monthly payments, making it easier for 
+companies to budget and plan their financials.
+<br><br>
+<strong>Maintenance and Support:</strong> Leased IT devices often come with maintenance and support 
+services, reducing the need for in-house technical support and associated costs.
+<br><br>
+<strong>Flexibility and Scalability:</strong> Businesses can easily scale their IT infrastructure up or down 
+according to changing needs, without being stuck with obsolete equipment.
+<br><br>
+Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
+Finance to offer IT equipment on lease.`
+        }
       ];
 
       selectedService: ServiceItem | null = null;
