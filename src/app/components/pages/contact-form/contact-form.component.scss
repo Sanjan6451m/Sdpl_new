@@ -1,0 +1,118 @@
+.contact-container {
+    display: flex;
+    min-height: 100vh;
+    padding: 2rem;
+    background: url('/assets/images/contactusimg.jpg') no-repeat center center/cover;
+    backdrop-filter: blur(5px);
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left-section, .right-section {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  
+  .left-section {
+    padding-right: 2%;
+  }
+  
+  .right-section {
+    padding-left: 2%;
+  }
+  
+  .left-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .left-section p {
+    color: #6c7a89;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+  
+  .form-box {
+    width: 100%;
+    max-width: 100%;
+    // background: rgba(255, 255, 255, 0.4);
+    padding: 2rem;
+    border-radius: 20px;
+    // backdrop-filter: blur(0px);
+    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-box input,
+  .form-box textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 2px solid white;
+    border-radius: 10px;
+    // backdrop-filter: blur(20px);
+    background: #ffffff00;
+    font-size: 1rem;
+  }
+  
+  .form-box .row {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .form-box .row input {
+    flex: 1;
+  }
+  
+  .form-box textarea {
+    height: 120px;
+    resize: none;
+  }
+  
+  .form-box button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .form-box input:focus, .form-box textarea:focus {
+    outline: none;
+    border-color: #ccc; /* Change to desired color */
+  }
+  
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .left-section, .right-section {
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+  
+    .form-box {
+      max-width: 100%;
+    }
+  }
+  
+
+  .blurbg{
+        width: 100%;
+        max-width: 100%;
+        background: rgba(255, 255, 255, 0.4);
+        padding: 2rem;
+        border-radius: 20px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
