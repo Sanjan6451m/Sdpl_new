@@ -67,6 +67,8 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         
         // Add resize listener
         window.addEventListener('resize', this.handleResize.bind(this));
+
+        
     }
 
     ngAfterViewInit() {
@@ -512,4 +514,32 @@ Finance to offer IT equipment on lease.`
       toggleAccordion(index: number) {
         this.activeAccordionIndex = this.activeAccordionIndex === index ? null : index;
       }
+
+      cardItems = [
+        {
+          icon: 'assets/icons/brand.svg',
+          title: '50+',
+          description: 'Brands'
+        },
+        {
+          icon: 'assets/icons/staff.svg',
+          title: '10+',
+          description: 'Certified Staffs'
+        },
+        {
+          icon: 'assets/icons/customers.svg',
+          title: '2000+',
+          description: 'Customers'
+        },
+        {
+          icon: 'assets/icons/map.svg',
+          title: 'Pan India',
+          description: 'support'
+        },
+        {
+          icon: 'assets/icons/device.svg',
+          title: '3,00,000+',
+          description: 'Devices Deployed'
+        }
+      ];
 }

@@ -33,6 +33,26 @@
     </div>
 </section>
 
+<!-- Cards start -->
+<section class="product-card-section">
+    <div class="product-card-layout">
+      <h1 style="text-align: center;">13+ years of Apple expertise and IT SHOWS!</h1>
+      <br><br>
+      <div class="product-card-container">
+        <div class="product-card" *ngFor="let item of cardItems">
+          <div class="product-card-icon">
+            <img [src]="item.icon" alt="{{ item.title }} Icon" class="product-card-icon-img">
+          </div>
+          <div class="product-card-content">
+            <h1 class="product-card-title">{{ item.title }}</h1>
+            <h3 class="product-card-description">{{ item.description }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Cards end -->
+
 <!-- <section class="slider-area-2">
     <div class="home-slider">
         <owl-carousel-o [options]="homeSlides">
@@ -172,9 +192,25 @@
             <!-- <span>Case Studies</span> -->
             <h2>About Us</h2>
         </div>
-        
-        <div class="row mb-5">
-            <div class="col-lg-12">
+
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                <div class="services-img mb-qc ios-content">
+                    <div class="circular-layout">
+                        <div class="image-container">
+                          <img src="assets/images/superior-story.jpg" alt="image" class="image-container-img"/>
+                        </div>
+                      </div>
+
+                    <!-- <div class="image-wrapper">
+                        <div class="background-shape shape1"></div>
+                        <div class="background-shape shape2"></div>
+                        <img src="assets/images/device4.png" alt="Person">
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="col-lg-6">
                 <div class="about-section">
                     <h3>Superior Story</h3>
                     <p>We started our journey in 2013 with a passionate team of three, driven by a commitment to 
@@ -192,22 +228,44 @@
             </div>
         </div>
         
-        <div class="row mb-5">
-            <div class="col-lg-12">
+        <br>
+        <br>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
                 <div class="about-section">
                     <h3>Our Approach</h3>
                     <p>Our approach to addressing customer IT Infrastructure challenges begins with a clear 
-                    understanding of their specific needs. We ensure top-notch quality and reliability in every solution, 
-                    fostering a long-term business relationship built on trust and mutual respect.</p>
+                        understanding of their specific needs. We ensure top-notch quality and reliability in every solution, 
+                        fostering a long-term business relationship built on trust and mutual respect.</p>
                 </div>
             </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                <div class="services-img mb-qc ios-content">
+                    <div class="circular-layout">
+                        <div class="image-container">
+                          <img src="assets/images/approach.jpg" alt="image" class="image-container-img"/>
+                        </div>
+                      </div>
+
+                    <!-- <div class="image-wrapper">
+                        <div class="background-shape shape1"></div>
+                        <div class="background-shape shape2"></div>
+                        <img src="assets/images/device4.png" alt="Person">
+                    </div> -->
+                </div>
+            </div>
+
         </div>
+       
+        <br>
+        <br>
+        <br>
         
         <div class="row approach-cards">
             <div class="col-lg-4 col-md-6">
                 <div class="single-case">
                     <div class="case-img">
-                        <i class="bx bx-dollar-circle"></i>
+                        <i class="bx bx-rupee"></i>
                     </div>
         
                     <div class="content">
