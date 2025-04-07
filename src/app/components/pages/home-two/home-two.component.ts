@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import emailjs from '@emailjs/browser';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
 
 interface FeatureCard {
     title: string;
@@ -36,13 +37,17 @@ interface FeatureCard {
       ])
     ]
 })
-export class HomeTwoComponent implements OnInit {
+export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     contactForm: FormGroup;
     message: string = '';
     selectedDevice = ''; 
     circleState = 'initial';
 
-    constructor(private fb: FormBuilder, private http: HttpClient) {
+    constructor(
+        private fb: FormBuilder, 
+        private http: HttpClient,
+        private route: ActivatedRoute
+    ) {
         this.contactForm = this.fb.group({
           name: ['', [Validators.required]],
           email: ['', [Validators.required, Validators.email]],
@@ -59,6 +64,45 @@ export class HomeTwoComponent implements OnInit {
         setTimeout(() => {
           this.circleState = 'visible';
         }, 500);
+        
+        // Add resize listener
+        window.addEventListener('resize', this.handleResize.bind(this));
+    }
+
+    ngAfterViewInit() {
+        // Check for fragment and scroll to that section after view is initialized
+        this.route.fragment.subscribe(fragment => {
+            if (fragment) {
+                this.scrollToSection(fragment);
+            }
+        });
+    }
+
+    ngOnDestroy() {
+        // Clean up resize listener when component is destroyed
+        window.removeEventListener('resize', this.handleResize.bind(this));
+    }
+
+    /**
+     * Scrolls to a specific section using its ID
+     * @param sectionId The ID of the section to scroll to
+     */
+    scrollToSection(sectionId: string) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            // Add a small delay to ensure all animations and layout calculations are complete
+            setTimeout(() => {
+                // Calculate position accounting for navbar height
+                const headerOffset = 80; // Adjust this value based on your navbar height
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }, 200);
+        }
     }
 
     @HostListener('window:scroll', ['$event'])
@@ -414,28 +458,58 @@ Finance to offer IT equipment on lease.`
       ];
 
       selectedService: ServiceItem | null = null;
+      activeAccordionIndex: number | null = null;
 
       private calculateServiceItemPositions() {
         const totalItems = this.services.length;
-        const radius = 220; // Adjust this value to change the wheel size
-        
-        this.services = this.services.map((item, index) => {
-          // Calculate angle for semi-circle (180 degrees or π radians)
-          const angle = (index * Math.PI) / (totalItems - 1);
-          
-          // Calculate x and y positions
-          // We use -Math.cos for y to make the semi-circle face upward
-          const x = radius * Math.sin(angle);
-          const y = -radius * Math.cos(angle);
-          
-          return {
-            ...item,
-            transform: `translate(${x}px, ${y}px)`
-          };
-        });
+    const radius = 220; // Adjust this value to change the wheel size
+    
+    this.services = this.services.map((item, index) => {
+      // Calculate angle for semi-circle (180 degrees or π radians)
+      const angle = (index * Math.PI) / (totalItems - 1);
+      
+      // Calculate x and y positions
+      // We use -Math.cos for y to make the semi-circle face upward
+      const x = radius * Math.sin(angle);
+      const y = -radius * Math.cos(angle);
+      
+      return {
+        ...item,
+        transform: `translate(${x}px, ${y}px)`
+      };
+    });
       }
     
       selectService(service: ServiceItem) {
+        // If already selected, deselect it
+        if (this.selectedService === service) {
+          this.selectedService = null;
+          return;
+        }
+        
+        // Apply selected class immediately for responsive feedback
         this.selectedService = service;
+        
+        // For mobile devices, scroll to content section after a slight delay
+        if (window.innerWidth <= 991) {
+          setTimeout(() => {
+            const contentSection = document.querySelector('.content-section');
+            if (contentSection) {
+              contentSection.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start'
+              });
+            }
+          }, 300);
+        }
+      }
+
+      // Handle window resize
+      private handleResize() {
+        this.calculateServiceItemPositions();
+      }
+
+      toggleAccordion(index: number) {
+        this.activeAccordionIndex = this.activeAccordionIndex === index ? null : index;
       }
 }
