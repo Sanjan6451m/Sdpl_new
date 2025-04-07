@@ -63,6 +63,37 @@ export class DummyPageComponent implements OnInit {
       { icon: 'https://ik.imagekit.io/xic57rvk8yp/leasing_wKaUgRUuK.png?updatedAt=1743764966653', title: 'Leasing', transform: '', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description3: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.', description4: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.' }
   ];
 
+  //Cards start
+  cardItems = [
+    {
+      icon: 'assets/icons/brand.svg',
+      title: '50+',
+      description: 'Brands'
+    },
+    {
+      icon: 'assets/icons/staff.svg',
+      title: '10+',
+      description: 'Certified Staffs'
+    },
+    {
+      icon: 'assets/icons/customers.svg',
+      title: '2000+',
+      description: 'Customers'
+    },
+    {
+      icon: 'assets/icons/map.svg',
+      title: 'Pan India',
+      description: 'support'
+    },
+    {
+      icon: 'assets/icons/device.svg',
+      title: '3,00,000+',
+      description: 'Devices Deployed'
+    }
+  ];
+  //Cards end
+
+
   selectedService: ServiceItem | null = null;
   activeAccordionIndex: number | null = null;
 

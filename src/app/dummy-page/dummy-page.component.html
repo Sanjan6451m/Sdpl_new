@@ -67,5 +67,33 @@
         </div>
       </div>
     </div>
+
+    <div class="circular-layout">
+      <div class="image-container">
+        <img src="assets/images/contact-img2.jpg" alt="image" class="image-container-img"/>
+      </div>
+    </div>
+
+    <!-- Cards start -->
+    <section class="card-section">
+      <div class="card-layout">
+        <h1 style="text-align: center;">13+ years of Apple expertise
+          and IT SHOWS!</h1>
+          <br>
+          <br>
+        <div class="card-container">
+          <div class="card" *ngFor="let item of cardItems">
+            <div class="card-icon">
+              <img [src]="item.icon" alt="{{ item.title }} Icon" class="card-icon-img">
+            </div>
+            <div class="card-content">
+              <h1 class="card-title">{{ item.title }}</h1>
+              <h3 class="card-description">{{ item.description }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Cards end -->
   </div>
 </div>

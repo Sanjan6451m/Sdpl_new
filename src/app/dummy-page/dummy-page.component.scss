@@ -141,6 +141,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
 
   .content {
@@ -507,3 +509,114 @@
     font-size: 14px;
   }
 }
+
+
+.circular-layout {
+  position: relative;
+  width: 500px; /* Adjust as needed */
+  height: 500px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.image-container {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.image-container img {
+  width: 350px; /* Adjust as needed */
+  height: 350px; /* Adjust as needed */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.image-container-img {
+  padding: 0px; /* Adjust padding as needed */
+}
+
+
+
+//Cards start
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 40px); /* Adjusts to 3 cards per row */
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #14141459;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px; /* Adjust as needed */
+  height: 250px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px; /* Adjust as needed */
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.card-description {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #97e7f733;
+  height: 100px; /* Adjust as needed */
+}
+
+.card-icon-img {
+  width: 60px; /* Adjust as needed */
+  height: 60px; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 40px); /* Adjusts to 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%; /* Stacks cards vertically on very small screens */
+  }
+}
+
+.card-section {
+  padding: 40px 20px; /* Add padding for gutter space */
+}
+
+//Cards end
