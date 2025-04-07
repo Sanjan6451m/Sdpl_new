@@ -360,7 +360,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 
       services: ServiceItem[] = [
         { 
-          icon: 'https://ik.imagekit.io/xic57rvk8yp/cloud_n-oQmCmr-.png?updatedAt=1743764966503', 
+          icon: 'assets/images/cloud-removebg-preview.png', 
           title: 'Cloud Solutions', 
           transform: '',
           description: `Cloud solutions have transformed the way organisations operate by providing a flexible, cost
@@ -392,7 +392,7 @@ recovery options. In the event of a system failure or any disaster, organisation
 their data without losing valuable information, ensuring business continuity.`
         },
         { 
-          icon: 'https://ik.imagekit.io/xic57rvk8yp/consultant_OJETVCvZ5W.png?updatedAt=1743764966182', 
+          icon: 'assets/images/itsolutions-removebg-preview.png', 
           title: 'IT Consulting', 
           transform: '',
           description: `Whether you're a startup, small, medium, or large organisation, our journey together begins with a 
@@ -404,7 +404,7 @@ to align with your business goals, driving efficiency and growth.
 Partner with us to transform your technology strategies and stay ahead in the competitive market.`
         },
         { 
-          icon: 'https://ik.imagekit.io/xic57rvk8yp/repair_ub9f93pCHW.png?updatedAt=1743764966563', 
+          icon: 'assets/images/repair-support-removebg-preview.png', 
           title: 'Repair and Support', 
           transform: '',
           description: `Our Superior service team comprises highly skilled engineers who are certified by leading 
@@ -427,7 +427,7 @@ proactively identify potential issues before they impact your operations, ensuri
 continuous optimal performance.`
         },
         { 
-          icon: 'https://ik.imagekit.io/xic57rvk8yp/leasing_wKaUgRUuK.png?updatedAt=1743764966653', 
+          icon: 'assets/images/leaseing-removebg-preview.png', 
           title: 'Leasing', 
           transform: '',
           description: `Leasing technology equipment enables organisations to access the latest technology 

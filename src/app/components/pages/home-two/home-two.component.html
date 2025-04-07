@@ -1,5 +1,59 @@
+<a href="https://superiorsystems.in/apple" target="_blank" class="floating-coin">
+  <div class="coin">
+    <div class="front">
+      <img src="assets/images/superior.png" alt="Logo">
+    </div>
+    <div class="back">
+      <img src="assets/images/authorized.png" alt="Logo">
+    </div>
+  </div>
+</a>
+
 <section class="hero-section">
     <div class="container">
+        <div class="client-logos">
+            <div class="client-logo">
+                <img src="assets/images/marquee/hexnode-logo.png" alt="Client 1">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/42Gears-logo.png" alt="Client 2">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/logitech-logo.png" alt="Client 3">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/alogic-logo.png" alt="Client 4">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/belkin-logo.png" alt="Client 5">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/honeywell-logo.png" alt="Client 6">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/jebra-logo.png" alt="Client 7">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/poly-logo.png" alt="Client 8">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/samsung-logo.png" alt="Client 7">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/lg-logo.png" alt="Client 8">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/jumpcloud-logo.png" alt="Client 9">
+            </div>
+            <div class="client-logo">
+                <img src="assets/images/marquee/seagate-logo.png" alt="Client 10">
+            </div>
+            
+        </div>
+
+        <!-- <img src="assets/images/marquee/42Gears-logo.png" alt="Client 2">
+        <img src="assets/images/marquee/honeywell-logo.png" alt="Client 6"> -->
+
         <div class="circles-container">
             <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
                 <i class="bx bx-devices"></i>
@@ -346,6 +400,8 @@
         </div>
         
         <div class="content-container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
             <div class="service-wheel-container">
                 <div class="service-wheel" #serviceWheel>
                     <div class="center-circle">
@@ -364,17 +420,22 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="col-lg-6">
             
             <div class="content-section">
-                <h1 class="main-title">Our Services</h1>
+                <h1 class="main-title">Our Solutions</h1>
                 <h2 class="service-title">{{ selectedService?.title || 'Comprehensive Solutions' }}</h2>
                 <!-- <h3 class="subtitle">Tailored to Your Needs</h3> -->
                 <div class="description" *ngIf="!selectedService">
-                  <p>We offer a wide range of services designed to meet your specific requirements. Our team of experts is dedicated to delivering exceptional results that drive your success. Scroll to explore our service offerings and discover how we can help you achieve your goals.</p>
+                  <p>We offer a wide range of solutions designed to meet your specific requirements. Our team of experts is dedicated to delivering exceptional results that drive your success. Scroll to explore our service offerings and discover how we can help you achieve your goals.</p>
                 </div>
                 <div class="description" *ngIf="selectedService" [innerHTML]="selectedService.description"></div>
             </div>
         </div>
+        </div>
+    </div>
     </div>
 </section>
 
@@ -892,72 +953,36 @@
 </section> -->
 
 <section class="home-contact-area home-2-contact ptb-100">
-    <div class="container">
+    
         <div class="section-title">
             <h2>Contact Us</h2>
         </div>
 
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="content">
-                    <form id="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-                        <div class="row">
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="form-group">
-                                    <input type="text" formControlName="name" class="form-control" required placeholder="Your Name" />
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="form-group">
-                                    <input type="email" formControlName="email" class="form-control" required placeholder="Your Email" />
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="form-group">
-                                    <input type="text" formControlName="phone" class="form-control" required placeholder="Your Phone" />
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="form-group">
-                                    <select formControlName="device" class="form-control">
-                                        <option value="" disabled selected>Select Device</option>
-                                        <option *ngFor="let device of devices" [value]="device">{{ device }}</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <textarea formControlName="message" class="form-control" rows="5" required placeholder="Your Message"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <button type="submit" class="box-btn">Send Message</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div *ngIf="message" class="alert" [ngClass]="{'alert-success': message.includes('successfully'), 'alert-danger': message.includes('Error')}">
-                            {{ message }}
-                        </div>
+        <div class="contact-container">
+            <div class="blurbg">
+                <div class="left-section">
+                    <h1>Let us<br />contact you!</h1>
+                    <p>Submit your request in minutes,<br />no matter your need.</p>
+                </div>
+        
+                <div class="right-section">
+                    <form class="form-box">
+                        <input type="text" placeholder="Name" name="name" />
+        
+                        <!-- <div class="row"> -->
+                            <input type="email" placeholder="Email" name="email" />
+                            <input type="tel" placeholder="Mobile" name="mobile" />
+                        <!-- </div> -->
+        
+                        <input type="text" placeholder="Industry" name="industry" />
+                        <textarea placeholder="Whats on your Mind?" name="message"></textarea>
+        
+                        <button type="submit">Submit</button>
                     </form>
                 </div>
             </div>
-
-            <div class="col-lg-6 col-md-6">
-                <div class="contact-img contact-img-2">
-                    <img src="assets/images/contact-img2.jpg" alt="contact" />
-                </div>
-            </div>
         </div>
-    </div>
+    
 </section>
 
 <!-- <section id="clients" class="clients section" style="margin-bottom: 30px; margin-top: 50px;">
