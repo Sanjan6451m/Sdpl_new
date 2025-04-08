@@ -2271,6 +2271,11 @@
     right: 18%;
   }
 
+  .client-logo:nth-child(13) {
+    top: 20%;
+    right: 18%;
+  }
+
   .client-logo:nth-child(3) {
     top: 50%;
     left: 18%;
@@ -2340,5 +2345,15 @@
       width: 50px;
       height: 50px;
     }
+  }
+}
+
+.client-logos {
+  display: block; /* Default display for larger screens */
+}
+
+@media (max-width: 768px) {
+  .client-logos {
+    display: none; /* Hide on screens smaller than 768px */
   }
 }
