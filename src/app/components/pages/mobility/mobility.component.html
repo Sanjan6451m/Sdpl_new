@@ -22,10 +22,10 @@
                 <div class="section-title">
                     <h2>Welcome to Our Enterprise Mobility Solutions</h2>
                 </div>
-                <p>In today's rapidly evolving business landscape, staying connected and agile is essential for 
-                success. We offer comprehensive mobility solutions architected to meet the unique needs of 
-                enterprises across industries. Our solutions empower your workforce to access critical business 
-                information anytime, anywhere, ensuring maximum productivity and efficiency.</p>
+                <p>In today's rapidly evolving business landscape, staying connected and agile is essential for
+                    success. We offer comprehensive mobility solutions architected to meet the unique needs of
+                    enterprises across industries. Our solutions empower your workforce to access critical business
+                    information anytime, anywhere, ensuring maximum productivity and efficiency.</p>
             </div>
         </div>
 
@@ -42,11 +42,11 @@
                 </div>
 
                 <div class="col-lg-6">
-                    
+
                     <h2>Key Features of Our Mobility Solutions</h2>
                     <br>
-                    
-                    
+
+
                     <div class="accordion-container">
                         <div class="accordion">
                             <div class="accordion-item">
@@ -55,56 +55,61 @@
                                     <i class="bx bx-chevron-down"></i>
                                 </div>
                                 <div class="accordion-content">
-                                    <p>Our solutions easily integrate with existing enterprise systems and 
-                                    platforms, ensuring a smooth transition and minimal disruption to your operations.</p>
+                                    <p>Our solutions easily integrate with existing enterprise systems and
+                                        platforms, ensuring a smooth transition and minimal disruption to your
+                                        operations.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="accordion-item">
                                 <div class="accordion-header" (click)="toggleAccordion($event)">
                                     <h3>Enhanced Security</h3>
                                     <i class="bx bx-chevron-down"></i>
                                 </div>
                                 <div class="accordion-content">
-                                    <p>Protecting your data is our top priority. We offer advanced security features, 
-                                    including encryption, multi-factor authentication, and remote wipe capabilities, to safeguard 
-                                    sensitive information against cyber threats.</p>
+                                    <p>Protecting your data is our top priority. We offer advanced security features,
+                                        including encryption, multi-factor authentication, and remote wipe capabilities,
+                                        to safeguard
+                                        sensitive information against cyber threats.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="accordion-item">
                                 <div class="accordion-header" (click)="toggleAccordion($event)">
                                     <h3>Customisable Applications</h3>
                                     <i class="bx bx-chevron-down"></i>
                                 </div>
                                 <div class="accordion-content">
-                                    <p>We provide a range of customisable mobile applications designed to 
-                                    streamline workflows and increase operational efficiency. These applications are intuitive and user
-                                    friendly, requiring minimal training and support.</p>
+                                    <p>We provide a range of customisable mobile applications designed to
+                                        streamline workflows and increase operational efficiency. These applications are
+                                        intuitive and user
+                                        friendly, requiring minimal training and support.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="accordion-item">
                                 <div class="accordion-header" (click)="toggleAccordion($event)">
                                     <h3>Real-time Analytics</h3>
                                     <i class="bx bx-chevron-down"></i>
                                 </div>
                                 <div class="accordion-content">
-                                    <p>Gain insights into your business operations with real-time data analytics. Our 
-                                    solutions offer detailed reports and analytics to help you make informed decisions and stay ahead 
-                                    of the competition.</p>
+                                    <p>Gain insights into your business operations with real-time data analytics. Our
+                                        solutions offer detailed reports and analytics to help you make informed
+                                        decisions and stay ahead
+                                        of the competition.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="accordion-item">
                                 <div class="accordion-header" (click)="toggleAccordion($event)">
                                     <h3>Scalable Solutions</h3>
                                     <i class="bx bx-chevron-down"></i>
                                 </div>
                                 <div class="accordion-content">
-                                    <p>As your business grows, our mobility solutions can scale to meet your 
-                                    evolving needs. Whether you're expanding your workforce or entering new markets, we have the 
-                                    technology and expertise to support your growth.</p>
+                                    <p>As your business grows, our mobility solutions can scale to meet your
+                                        evolving needs. Whether you're expanding your workforce or entering new markets,
+                                        we have the
+                                        technology and expertise to support your growth.</p>
                                 </div>
                             </div>
                         </div>
@@ -112,15 +117,32 @@
                 </div>
             </div>
         </div>
-
-        <div class="scrives-item-2 mt-4">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    
-                        <h2>Benefits of Using Our Enterprise Mobility Solutions</h2>
-                    <br>
-                    
-                    <div class="accordion-container">
+    </div>
+    <div class="scrives-item-2 mt-4">
+        <div>
+            <h2 style="padding-left: 50px;">Mobility Solutions</h2>
+            <br>
+            <div class="contact-container">
+                <div class="form-box">
+                    <div class="form-left">
+                        <br>
+                        <h2 style="text-align: center; color: white;">Benefits of Using Our Enterprise Mobility Solutions</h2>
+                        <br>
+                        <div class="cards-container" #cardsContainer>
+                            <div class="card" *ngFor="let card of cards; let i = index"
+                                [class.active]="i === activeIndex">
+                                <h1 style="font-size: 20px; font-weight: bold; text-align: center;">{{ card.title }}</h1>
+                                <p>{{ card.description }}</p>
+                            </div>
+                        </div>
+                        <div class="dots">
+                            <span *ngFor="let card of cards; let i = index" [class.active]="i === activeIndex"
+                                (click)="goToSlide(i)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--    <div class="accordion-container">
                         <div class="accordion">
                             <div class="accordion-item">
                                 <div class="accordion-header" (click)="toggleAccordion($event)">
@@ -177,157 +199,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <div class="services-img mb-qc ios-content">
-                        <div class="image-wrapper">
-                            <div class="background-shape shape1"></div>
-                            <div class="background-shape shape2"></div>
-                            <img src="assets/images/mobi3.png" alt="Mobility Support">
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </div> -->
         </div>
-
-        <!-- <div class="row mt-5">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>Key Features of Our Mobility Solutions</h2>
-                </div>
-                
-                <div class="accordion-container">
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Seamless Integration</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Our solutions easily integrate with existing enterprise systems and 
-                                platforms, ensuring a smooth transition and minimal disruption to your operations.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Enhanced Security</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Protecting your data is our top priority. We offer advanced security features, 
-                                including encryption, multi-factor authentication, and remote wipe capabilities, to safeguard 
-                                sensitive information against cyber threats.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Customisable Applications</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>We provide a range of customisable mobile applications designed to 
-                                streamline workflows and increase operational efficiency. These applications are intuitive and user
-                                friendly, requiring minimal training and support.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Real-time Analytics</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Gain insights into your business operations with real-time data analytics. Our 
-                                solutions offer detailed reports and analytics to help you make informed decisions and stay ahead 
-                                of the competition.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Scalable Solutions</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>As your business grows, our mobility solutions can scale to meet your 
-                                evolving needs. Whether you're expanding your workforce or entering new markets, we have the 
-                                technology and expertise to support your growth.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>Benefits of Using Our Enterprise Mobility Solutions</h2>
-                </div>
-                
-                <div class="accordion-container">
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Increased Productivity</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Enable your team to work more efficiently with instant access to the tools 
-                                and information they need, no matter where they are.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Improved Collaboration</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Foster better communication and collaboration among teams with 
-                                seamless connectivity and sharing platforms.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Cost Efficiency</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Reduce operational costs by streamlining processes and eliminating 
-                                unnecessary manual tasks.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Enhanced Customer Experience</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Provide your customers with a seamless and responsive 
-                                service experience, enhancing satisfaction and loyalty.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <div class="accordion-header" (click)="toggleAccordion($event)">
-                                <h3>Competitive Advantage</h3>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <div class="accordion-content">
-                                <p>Stay ahead of the competition with cutting-edge technology that keeps 
-                                your business agile and innovative.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </section>
