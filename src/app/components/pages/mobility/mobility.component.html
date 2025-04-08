@@ -48,7 +48,7 @@
                     <div class="grid-container-wrapper">
                         <button class="nav-arrow left-arrow" (click)="scrollLeft()">&#10094;</button>
                         
-                        <div class="grid-container" #gridContainer>
+                        <!-- <div class="grid-container" #gridContainer>
                           <div class="grid-item" *ngFor="let item of gridItems; let i = index"
                                [class.active]="i === activeIndex"
                                [ngStyle]="{'background-image': 'url(' + item.image + ')'}"
@@ -58,7 +58,20 @@
                               <p style="color: #fff; text-align: justify;">{{ item.description }}</p>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
+
+                        <div class="grid-container" #gridContainer>
+                            <div class="marquee-wrapper">
+                              <div class="grid-item" *ngFor="let item of gridItems; let i = index"
+                                   [ngStyle]="{'background-image': 'url(' + item.image + ')'}"
+                                   (click)="goToSlidegrid(i)">
+                                <div class="content">
+                                  <h3 style="color: #fff; font-size: 32px; text-align: center;">{{ item.title }}</h3>
+                                  <p style="color: #fff; text-align: justify; font-size: 16px;">{{ item.description }}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         
                         <button class="nav-arrow right-arrow" (click)="scrollRight()">&#10095;</button>
                       </div>

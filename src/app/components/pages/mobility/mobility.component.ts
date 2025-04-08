@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export class MobilityComponent {
   @ViewChild('cardsContainer', { static: false }) cardsContainer!: ElementRef;
-  @ViewChild('gridContainer', { static: false }) gridContainer!: ElementRef;
+  @ViewChild('gridContainer') gridContainer!: ElementRef;
   activeIndex = 0;
   activeIndexgrid = 0;
   slideInterval: any;
@@ -94,6 +94,9 @@ export class MobilityComponent {
 
   ngOnInit(): void {
     this.startAutoSlide();
+    this.gridItems = [...this.gridItems, ...this.gridItems];
+
+
   }
 
   startAutoSlide() {

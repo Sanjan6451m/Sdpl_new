@@ -563,12 +563,12 @@ Finance to offer IT equipment on lease.`
         {
           icon: 'assets/icons/staff.svg',
           title: '10+',
-          description: 'Certified Staffs'
+          description: 'Certified Staff'
         },
         {
           icon: 'assets/icons/customers.svg',
-          title: '2000+',
-          description: 'Customers'
+          title: '1500+',
+          description: 'Enterprise Customers'
         },
         {
           icon: 'assets/icons/map.svg',
