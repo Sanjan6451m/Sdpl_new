@@ -14,6 +14,7 @@ export class MobilityComponent {
   @ViewChild('gridContainer', { static: false }) gridContainer!: ElementRef;
   activeIndex = 0;
   activeIndexgrid = 0;
+  slideInterval: any;
   cards = [
     { title: 'Increased Productivity', description: 'Enable your team to work more efficiently with instant access to the tools and information they need, no matter where they are.' },
     { title: 'Improved Collaboration', description: 'Foster better communication and collaboration among teams with seamless connectivity and sharing platforms.' },
@@ -90,5 +91,29 @@ export class MobilityComponent {
       });
     }
   }
+
+  ngOnInit(): void {
+    this.startAutoSlide();
+  }
+
+  startAutoSlide() {
+    this.slideInterval = setInterval(() => {
+      this.nextSlide();
+    }, 3000); // Change slide every 3 seconds
+  }
+
+  stopAutoSlide() {
+    if (this.slideInterval) {
+      clearInterval(this.slideInterval);
+    }
+  }
+
+  nextSlide() {
+    this.activeIndex = (this.activeIndex + 1) % this.gridItems.length;
+  }
+
+  // goToSlidegrid(index: number) {
+  //   this.activeIndex = index;
+  // }
 
 }

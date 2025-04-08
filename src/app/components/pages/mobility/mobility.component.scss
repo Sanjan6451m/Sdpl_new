@@ -140,14 +140,15 @@
   box-sizing: border-box;
   padding: 30px;
   min-width: 250px;
-  height: 350px;
+  height: 280px;
   background-color: rgba(255, 255, 255, 0.5333333333);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
   vertical-align: middle;
+  font-size: 14px;
   transition: transform 0.3s, box-shadow 0.3s;
-  text-align: justify;
+  // text-align: justify;
   justify-content: center;
 }
 
@@ -199,7 +200,7 @@
 
 @media (min-width: 1024px) {
   .card {
-    flex: 0 0 25%; /* Show 4 cards at a time on larger screens */
+    flex: 0 0 18%; /* Show 4 cards at a time on larger screens */
   }
 }
 
@@ -271,7 +272,7 @@
   background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better text readability */
   border-radius: 8px;
   transition: filter 0.3s;
-  filter: blur(5px); /* Initially blur the text */
+  // filter: blur(5px); /* Initially blur the text */
 }
 
 .grid-item:hover::before {
