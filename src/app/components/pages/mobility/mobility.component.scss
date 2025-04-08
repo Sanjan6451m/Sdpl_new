@@ -84,6 +84,10 @@
 }
 
 @media (max-width: 768px) {
+
+  .grid-item{
+    min-width: 100% !important;
+  }
   .accordion-header {
     padding: 15px;
     
@@ -199,51 +203,67 @@
   }
 }
 
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 10px; /* Space between grid items */
-  padding: 20px;
-  min-width: 100%; 
-  box-sizing: border-box;
+.grid-container-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
 }
 
+.grid-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 30px;
+  height: 400px;
+  box-sizing: border-box;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+}
+.grid-container::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, and Opera */
+}
 .grid-item {
+  flex: 0 0 30%;
+  min-width: 30%;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  background-size: cover; /* Ensure the image covers the entire grid item */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  height: 250px; /* Set a fixed height for grid items */
-  width: 100%;
-  color: #fff; /* Ensure text is readable on the image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  scroll-snap-align: start;
 }
 
-.grid-item::before {
-  content: '';
+.nav-arrow {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit; /* Use the same background image */
-  transition: filter 0.3s;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 35%;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 35px;
+  z-index: 10;
 }
 
-.grid-item.active {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border: 3px solid #fff; /* Highlight with a border */
-  z-index: 1; /* Bring the active card to the front */
+.left-arrow {
+  left: 3%;
 }
 
+.right-arrow {
+  right: 3%;
+}
 .grid-item .content {
   position: relative;
   z-index: 2; /* Ensure text is above the image */
@@ -267,4 +287,3 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 2px solid #fff;
 }
-

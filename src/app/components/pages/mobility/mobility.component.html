@@ -42,18 +42,25 @@
                 </div> -->
 
 
-                    <h2 style="padding-left: 50px;">Key Features of Our Mobility Solutions</h2>
+                    <h2 style="padding-left: 6%;">Key Features of Our Mobility Solutions</h2>
                     <br>
 
-                    <div class="grid-container">
-                        <div class="grid-item" *ngFor="let item of gridItems; let i = index" 
-                             [class.active]="i === activeIndex"
-                             [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
-                          <div class="content">
-                            <h3 style="color: #fff;">{{ item.title }}</h3>
-                            <p style="color: #fff; text-align: justify;">{{ item.description }}</p>
+                    <div class="grid-container-wrapper">
+                        <button class="nav-arrow left-arrow" (click)="scrollLeft()">&#10094;</button>
+                        
+                        <div class="grid-container" #gridContainer>
+                          <div class="grid-item" *ngFor="let item of gridItems; let i = index"
+                               [class.active]="i === activeIndex"
+                               [ngStyle]="{'background-image': 'url(' + item.image + ')'}"
+                               (click)="goToSlidegrid(i)">
+                            <div class="content">
+                              <h3 style="color: #fff;">{{ item.title }}</h3>
+                              <p style="color: #fff; text-align: justify;">{{ item.description }}</p>
+                            </div>
                           </div>
                         </div>
+                        
+                        <button class="nav-arrow right-arrow" (click)="scrollRight()">&#10095;</button>
                       </div>
                     <!-- <div class="accordion-container">
                         <div class="accordion">

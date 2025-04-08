@@ -11,7 +11,9 @@ import { RouterModule } from '@angular/router';
 })
 export class MobilityComponent {
   @ViewChild('cardsContainer', { static: false }) cardsContainer!: ElementRef;
+  @ViewChild('gridContainer', { static: false }) gridContainer!: ElementRef;
   activeIndex = 0;
+  activeIndexgrid = 0;
   cards = [
     { title: 'Increased Productivity', description: 'Enable your team to work more efficiently with instant access to the tools and information they need, no matter where they are.' },
     { title: 'Improved Collaboration', description: 'Foster better communication and collaboration among teams with seamless connectivity and sharing platforms.' },
@@ -62,4 +64,31 @@ export class MobilityComponent {
       behavior: 'smooth'
     });
   }
+
+  goToSlidegrid(index: number) {
+    this.activeIndexgrid = index;
+  }
+
+  scrollLeft() {
+    if (this.activeIndex > 0) {
+      this.activeIndex--;
+      const container = this.gridContainer.nativeElement;
+      container.scrollBy({
+        left: -container.offsetWidth / 1, // Scroll by one tile width
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  scrollRight() {
+    if (this.activeIndex < this.gridItems.length - 1) {
+      this.activeIndex++;
+      const container = this.gridContainer.nativeElement;
+      container.scrollBy({
+        left: container.offsetWidth / 1, // Scroll by one tile width
+        behavior: 'smooth'
+      });
+    }
+  }
+
 }
