@@ -198,3 +198,73 @@
     flex: 0 0 25%; /* Show 4 cards at a time on larger screens */
   }
 }
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 10px; /* Space between grid items */
+  padding: 20px;
+  min-width: 100%; 
+  box-sizing: border-box;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-size: cover; /* Ensure the image covers the entire grid item */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 250px; /* Set a fixed height for grid items */
+  width: 100%;
+  color: #fff; /* Ensure text is readable on the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit; /* Use the same background image */
+  transition: filter 0.3s;
+}
+
+.grid-item.active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid #fff; /* Highlight with a border */
+  z-index: 1; /* Bring the active card to the front */
+}
+
+.grid-item .content {
+  position: relative;
+  z-index: 2; /* Ensure text is above the image */
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better text readability */
+  border-radius: 8px;
+  transition: filter 0.3s;
+  filter: blur(5px); /* Initially blur the text */
+}
+
+.grid-item:hover::before {
+  filter: blur(8px); /* Blur the image on hover */
+}
+
+.grid-item:hover .content {
+  filter: blur(0); /* Clear the text on hover */
+}
+
+.grid-item.active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #fff;
+}
+
