@@ -3,7 +3,17 @@
 /*
 Default Style
 ============================*/
+html {
+    scroll-behavior: smooth;
+  }
 
+  body {
+    overflow-y: auto;
+  
+    &.fixed {
+      overflow: hidden;
+    }
+  }
 :root {
     --bodyFontFamily: "Open Sans", sans-serif;
     --headingFontFamily: "Catamaran", sans-serif;

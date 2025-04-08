@@ -66,8 +66,42 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         }, 500);
         
         // Add resize listener
-        window.addEventListener('resize', this.handleResize.bind(this));
-
+        // window.addEventListener('resize', this.handleResize.bind(this));
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY;
+          const logoContainer = document.getElementById('logoContainer');
+          const heroSection = document.getElementById('heroSection');
+          const heroPlaceholder = document.getElementById('heroPlaceholder');
+          const nextSection = document.getElementById('nextSection');
+          const clientLogos = document.getElementById('clientLogos');
+          const circlesContainer = document.getElementById('circlesContainer');
+        
+          const expandScrollLimit = 300;
+        
+          if (scrollY > 50) {
+            logoContainer?.classList.add('expanded');
+            clientLogos?.classList.add('fade-out');
+            circlesContainer?.classList.add('fade-out');
+          } else {
+            logoContainer?.classList.remove('expanded');
+            clientLogos?.classList.remove('fade-out');
+            circlesContainer?.classList.remove('fade-out');
+          }
+        
+          if (scrollY > expandScrollLimit) {
+            heroSection?.classList.add('unfix');
+            heroPlaceholder?.classList.add('show');
+            nextSection?.classList.add('visible');
+            logoContainer?.classList.add('hide');
+          } else {
+            heroSection?.classList.remove('unfix');
+            heroPlaceholder?.classList.remove('show');
+            nextSection?.classList.remove('visible');
+            logoContainer?.classList.remove('hide');
+          }
+        });
+        
+        
         
     }
 
@@ -542,4 +576,6 @@ Finance to offer IT equipment on lease.`
           description: 'Devices Deployed'
         }
       ];
+
+      
 }
