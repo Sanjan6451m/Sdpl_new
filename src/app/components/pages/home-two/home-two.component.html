@@ -40,7 +40,7 @@
                 <img src="assets/images/marquee/stm-logo.png" alt="Client 9">
             </div>
             <div class="client-logo">
-                <img src="assets/images/marquee/jamf-logo.png" alt="Client 10">
+                <img src="assets/images/marquee/overview-JAMF.png" alt="Client 10">
             </div>
             <div class="client-logo">
                 <img src="assets/images/marquee/samsung-logo.png" alt="Client 11">
@@ -408,7 +408,7 @@
                      [class.next]="i === (activeIndex + 1) % features.length">
                   <div class="card-content">
                     <div class="icon-container">
-                      <i [class]="feature.icon"></i>
+                      <img [src]="feature.image" [alt]="feature.title" width="100px" height="100px">
                     </div>
                     <h3>{{feature.title}}</h3>
                     <p>{{feature.description}}</p>
@@ -425,48 +425,52 @@
     
 
 <section class="home-case ptb-100 bg-color" id="solutions">
-    <div class="container">
+    <div class="container1">
         <div class="section-title">
             <h2>Solutions</h2>
         </div>
-        
+
         <div class="content-container">
             <div class="row align-items-center">
-                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-            <div class="service-wheel-container">
-                <div class="service-wheel" #serviceWheel>
-                    <div class="center-circle">
-                        <img src="assets/images/Minimal-Business-Logo-Reveal-f-unscreen.gif" alt="logo" />
-                    </div>
-                    <div class="service-items" #serviceItemsContainer>
-                        <div class="service-item" 
-                            *ngFor="let service of services" 
-                            [style.transform]="service.transform"
-                            (click)="selectService(service)" 
-                            [class.selected]="service === selectedService">
-                            <div class="item-content">
-                                <img [src]="service.icon" [alt]="service.title" width="100px" height="100px">
+                <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+                    <div class="service-wheel-container">
+                        <div class="service-wheel" #serviceWheel>
+                            <div class="center-circle">
+                                <img src="assets/images/Minimal-Business-Logo-Reveal-f-unscreen.gif" alt="logo" />
                             </div>
+                            <div class="service-items" #serviceItemsContainer>
+                                <div class="service-item" *ngFor="let service of services"
+                                    [style.transform]="service.transform" (click)="selectService(service)"
+                                    [class.selected]="service === selectedService">
+                                    <div class="item-content">
+                                        <span style="font-size: 12px; font-weight: 600; text-align: center;">{{service.title}}</span>
+                                        
+                                        <img [src]="service.icon" [alt]="service.title" width="80px" height="80px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+
+                    <div class="content-section">
+                        <h1 class="main-title">Our Solutions</h1>
+                        <h2 class="service-title">{{ selectedService?.title || 'Comprehensive Solutions' }}</h2>
+                        <!-- <h3 class="subtitle">Tailored to Your Needs</h3> -->
+                        <div class="description" *ngIf="!selectedService">
+                            <p>We offer a wide range of solutions designed to meet your specific requirements. Our team
+                                of experts is dedicated to delivering exceptional results that drive your success.
+                                Scroll to explore our service offerings and discover how we can help you achieve your
+                                goals.</p>
+                        </div>
+                        <div class="description" *ngIf="selectedService" [innerHTML]="selectedService.description">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-6">
-            
-            <div class="content-section">
-                <h1 class="main-title">Our Solutions</h1>
-                <h2 class="service-title">{{ selectedService?.title || 'Comprehensive Solutions' }}</h2>
-                <!-- <h3 class="subtitle">Tailored to Your Needs</h3> -->
-                <div class="description" *ngIf="!selectedService">
-                  <p>We offer a wide range of solutions designed to meet your specific requirements. Our team of experts is dedicated to delivering exceptional results that drive your success. Scroll to explore our service offerings and discover how we can help you achieve your goals.</p>
-                </div>
-                <div class="description" *ngIf="selectedService" [innerHTML]="selectedService.description"></div>
-            </div>
-        </div>
-        </div>
-    </div>
     </div>
 </section>
 
@@ -983,7 +987,7 @@
     </div>
 </section> -->
 
-<section class="home-contact-area home-2-contact ptb-100" id="contact-us">
+<section class="home-contact-area home-2-contact ptb-100">
     
         <div class="section-title">
             <h2>Contact Us</h2>

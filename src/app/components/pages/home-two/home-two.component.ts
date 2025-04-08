@@ -42,6 +42,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     message: string = '';
     selectedDevice = ''; 
     circleState = 'initial';
+    slideInterval: any;
 
     constructor(
         private fb: FormBuilder, 
@@ -59,6 +60,8 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngOnInit() {
+
+      this.startAutoSlide();
         this.calculateServiceItemPositions();
         // Trigger the animation after a delay
         setTimeout(() => {
@@ -329,56 +332,56 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
 
-    features: FeatureCard[] = [
+    features = [
         {
           title: 'Logistics',
           description: ' Our Logistics service handles the efficient coordination and management of resources to ensure timely delivery and setup of your solutions. We focus on minimising downtime and disruption to keep your business running smoothly.',
-          icon: 'bx bx-package'
+          image: "assets/images/logistics.png"
         },
         {
           title: 'Deployment',
           description: 'Through our Deployment service, we ensure a seamless and efficient implementation of solutions, with minimal impact on your daily operations. Our team ensures everything is set up correctly and functioning optimally from day one.',
-          icon: 'bx bx-rocket'
+          image: "assets/images/deployment.png"
         },
         {
           title: 'Training',
           description: 'We offer comprehensive Training services to equip your team with the skills needed to effectively use new systems and technologies. Our support ensures a smooth transition and maximises the return on your technology investments.',
-          icon: 'bx bx-book-open'
+          image: "assets/images/training.png"
         },
         {
           title: 'Perpetual Support',
           description: 'Our Perpetual Support service provides ongoing assistance to ensure your systems remain secure, up-to-date, and running efficiently. We are committed to delivering continuous improvements and support to optimise your business operations.',
-          icon: 'bx bx-support'
+          image: "assets/images/prepetual-support.png"
         },
         {
             title: 'Discover Needs',
             description: 'Our Discover Needs service involves a thorough analysis of your current business operations to identify specific challenges and opportunities for improvement. We work closely with you to understand your goals, ensuring tailored solutions that meet your unique requirements.',
-            icon: 'bx bx-search-alt'
+            image: "assets/images/discover.png"
         },
         {
             title: 'PreSales Consulting',
             description: 'With our PreSales Consulting, our team of experts evaluates your requirements and provides strategic advice to help you choose the right solutions. This service ensures informed decision-making, optimising your investments while aligning with your business objectives.',
-            icon: 'bx bx-conversation'
+            image: "assets/images/itsolutions-removebg-preview.png"
         },
         {
             title: 'Architect Solution',
             description: 'The Architect Solution service designs a comprehensive blueprint tailored to your business requirements, ensuring seamless integration of technologies and systems. Our skilled architects work to create scalable and efficient solutions that drive innovation and growth.',
-            icon: 'bx bx-layer'
+            image: "assets/images/solutions.png"
         },
         {
             title: 'Finance Options',
             description: ' We offer a variety of flexible finance options to support your investment in cutting-edge technology solutions. Our team helps you choose the best payment plans that suit your financial strategy and budget.',
-            icon: 'bx bx-money'
+            image: "assets/images/finance.png"
         },
         {
             title: 'Proposal and Quotes',
             description: 'Our Proposal and Quotes service provides detailed, easy-to-understand documentation outlining the costs and benefits of proposed solutions. This transparency ensures you have all the information needed to make confident, informed decisions.',
-            icon: 'bx bx-file'
+            image: "assets/images/quote.png"
         },
         {
             title: 'Proof of Concept',
             description: ' Our Proof of Concept service allows you to test and validate potential solutions in a controlled environment before full-scale implementation. This helps mitigate risks and ensures that the chosen solutions are the best fit for your business needs.',
-            icon: 'bx bx-test-tube'
+            image: "assets/images/poc.png"
         }
       ];
       
@@ -598,5 +601,11 @@ Finance to offer IT equipment on lease.`
               this.message = 'Error sending message. Try again later.';
             });
         }
+      }
+
+      startAutoSlide() {
+        this.slideInterval = setInterval(() => {
+          this.nextSlide();
+        }, 2000); // Change slide every 3 seconds
       }
 }
