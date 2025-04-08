@@ -52,8 +52,8 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
           name: ['', [Validators.required]],
           email: ['', [Validators.required, Validators.email]],
           message: ['', [Validators.required]],
-          phone: ['', [Validators.required]],
-          device: ['']
+          mobile: ['', [Validators.required]],
+          industry: ['', [ Validators.required]]
         });
         emailjs.init("PTmfxUAnOlAZlyhRB");
     }
@@ -112,6 +112,8 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
                 this.scrollToSection(fragment);
             }
         });
+        this.contactForm.patchValue({ device: null });
+        emailjs.init("PTmfxUAnOlAZlyhRB");
     }
 
     ngOnDestroy() {
@@ -284,7 +286,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
     }
 
-    onSubmit() {
+ /*    onSubmit() {
         if (this.contactForm.valid) {
             this.message = 'Sending message...';
             
@@ -308,7 +310,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         } else {
             this.message = 'Please fill in all required fields correctly.';
         }
-    }
+    } */
     
     // Tabs
     currentTab = 'tab1';
@@ -577,5 +579,24 @@ Finance to offer IT equipment on lease.`
         }
       ];
 
-      
+      onSubmit() {
+        if (this.contactForm.valid) {
+          emailjs.send("service_kuiothp", "template_g8fkwgh", {
+            to_name: "SDPL",
+            from_name: this.contactForm.value.name,
+            email: this.contactForm.value.email,
+            phone: this.contactForm.value.mobile,
+            device: this.contactForm.value.industry,
+            message: this.contactForm.value.message,
+            reply_to: this.contactForm.value.email,
+          })
+            .then((response) => {
+              this.message = 'Message sent successfully!';
+              this.contactForm.reset();
+            })
+            .catch((error) => {
+              this.message = 'Error sending message. Try again later.';
+            });
+        }
+      }
 }

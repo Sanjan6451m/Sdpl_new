@@ -997,17 +997,22 @@
                 </div>
         
                 <div class="right-section">
-                    <form class="form-box">
-                        <input type="text" placeholder="Name" name="name" />
+                    <form class="form-box" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <!-- <input type="text" name="name" id="name" class="form-control" required
+                        placeholder="Your Name" formControlName="name" /> -->
+                        <input type="text" name="name" id="name" placeholder="Name"
+                         formControlName="name"/>
         
                         <!-- <div class="row"> -->
-                            <input type="email" placeholder="Email" name="email" />
-                            <input type="tel" placeholder="Mobile" name="mobile" />
+                            <input type="email" placeholder="Email" name="email" id="email" formControlName="email"/>
+                            <input type="tel" placeholder="Mobile" name="mobile" id="mobile" formControlName="mobile"/>
                         <!-- </div> -->
         
-                        <input type="text" placeholder="Industry" name="industry" />
-                        <textarea placeholder="Whats on your Mind?" name="message"></textarea>
-        
+                        <input type="text" placeholder="Industry" name="industry" id="industry" formControlName="industry"/>
+                        <textarea placeholder="Whats on your Mind?" name="message" id="message" formControlName="message"></textarea>
+                        <div *ngIf="message" class="alert" [ngClass]="{'alert-success': message.includes('successfully'), 'alert-danger': message.includes('Error')}">
+                            {{ message }}
+                        </div>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
