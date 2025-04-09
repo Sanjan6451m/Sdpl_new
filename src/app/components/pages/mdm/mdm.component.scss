@@ -84,6 +84,10 @@
   }
   
   @media (max-width: 768px) {
+
+    .back-arrow-btn {
+      top: 10% !important;
+    }
     .accordion-header {
       padding: 15px;
       
@@ -182,3 +186,36 @@
 }
 
 // ... existing code ...
+.back-arrow-btn {
+  position: absolute;
+  top: 30%;
+  left: 30px;
+  background-color: rgb(106 108 110);
+  color: #eff2f4;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+      background-color: rgba(255, 255, 255, 1);
+      transform: translateX(-5px);
+      color: #2c3e50;
+  }
+
+  i {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+  }
+
+  &:hover i {
+      transform: translateX(-5px);
+  }
+}
