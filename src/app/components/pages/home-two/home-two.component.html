@@ -410,7 +410,9 @@
         </div>
             <div class="cards-wrapper">
               <button class="nav-arrow left-arrow" (click)="prevSlide()">‹</button>
-              <div class="cards-container">
+              <div class="cards-container"
+              (mouseenter)="onCardHover(true)"
+     (mouseleave)="onCardHover(false)">
                 <div class="card" 
                      *ngFor="let feature of features; let i = index"
                      [class.active]="i === activeIndex"

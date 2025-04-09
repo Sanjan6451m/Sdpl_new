@@ -48,6 +48,9 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     maxLength: number = 300;
     circleScale: number = 1;
   circleOpacity: number = 1;
+  isHovered = false;
+  intervalId: any;
+  
   private scrollListener: () => void;
 
     logos = [
@@ -163,6 +166,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnDestroy() {
         window.removeEventListener('resize', this.handleResize.bind(this));
         window.removeEventListener('scroll', this.scrollListener);
+        this.stopAutoSlide();
     }
 
     scrollToSection(sectionId: string) {
@@ -601,11 +605,21 @@ Finance to offer IT equipment on lease.`
       }
 
       startAutoSlide() {
-        this.slideInterval = setInterval(() => {
-          this.nextSlide();
-        }, 2000);
+           this.intervalId = setInterval(() => {
+      if (!this.isHovered) {
+        this.nextSlide();
+      }
+    }, 3000); // Adjust time as needed
       }
 
+
+      stopAutoSlide() {
+        if (this.intervalId) {
+          clearInterval(this.intervalId);
+        }
+      }
+
+      
       getDisplayContent(): string {
         if (!this.selectedService) return '';
         
@@ -647,4 +661,8 @@ Finance to offer IT equipment on lease.`
         this.circleOpacity = 1;
       }
     }
+
+  onCardHover(isHovered: boolean) {
+    this.isHovered = isHovered;
+  }
 }
