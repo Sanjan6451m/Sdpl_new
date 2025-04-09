@@ -76,7 +76,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         // window.addEventListener('resize', this.handleResize.bind(this));
         window.addEventListener('scroll', () => {
           const scrollY = window.scrollY;
-          const logoContainer = document.getElementById('logoContainer');
+          // const logoContainer = document.getElementById('logoContainer');
           const heroSection = document.getElementById('heroSection');
           const heroPlaceholder = document.getElementById('heroPlaceholder');
           const nextSection = document.getElementById('nextSection');
@@ -86,11 +86,11 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
           const expandScrollLimit = 300;
         
           if (scrollY > 50) {
-            logoContainer?.classList.add('expanded');
+            // logoContainer?.classList.add('expanded');
             clientLogos?.classList.add('fade-out');
             circlesContainer?.classList.add('fade-out');
           } else {
-            logoContainer?.classList.remove('expanded');
+            // logoContainer?.classList.remove('expanded');
             clientLogos?.classList.remove('fade-out');
             circlesContainer?.classList.remove('fade-out');
           }
@@ -99,12 +99,12 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
             heroSection?.classList.add('unfix');
             heroPlaceholder?.classList.add('show');
             nextSection?.classList.add('visible');
-            logoContainer?.classList.add('hide');
+            // logoContainer?.classList.add('hide');
           } else {
             heroSection?.classList.remove('unfix');
             heroPlaceholder?.classList.remove('show');
             nextSection?.classList.remove('visible');
-            logoContainer?.classList.remove('hide');
+            // logoContainer?.classList.remove('hide');
           }
         });
         
