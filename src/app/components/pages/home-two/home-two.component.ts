@@ -46,7 +46,34 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     selectedService: any;
     isExpanded: boolean = false;
     maxLength: number = 300;
+    circleScale: number = 1;
+  circleOpacity: number = 1;
+  private scrollListener: () => void;
 
+    logos = [
+        { src: 'assets/images/marquee/hexnode-logo.png', alt: 'Client 1', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/42Gears-logo.png', alt: 'Client 2', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/logitech-logo.png', alt: 'Client 3', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/alogic-logo.png', alt: 'Client 4', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/belkin-logo.png', alt: 'Client 5', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/honeywell-logo.png', alt: 'Client 6', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/jebra-logo.png', alt: 'Client 7', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/poly-logo.png', alt: 'Client 8', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/stm-logo.png', alt: 'Client 9', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/overview-JAMF.png', alt: 'Client 10', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/samsung-logo.png', alt: 'Client 11', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/lg-logo.png', alt: 'Client 12', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/jumpcloud-logo.png', alt: 'Client 13', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/seagate-logo.png', alt: 'Client 14', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/sure-logo.png', alt: 'Client 15', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/kingston-logo.png', alt: 'Client 16', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/bose-logo.png', alt: 'Client 17', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/corsair.png', alt: 'Client 18', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/adobe-logo.png', alt: 'Client 19', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/microsoft-logo.png', alt: 'Client 20', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/kandgi-logo.png', alt: 'Client 21', scale: 1, opacity: 1 },
+        { src: 'assets/images/marquee/vmware-logo.png', alt: 'Client 22', scale: 1, opacity: 1 }
+    ];
 
     constructor(
         private fb: FormBuilder, 
@@ -64,19 +91,14 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngOnInit() {
-
-      this.startAutoSlide();
+        this.startAutoSlide();
         this.calculateServiceItemPositions();
-        // Trigger the animation after a delay
         setTimeout(() => {
           this.circleState = 'visible';
         }, 500);
         
-        // Add resize listener
-        // window.addEventListener('resize', this.handleResize.bind(this));
         window.addEventListener('scroll', () => {
           const scrollY = window.scrollY;
-          // const logoContainer = document.getElementById('logoContainer');
           const heroSection = document.getElementById('heroSection');
           const heroPlaceholder = document.getElementById('heroPlaceholder');
           const nextSection = document.getElementById('nextSection');
@@ -86,11 +108,9 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
           const expandScrollLimit = 300;
         
           if (scrollY > 50) {
-            // logoContainer?.classList.add('expanded');
             clientLogos?.classList.add('fade-out');
             circlesContainer?.classList.add('fade-out');
           } else {
-            // logoContainer?.classList.remove('expanded');
             clientLogos?.classList.remove('fade-out');
             circlesContainer?.classList.remove('fade-out');
           }
@@ -99,21 +119,35 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
             heroSection?.classList.add('unfix');
             heroPlaceholder?.classList.add('show');
             nextSection?.classList.add('visible');
-            // logoContainer?.classList.add('hide');
           } else {
             heroSection?.classList.remove('unfix');
             heroPlaceholder?.classList.remove('show');
             nextSection?.classList.remove('visible');
-            // logoContainer?.classList.remove('hide');
           }
         });
         
-        
-        
+        this.animateLogos();
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const clientLogos = document.getElementById('clientLogos');
+            const logoElements = clientLogos?.querySelectorAll('.client-logo');
+
+            if (scrollY > 50) {
+                clientLogos?.classList.add('fade-out');
+                logoElements?.forEach(logo => {
+                    logo.classList.add('scrolled');
+                });
+            } else {
+                clientLogos?.classList.remove('fade-out');
+                logoElements?.forEach(logo => {
+                    logo.classList.remove('scrolled');
+                });
+            }
+        });
     }
 
     ngAfterViewInit() {
-        // Check for fragment and scroll to that section after view is initialized
         this.route.fragment.subscribe(fragment => {
             if (fragment) {
                 this.scrollToSection(fragment);
@@ -124,21 +158,14 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        // Clean up resize listener when component is destroyed
         window.removeEventListener('resize', this.handleResize.bind(this));
     }
 
-    /**
-     * Scrolls to a specific section using its ID
-     * @param sectionId The ID of the section to scroll to
-     */
     scrollToSection(sectionId: string) {
         const element = document.getElementById(sectionId);
         if (element) {
-            // Add a small delay to ensure all animations and layout calculations are complete
             setTimeout(() => {
-                // Calculate position accounting for navbar height
-                const headerOffset = 80; // Adjust this value based on your navbar height
+                const headerOffset = 80;
                 const elementPosition = element.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 
@@ -152,10 +179,8 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 
     @HostListener('window:scroll', ['$event'])
     onScroll() {
-      // Check scroll position and update circle scale if needed
       const scrollPosition = window.scrollY;
       if (scrollPosition > 100) {
-        // When scrolling down, make circles larger
         document.querySelectorAll('.circle').forEach(circle => {
           (circle as HTMLElement).style.transform = `scale(${1 + (scrollPosition * 0.001)})`;
         });
@@ -293,40 +318,12 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
     }
 
- /*    onSubmit() {
-        if (this.contactForm.valid) {
-            this.message = 'Sending message...';
-            
-            emailjs.send("service_kuiothp", "template_g8fkwgh", {
-                to_name: "SDPL",
-                from_name: this.contactForm.value.name,
-                email: this.contactForm.value.email,
-                phone: this.contactForm.value.phone,
-                device: this.contactForm.value.device,
-                message: this.contactForm.value.message,
-                reply_to: this.contactForm.value.email
-            })
-            .then((response) => {
-                this.message = 'Message sent successfully!';
-                this.contactForm.reset();
-                console.log('SUCCESS!', response.status, response.text);
-            }, (error) => {
-                this.message = 'Error sending message. Please try again later.';
-                console.error('FAILED...', error);
-            });
-        } else {
-            this.message = 'Please fill in all required fields correctly.';
-        }
-    } */
-    
-    // Tabs
     currentTab = 'tab1';
     switchTab(event: MouseEvent, tab: string) {
         event.preventDefault();
         this.currentTab = tab;
     }
 
-    // Video Popup
     isOpen = false;
     openPopup(): void {
         this.isOpen = true;
@@ -502,19 +499,15 @@ Finance to offer IT equipment on lease.`
         }
       ];
 
-      // selectedService: ServiceItem | null = null;
       activeAccordionIndex: number | null = null;
 
       private calculateServiceItemPositions() {
         const totalItems = this.services.length;
-    const radius = 220; // Adjust this value to change the wheel size
+    const radius = 220;
     
     this.services = this.services.map((item, index) => {
-      // Calculate angle for semi-circle (180 degrees or π radians)
       const angle = (index * Math.PI) / (totalItems - 1);
       
-      // Calculate x and y positions
-      // We use -Math.cos for y to make the semi-circle face upward
       const x = radius * Math.sin(angle);
       const y = -radius * Math.cos(angle);
       
@@ -526,16 +519,13 @@ Finance to offer IT equipment on lease.`
       }
     
       selectService(service: ServiceItem) {
-        // If already selected, deselect it
         if (this.selectedService === service) {
           this.selectedService = null;
           return;
         }
         
-        // Apply selected class immediately for responsive feedback
         this.selectedService = service;
         
-        // For mobile devices, scroll to content section after a slight delay
         if (window.innerWidth <= 991) {
           setTimeout(() => {
             const contentSection = document.querySelector('.content-section');
@@ -549,7 +539,6 @@ Finance to offer IT equipment on lease.`
         }
       }
 
-      // Handle window resize
       private handleResize() {
         this.calculateServiceItemPositions();
       }
@@ -610,7 +599,7 @@ Finance to offer IT equipment on lease.`
       startAutoSlide() {
         this.slideInterval = setInterval(() => {
           this.nextSlide();
-        }, 2000); // Change slide every 3 seconds
+        }, 2000);
       }
 
       getDisplayContent(): string {
@@ -621,7 +610,6 @@ Finance to offer IT equipment on lease.`
           return content;
         }
         
-        // Return truncated content
         return content.substring(0, this.maxLength) + '...';
       }
     
@@ -632,4 +620,13 @@ Finance to offer IT equipment on lease.`
       toggleReadMore(): void {
         this.isExpanded = !this.isExpanded;
       }
+
+      animateLogos() {
+        setInterval(() => {
+            this.logos.forEach(logo => {
+                logo.scale = 0.8 + Math.random() * 0.4;
+                logo.opacity = 0.6 + Math.random() * 0.4;
+            });
+        }, 2000);
+    }
 }

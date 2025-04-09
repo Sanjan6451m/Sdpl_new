@@ -11,7 +11,7 @@
 
 <section class="hero-section" id="heroSection">
     <div class="container">
-        <div class="client-logos" id="clientLogos" 
+        <!-- <div class="client-logos" id="clientLogos" 
         >
             <div class="client-logo">
                 <img src="assets/images/marquee/hexnode-logo.png" alt="Client 1">
@@ -79,9 +79,20 @@
             <div class="client-logo">
                 <img src="assets/images/marquee/vmware-logo.png" alt="Client 22">
             </div>
+        </div> -->
+        <div class="client-logos" id="clientLogos">
+            <div class="client-logo" *ngFor="let logo of logos">
+                <img [src]="logo.src" [alt]="logo.alt" [ngStyle]="{
+                    'transform': 'scale(' + logo.scale + ')',
+                    'opacity': logo.opacity
+                }">
+            </div>
         </div>
 
-        <div class="circles-container" id="circlesContainer"  
+        <div class="circles-container" id="circlesContainer" [ngStyle]="{
+            'transform': 'scale(' + circleScale + ')',
+            'opacity': circleOpacity
+        }" 
         >
             <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
                 <i class="bx bx-devices"></i>
@@ -1041,3 +1052,4 @@
       </owl-carousel-o>
     </div>
 </section> -->
+
