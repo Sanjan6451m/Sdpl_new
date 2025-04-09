@@ -1492,7 +1492,7 @@
   }
 
   .description {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.8;
     color: #666;
   }
@@ -2013,3 +2013,39 @@
 }
 
 
+.description {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #ff3300;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 10px;
+  font-weight: 200;
+  transition: color 0.3s ease;
+  display: block;
+  font-size: 20px;
+}
+
+.read-more-btn:hover {
+  color: #ff3300;
+  text-decoration: underline;
+}
+
+/* Animation for content expansion */
+.description div {
+  transition: max-height 0.3s ease-out;
+}
+
+/* Preserve HTML formatting */
+.description ::ng-deep strong {
+  font-weight: bold;
+}
+
+.description ::ng-deep br {
+  margin: 8px 0;
+}

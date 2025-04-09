@@ -43,6 +43,10 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     selectedDevice = ''; 
     circleState = 'initial';
     slideInterval: any;
+    selectedService: any;
+    isExpanded: boolean = false;
+    maxLength: number = 300;
+
 
     constructor(
         private fb: FormBuilder, 
@@ -498,7 +502,7 @@ Finance to offer IT equipment on lease.`
         }
       ];
 
-      selectedService: ServiceItem | null = null;
+      // selectedService: ServiceItem | null = null;
       activeAccordionIndex: number | null = null;
 
       private calculateServiceItemPositions() {
@@ -556,17 +560,17 @@ Finance to offer IT equipment on lease.`
 
       cardItems = [
         {
-          icon: 'assets/icons/brand.svg',
+          icon: 'assets/icons/brand-image.svg',
           title: '50+',
           description: 'Brands'
         },
         {
-          icon: 'assets/icons/staff.svg',
+          icon: 'assets/icons/expertise.svg',
           title: '10+',
           description: 'Certified Staff'
         },
         {
-          icon: 'assets/icons/customers.svg',
+          icon: 'assets/icons/people.svg',
           title: '1500+',
           description: 'Enterprise Customers'
         },
@@ -607,5 +611,25 @@ Finance to offer IT equipment on lease.`
         this.slideInterval = setInterval(() => {
           this.nextSlide();
         }, 2000); // Change slide every 3 seconds
+      }
+
+      getDisplayContent(): string {
+        if (!this.selectedService) return '';
+        
+        const content = this.selectedService.description;
+        if (!this.isContentLong() || this.isExpanded) {
+          return content;
+        }
+        
+        // Return truncated content
+        return content.substring(0, this.maxLength) + '...';
+      }
+    
+      isContentLong(): boolean {
+        return this.selectedService?.description.length > this.maxLength;
+      }
+    
+      toggleReadMore(): void {
+        this.isExpanded = !this.isExpanded;
       }
 }

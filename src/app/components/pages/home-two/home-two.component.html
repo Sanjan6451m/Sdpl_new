@@ -465,8 +465,14 @@
                                 Scroll to explore our service offerings and discover how we can help you achieve your
                                 goals.</p>
                         </div>
-                        <div class="description" *ngIf="selectedService" [innerHTML]="selectedService.description">
+                        <div class="description" *ngIf="selectedService">
+                            <div [innerHTML]="getDisplayContent()"></div>
+                            <button class="read-more-btn" *ngIf="isContentLong()" (click)="toggleReadMore()">
+                                {{ isExpanded ? 'Read Less' : 'Read More' }}
+                            </button>
                         </div>
+                        <!-- <div class="description" *ngIf="selectedService" [innerHTML]="selectedService.description">
+                        </div> -->
                     </div>
                 </div>
             </div>
