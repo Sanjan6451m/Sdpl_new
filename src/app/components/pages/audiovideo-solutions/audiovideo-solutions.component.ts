@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-audiovideo-solutions',
@@ -7,8 +8,17 @@ import { Component } from '@angular/core';
   templateUrl: './audiovideo-solutions.component.html',
   styleUrl: './audiovideo-solutions.component.scss'
 })
-export class AudiovideoSolutionsComponent {
+export class AudiovideoSolutionsComponent implements OnInit  {
 
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/']);
+  }
+  
   /**
    * Toggles the accordion item's expanded state
    * @param event The click event

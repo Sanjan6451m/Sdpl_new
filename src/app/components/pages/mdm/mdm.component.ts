@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mdm',
@@ -9,7 +9,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './mdm.component.html',
   styleUrl: './mdm.component.scss'
 })
-export class MdmComponent {
+export class MdmComponent implements OnInit {
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
   /**
    * Toggles the accordion item's expanded state
    * @param event The click event
@@ -34,5 +39,9 @@ export class MdmComponent {
         }
       }
     }
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/']);
   }
 }

@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mobility',
@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './mobility.component.html',
   styleUrl: './mobility.component.scss'
 })
-export class MobilityComponent {
+export class MobilityComponent implements OnInit {
   @ViewChild('cardsContainer', { static: false }) cardsContainer!: ElementRef;
   @ViewChild('gridContainer') gridContainer!: ElementRef;
   activeIndex = 0;
@@ -29,6 +29,9 @@ export class MobilityComponent {
     { title: 'Real-time Analytics', description: 'Gain insights into your business operations with real-time data analytics. Our solutions offer detailed reports and analytics to help you make informed decisions and stay ahead of the competition.', image: 'assets/images/realtimeanalysis.jpeg' },
     { title: 'Scalable Solutions', description: 'As your business grows, our mobility solutions can scale to meet your evolving needs. Whether you\'re expanding your workforce or entering new markets, we have the technology and expertise to support your growth.', image: 'assets/images/scalable.jpeg' }
   ];
+
+  constructor(private router: Router) { }
+
   /**
    * Toggles the accordion item's expanded state
    * @param event The click event
@@ -55,7 +58,6 @@ export class MobilityComponent {
     }
   }
 
- 
   goToSlide(index: number) {
     this.activeIndex = index;
     const container = this.cardsContainer.nativeElement;
@@ -95,8 +97,6 @@ export class MobilityComponent {
   ngOnInit(): void {
     this.startAutoSlide();
     this.gridItems = [...this.gridItems, ...this.gridItems];
-
-
   }
 
   startAutoSlide() {
@@ -115,8 +115,7 @@ export class MobilityComponent {
     this.activeIndex = (this.activeIndex + 1) % this.gridItems.length;
   }
 
-  // goToSlidegrid(index: number) {
-  //   this.activeIndex = index;
-  // }
-
+  navigateToHome(): void {
+    this.router.navigate(['/']);
+  }
 }

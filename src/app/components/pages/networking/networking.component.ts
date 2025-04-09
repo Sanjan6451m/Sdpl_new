@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-networking',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
   templateUrl: './networking.component.html',
   styleUrl: './networking.component.scss'
 })
-export class NetworkingComponent {
+export class NetworkingComponent implements OnInit {
+  constructor(private router: Router) { }
 
+  ngOnInit(): void {
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/']);
+  }
 }
