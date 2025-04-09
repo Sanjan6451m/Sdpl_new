@@ -96,6 +96,9 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         setTimeout(() => {
           this.circleState = 'visible';
         }, 500);
+
+        this.scrollListener = this.handleScroll.bind(this);
+    window.addEventListener('scroll', this.scrollListener);
         
         window.addEventListener('scroll', () => {
           const scrollY = window.scrollY;
@@ -159,6 +162,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 
     ngOnDestroy() {
         window.removeEventListener('resize', this.handleResize.bind(this));
+        window.removeEventListener('scroll', this.scrollListener);
     }
 
     scrollToSection(sectionId: string) {
@@ -629,4 +633,18 @@ Finance to offer IT equipment on lease.`
             });
         }, 2000);
     }
+
+    private handleScroll() {
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const fadeStart = viewportHeight * 0.2;
+  
+      if (scrollY > fadeStart) {
+        this.circleScale = Math.min(3, 1 + (scrollY - fadeStart) / viewportHeight * 2);
+        this.circleOpacity = Math.max(0.1, 1 - (scrollY - fadeStart) / viewportHeight);
+      } else {
+        this.circleScale = 1;
+        this.circleOpacity = 1;
+      }
+    }
 }
