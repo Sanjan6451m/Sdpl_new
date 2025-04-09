@@ -565,7 +565,7 @@ Finance to offer IT equipment on lease.`
         {
           icon: 'assets/icons/people.svg',
           title: '1500+',
-          description: 'Enterprise Customers'
+          description: 'Corporate Customers'
         },
         {
           icon: 'assets/icons/map.svg',
