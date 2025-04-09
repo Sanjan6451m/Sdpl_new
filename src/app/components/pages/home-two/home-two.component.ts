@@ -50,7 +50,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
   circleOpacity: number = 1;
   isHovered = false;
   intervalId: any;
-  
+
   private scrollListener: () => void;
 
     logos = [
@@ -71,7 +71,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         { src: 'assets/images/marquee/sure-logo.png', alt: 'Client 15', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/kingston-logo.png', alt: 'Client 16', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/bose-logo.png', alt: 'Client 17', scale: 1, opacity: 1 },
-        { src: 'assets/images/marquee/corsair.png', alt: 'Client 18', scale: 1, opacity: 1 },
+        { src: 'assets/images/corsair_new.png', alt: 'Client 18', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/adobe-logo.png', alt: 'Client 19', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/microsoft-logo.png', alt: 'Client 20', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/kandgi-logo.png', alt: 'Client 21', scale: 1, opacity: 1 },
