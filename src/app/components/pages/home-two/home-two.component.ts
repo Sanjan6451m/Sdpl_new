@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import emailjs from '@emailjs/browser';
@@ -17,6 +17,13 @@ interface FeatureCard {
     title: string;
     transform: string;
     description: string;
+  }
+
+  interface SolutionCard {
+    icon: string;
+    title: string;
+    description: string;
+    isExpanded?: boolean;
   }
 
 @Component({
@@ -38,6 +45,9 @@ interface FeatureCard {
     ]
 })
 export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('cardContainer') cardContainer!: ElementRef;
+  private autoScrollInterval: any;
+  private scrollDirection: 'left' | 'right' = 'right';
     contactForm: FormGroup;
     message: string = '';
     selectedDevice = ''; 
@@ -68,7 +78,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     'assets/images/marquee/lg-logo.png',
     'assets/images/marquee/jumpcloud-logo.png',
   ]
-  
+
   clients2: string[] = [
     'assets/images/marquee/seagate-logo.png',
     'assets/images/marquee/sure-logo.png',
@@ -114,6 +124,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         { src: 'assets/images/marquee/epson.png', alt: 'Client 26', scale: 1, opacity: 1 }
     ];
 
+    
     constructor(
         private fb: FormBuilder, 
         private http: HttpClient,
@@ -129,7 +140,109 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         emailjs.init("PTmfxUAnOlAZlyhRB");
     }
 
+    solutionCards: SolutionCard[] = [
+      { 
+        icon: 'assets/images/cloud-removebg-preview.png', 
+        title: 'Cloud Solutions', 
+        description: `Cloud solutions have transformed the way organisations operate by providing a flexible, cost
+  effective, and scalable platform for storing, managing, and processing data. These solutions 
+  leverage remote servers hosted on the internet to store and process data, which can be accessed 
+  from anywhere at any time. Here are five top benefits of adopting cloud solutions for organisations:
+  <br><br>
+  <strong>Cost Efficiency:</strong> By moving to the cloud, organisations can significantly reduce their IT costs. 
+  They eliminate the need for purchasing and maintaining expensive hardware and infrastructure 
+  since cloud services operate on a pay-as-you-go model, allowing businesses to pay only for the 
+  resources they use.
+  <br><br>
+  <strong>Scalability:</strong> Cloud solutions allow organisations to easily scale their resources up or down based 
+  on their needs. This flexibility ensures that businesses can handle increased loads during peak 
+  times without the need for permanent infrastructure additions, thus maintaining operational 
+  efficiency.
+  <br><br>
+  <strong>Improved Collaboration and Accessibility:</strong> With cloud solutions, employees can access data 
+  and applications from anywhere with an internet connection. This enhances collaboration among 
+  team members, especially in a world where remote work is becoming increasingly common, and 
+  ensures that everyone has access to the latest information.
+  <br><br>
+  <strong>Enhanced Security:</strong> Leading cloud providers invest heavily in security measures to protect data 
+  against breaches and cyber threats. Cloud solutions offer robust security features like encryption, 
+  authentication, and access control, ensuring that organisational data remains secure.
+  <br><br>
+  <strong>Disaster Recovery and Backup:</strong> Cloud solutions provide reliable data backup and disaster 
+  recovery options. In the event of a system failure or any disaster, organisations can quickly recover 
+  their data without losing valuable information, ensuring business continuity.`,
+        isExpanded: false
+      },
+      { 
+        icon: 'assets/images/itsolutions-removebg-preview.png', 
+        title: 'IT Consulting', 
+        description: `Whether you're a startup, small, medium, or large organisation, our journey together begins with a 
+  free consultation. We focus on understanding your unique needs and preferences, as well as your 
+  future expansion plans. Our team provides comprehensive solutions from start to finish, ensuring 
+  seamless integration and execution. With our expertise in IT consulting, we customise our services 
+  to align with your business goals, driving efficiency and growth. 
+  <br><br>
+  Partner with us to transform your technology strategies and stay ahead in the competitive market.`,
+        isExpanded: false
+      },
+      { 
+        icon: 'assets/images/repair-support-removebg-preview.png', 
+        title: 'Repair and Support', 
+        description: `Our Superior service team comprises highly skilled engineers who are certified by leading 
+  brands such as Apple, Microsoft, HP, Dell, and Lenovo, ensuring top-notch software and 
+  hardware repair and support.
+  <br><br>
+  <strong>Rapid Incident Support:</strong> Our expertise allows us to provide swift diagnosis and resolution 
+  per incident, minimising downtime and ensuring your operations continue smoothly.
+  <br><br>
+  <strong>Comprehensive Annual Maintenance Contracts:</strong> With our annual maintenance 
+  contracts, you can expect ongoing, reliable support tailored to prevent and address issues 
+  promptly, enhancing the productivity of your business.
+  <br><br>
+  <strong>Dedicated On-Premise Engineer:</strong> Benefit from having a dedicated engineer on-site who 
+  is familiar with your systems, ensuring immediate support and personalised service for any 
+  technical needs.
+  <br><br>
+  <strong>Scheduled Free Health Checkups:</strong> Take advantage of planned health checkups to 
+  proactively identify potential issues before they impact your operations, ensuring 
+  continuous optimal performance.`,
+        isExpanded: false
+      },
+      { 
+        icon: 'assets/images/leaseing-removebg-preview.png', 
+        title: 'Leasing', 
+        description: `Leasing technology equipment enables organisations to access the latest technology 
+  without incurring a significant upfront cost, and offers flexibility for upgrades. It generally 
+  includes maintenance and support services to keep the equipment in optimal condition. At 
+  the end of the lease, organisations have the option to return the equipment, continue 
+  leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
+  usage.
+  <br><br>
+  <strong>Benefits to Organisations:</strong>
+  <br><br>
+  <strong>Cost Management:</strong> Leasing avoids the substantial initial cost associated with purchasing 
+  IT devices, allowing businesses to conserve capital for other operational needs.
+  <br><br>
+  <strong>Technology Upgrades:</strong> Organisations can regularly upgrade to the latest technology 
+  without the financial burden of replacing outdated equipment.
+  <br><br>
+  <strong>Predictable Expenses:</strong> Leasing provides fixed monthly payments, making it easier for 
+  companies to budget and plan their financials.
+  <br><br>
+  <strong>Maintenance and Support:</strong> Leased IT devices often come with maintenance and support 
+  services, reducing the need for in-house technical support and associated costs.
+  <br><br>
+  <strong>Flexibility and Scalability:</strong> Businesses can easily scale their IT infrastructure up or down 
+  according to changing needs, without being stuck with obsolete equipment.
+  <br><br>
+  Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
+  Finance to offer IT equipment on lease.`,
+        isExpanded: false
+      }
+    ];
+
     ngOnInit() {
+      this.startAutoScroll();
         this.startAutoSlide();
         this.calculateServiceItemPositions();
         setTimeout(() => {
@@ -203,6 +316,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         window.removeEventListener('resize', this.handleResize.bind(this));
         window.removeEventListener('scroll', this.scrollListener);
         this.stopAutoSlide();
+        this.stopAutoScroll();
     }
 
     scrollToSection(sectionId: string) {
@@ -700,5 +814,63 @@ Finance to offer IT equipment on lease.`
 
   onCardHover(isHovered: boolean) {
     this.isHovered = isHovered;
+  }
+
+  startAutoScroll() {
+    this.autoScrollInterval = setInterval(() => {
+      if (this.cardContainer) {
+        const container = this.cardContainer.nativeElement;
+        const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth;
+        const isAtStart = container.scrollLeft <= 0;
+
+        // Change direction if we reach the end or start
+        if (isAtEnd) {
+          this.scrollDirection = 'left';
+        } else if (isAtStart) {
+          this.scrollDirection = 'right';
+        }
+
+        // Scroll in the current direction
+        if (this.scrollDirection === 'right') {
+          this.scrollRightCards();
+        } else {
+          this.scrollLeftCards();
+        }
+      }
+    }, 3000); // Scroll every 3 seconds
+  }
+
+  stopAutoScroll() {
+    if (this.autoScrollInterval) {
+      clearInterval(this.autoScrollInterval);
+    }
+  }
+
+  scrollLeftCards() {
+    if (this.cardContainer) {
+      this.stopAutoScroll(); // Stop auto-scroll when manual interaction occurs
+      const container = this.cardContainer.nativeElement;
+      container.scrollBy({
+        left: -840,
+        behavior: 'smooth'
+      });
+      this.startAutoScroll(); // Restart auto-scroll after manual interaction
+    }
+  }
+
+  scrollRightCards() {
+    if (this.cardContainer) {
+      this.stopAutoScroll(); // Stop auto-scroll when manual interaction occurs
+      const container = this.cardContainer.nativeElement;
+      container.scrollBy({
+        left: 840,
+        behavior: 'smooth'
+      });
+      this.startAutoScroll(); // Restart auto-scroll after manual interaction
+    }
+  }
+
+  toggleReadMoresolution(card: SolutionCard) {
+    card.isExpanded = !card.isExpanded;
   }
 }

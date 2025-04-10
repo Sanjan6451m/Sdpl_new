@@ -473,7 +473,29 @@
         </div>
 
         <div class="content-container">
-            <div class="row align-items-center" style="margin: auto">
+            <div class="solution-card-section">
+                <div class="scroll-container">
+                    <button class="nav-arrow left-arrow" (click)="scrollLeftCards()" (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">❮</button>
+                    <div class="solution-card-container" #cardContainer (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">
+                        <div class="solution-card" *ngFor="let card of solutionCards">
+                            <div class="solution-card-icon">
+                                <img [src]="card.icon" alt="service icon">
+                            </div>
+                            <div class="solution-card-content">
+                                <h3 class="solution-card-title">{{ card.title }}</h3>
+                                <div class="description-container">
+                                    <p class="solution-card-description" [class.truncated]="!card.isExpanded" [innerHTML]="card.description"></p>
+                                    <button class="read-more-btn" (click)="toggleReadMoresolution(card)">
+                                        {{ card.isExpanded ? 'Read Less' : 'Read More' }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="nav-arrow right-arrow" (click)="scrollRightCards()" (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">❯</button>
+                </div>
+            </div> 
+           <!--  <div class="row align-items-center" style="margin: auto">
                 <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
                     <div class="service-wheel-container">
                         <div class="service-wheel" #serviceWheel>
@@ -500,7 +522,6 @@
                     <div class="content-section">
                         <h1 class="main-title">Our Solutions</h1>
                         <h2 class="service-title">{{ selectedService?.title || 'Comprehensive Solutions' }}</h2>
-                        <!-- <h3 class="subtitle">Tailored to Your Needs</h3> -->
                         <div class="description" *ngIf="!selectedService">
                             <p>We offer a wide range of solutions designed to meet your specific requirements. Our team
                                 of experts is dedicated to delivering exceptional results that drive your success.
@@ -513,11 +534,9 @@
                                 {{ isExpanded ? 'Read Less' : 'Read More' }}
                             </button>
                         </div>
-                        <!-- <div class="description" *ngIf="selectedService" [innerHTML]="selectedService.description">
-                        </div> -->
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
