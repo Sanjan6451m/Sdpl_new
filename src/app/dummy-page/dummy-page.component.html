@@ -1,99 +1,33 @@
-<!-- <div class="cards-wrapper">
-  <button class="nav-arrow left-arrow" (click)="scrollLeft()">‹</button>
-  <div class="flip-cards-container" #cardsContainer>
-    <div class="flip-card" *ngFor="let card of cards">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img [src]="card.image" [alt]="card.title">
-          <div class="content">
-            <h2>{{card.title}}</h2>
-            <p>{{card.frontContent}}</p>
-          </div>
-        </div>
-        <div class="flip-card-back">
-          <div class="content">
-            <h2>{{card.title}}</h2>
-            <p>{{card.backContent}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="nav-arrow right-arrow" (click)="scrollRight()">›</button>
-</div> -->
-
-
-<div class="services-section">
-  <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-  <div class="content-container">
-    <div class="service-wheel" #serviceWheel>
-      <div class="center-circle">
-        <img src="assets/images/Minimal-Business-Logo-Reveal-f-unscreen.gif" alt="logo" />
-
-        <!-- <img src="assets/images/logogif.gif" alt="Logo"> -->
-      </div>
-      <div class="service-items" #serviceItemsContainer>
-        <div class="service-item" *ngFor="let service of services" [style.transform]="service.transform"
-          (click)="selectService(service)" [class.selected]="service === selectedService">
-          <div class="item-content">
-            <img [src]="service.icon" [alt]="service.title" width="100px" height="100px">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content-section">
-      <h1 class="main-title">Our Services</h1>
-      <div class="accordion-container">
-        <div class="accordion" *ngFor="let service of services; let i = index">
-          <div class="accordion-item" [class.active]="activeAccordionIndex === i">
-            <div class="accordion-header" (click)="toggleAccordion(i)">
-              <h3>{{ service.title }}</h3>
-              <i class="fas" [ngClass]="{'fa-chevron-down': activeAccordionIndex !== i, 'fa-chevron-up': activeAccordionIndex === i}"></i>
+<div class="services-layout">
+    <div class="service-wheel-container">
+        <div class="service-wheel">
+            <img src="../../assets/images/superior-removebg-preview.png" alt="Service Wheel" width="200">
+            <div class="floating-icons">
+                <!-- Add 8 floating icon divs around the wheel -->
+                <div class="floating-icon icon1"><img src="assets/images/cloud-removebg-preview.png" alt="Service Icon"></div>
+                <div class="floating-icon icon2"><img src="assets/images/itsolutions-removebg-preview.png" alt="Service Icon"></div>
+                <div class="floating-icon icon3"><img src="assets/images/repair-support-removebg-preview.png" alt="Service Icon"></div>
+                <div class="floating-icon icon4"><img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon"></div>
+                <div class="floating-icon icon5"><img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon"></div>
+                <div class="floating-icon icon6"><img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon"></div>
+                <div class="floating-icon icon7"><img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon"></div>
+                <div class="floating-icon icon8"><img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon"></div>
+                <div class="floating-icon icon9"><img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon"></div>
             </div>
-            <div class="accordion-content" [style.maxHeight]="activeAccordionIndex === i ? '200px' : '0'">
-              <p>{{ service.description }}</p>
-              <p>{{ service.description1 }}</p>
-              <p>{{ service.description2 }}</p>
-              <p>{{ service.description3 }}</p>
-              <p>{{ service.description4 }}</p>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-
-    <div class="circular-layout">
-      <div class="image-container">
-        <img src="assets/images/contact-img2.jpg" alt="image" class="image-container-img"/>
-      </div>
+    
+    <div class="service-content">
+        <h1 class="main-title">Our Services</h1>
+        <h2 class="service-title">Dedicated sPoC</h2>
+        <h3 class="service-subtitle">Dedicated Support, Seamless Experience</h3>
+        
+        <p class="service-description">
+            Each enterprise customer is assigned an Account Manager as their single point of contact 
+            for after-sales support, additional procurement, and value-added services. With quick 
+            turnaround times, proactive support, and priority service, we ensure an exceptional 
+            customer experience. Dedicated CRM and purchase/support portals are available upon 
+            request for 24/7 convenience. Our team prioritizes customer data security at every step.
+        </p>
     </div>
-
-    <!-- Cards start -->
-    <section class="card-section">
-      <div class="card-layout">
-        <h1 style="text-align: center;">13+ years of Apple expertise
-          and IT SHOWS!</h1>
-          <br>
-          <br>
-        <div class="card-container">
-          <div class="card" *ngFor="let item of cardItems">
-            <div class="card-icon">
-              <img [src]="item.icon" alt="{{ item.title }} Icon" class="card-icon-img">
-            </div>
-            <div class="card-content">
-              <h1 class="card-title">{{ item.title }}</h1>
-              <h3 class="card-description">{{ item.description }}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Cards end -->
-  </div>
 </div>
