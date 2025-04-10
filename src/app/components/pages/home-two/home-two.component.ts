@@ -837,7 +837,7 @@ Finance to offer IT equipment on lease.`
           this.scrollLeftCards();
         }
       }
-    }, 3000); // Scroll every 3 seconds
+    }, 9000); // Scroll every 3 seconds
   }
 
   stopAutoScroll() {
