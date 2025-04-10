@@ -10,121 +10,151 @@
 </a>
 
 <section class="hero-section" id="heroSection">
-    <div class="container">
-        <!-- <div class="client-logos" id="clientLogos" 
-        >
-            <div class="client-logo">
-                <img src="assets/images/marquee/hexnode-logo.png" alt="Client 1">
+   <div class="column-container">
+        <div class="container">
+            <!-- <div class="client-logos" id="clientLogos" 
+            >
+                <div class="client-logo">
+                    <img src="assets/images/marquee/hexnode-logo.png" alt="Client 1">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/42Gears-logo.png" alt="Client 2">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/logitech-logo.png" alt="Client 3">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/alogic-logo.png" alt="Client 4">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/belkin-logo.png" alt="Client 5">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/honeywell-logo.png" alt="Client 6">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/jebra-logo.png" alt="Client 7">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/poly-logo.png" alt="Client 8">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/stm-logo.png" alt="Client 9">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/overview-JAMF.png" alt="Client 10">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/samsung-logo.png" alt="Client 11">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/lg-logo.png" alt="Client 12">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/jumpcloud-logo.png" alt="Client 13">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/seagate-logo.png" alt="Client 14">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/sure-logo.png" alt="Client 15">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/kingston-logo.png" alt="Client 16">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/bose-logo.png" alt="Client 17">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/corsair.png" alt="Client 18">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/adobe-logo.png" alt="Client 19">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/microsoft-logo.png" alt="Client 20">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/kandgi-logo.png" alt="Client 21">
+                </div>
+                <div class="client-logo">
+                    <img src="assets/images/marquee/vmware-logo.png" alt="Client 22">
+                </div>
+            </div> -->
+            <div class="client-logos" id="clientLogos">
+                <div class="client-logo" *ngFor="let logo of logos">
+                    <img [src]="logo.src" [alt]="logo.alt" [ngStyle]="{
+                        'transform': 'scale(' + logo.scale + ')',
+                        'opacity': logo.opacity
+                    }">
+                </div>
             </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/42Gears-logo.png" alt="Client 2">
+    
+            <div class="circles-container" id="circlesContainer" [ngStyle]="{
+                'transform': 'scale(' + circleScale + ')',
+                'opacity': circleOpacity}">
+                <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
+                    <i class="bx bx-devices"></i>
+                    <span class="circle-label">Devices</span>
+                </a>
+    
+                <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
+                    <i class="bx bx-mobile-alt"></i>
+                    <span class="circle-label">MDM</span>
+                </a>
+    
+                <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
+                    <i class="bx bx-laptop"></i>
+                    <span class="circle-label">Mobility</span>
+                </a>
+    
+                <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
+                    <i class="bx bx-network-chart"></i>
+                    <span class="circle-label">Networking</span>
+                </a>
+    
+                <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
+                    <i class="bx bx-video"></i>
+                    <span class="circle-label">AV Solutions</span>
+                </a>
             </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/logitech-logo.png" alt="Client 3">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/alogic-logo.png" alt="Client 4">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/belkin-logo.png" alt="Client 5">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/honeywell-logo.png" alt="Client 6">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/jebra-logo.png" alt="Client 7">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/poly-logo.png" alt="Client 8">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/stm-logo.png" alt="Client 9">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/overview-JAMF.png" alt="Client 10">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/samsung-logo.png" alt="Client 11">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/lg-logo.png" alt="Client 12">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/jumpcloud-logo.png" alt="Client 13">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/seagate-logo.png" alt="Client 14">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/sure-logo.png" alt="Client 15">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/kingston-logo.png" alt="Client 16">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/bose-logo.png" alt="Client 17">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/corsair.png" alt="Client 18">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/adobe-logo.png" alt="Client 19">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/microsoft-logo.png" alt="Client 20">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/kandgi-logo.png" alt="Client 21">
-            </div>
-            <div class="client-logo">
-                <img src="assets/images/marquee/vmware-logo.png" alt="Client 22">
-            </div>
-        </div> -->
-        <div class="client-logos" id="clientLogos">
-            <div class="client-logo" *ngFor="let logo of logos">
-                <img [src]="logo.src" [alt]="logo.alt" [ngStyle]="{
-                    'transform': 'scale(' + logo.scale + ')',
-                    'opacity': logo.opacity
-                }">
+    
+            <div class="logo-container" id="logoContainer">
+                <img src="assets/images/superior-removebg-preview.png" alt="Superior Digital Logo" class="main-logo">
             </div>
         </div>
-
-        <div class="circles-container" id="circlesContainer" [ngStyle]="{
-            'transform': 'scale(' + circleScale + ')',
-            'opacity': circleOpacity
-        }" 
-        >
-            <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
-                <i class="bx bx-devices"></i>
-                <span class="circle-label">Devices</span>
-            </a>
-                
-            <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
-                <i class="bx bx-mobile-alt"></i>
-                <span class="circle-label">MDM</span>
-            </a>
-                
-            <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
-                <i class="bx bx-laptop"></i>
-                <span class="circle-label">Mobility</span>
-            </a>
-                
-            <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
-                <i class="bx bx-network-chart"></i>
-                <span class="circle-label">Networking</span>
-            </a>
-                
-            <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
-                <i class="bx bx-video"></i>
-                <span class="circle-label">AV Solutions</span>
-            </a>
+      <!--   <br>
+        <br> -->
+        <div class="marquee-container">
+            <div class="marquee right-to-left">
+                <div class="marquee-content">
+                    <div class="client-item" *ngFor="let client of clients1">
+                        <img [src]="client" [alt]="client.split('/').pop()?.split('-')[0] || 'Client'">
+                    </div>
+                </div>
+                <div class="marquee-content">
+                    <div class="client-item" *ngFor="let client of clients2">
+                        <img [src]="client" [alt]="client.split('/').pop()?.split('-')[0] || 'Client'">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="marquee left-to-right">
+                <div class="marquee-content">
+                    <div class="client-item" *ngFor="let client of clients2">
+                        <img [src]="client" [alt]="client.split('/').pop()?.split('-')[0] || 'Client'">
+                    </div>
+                </div>
+                <div class="marquee-content">
+                    <div class="client-item" *ngFor="let client of clients1">
+                        <img [src]="client" [alt]="client.split('/').pop()?.split('-')[0] || 'Client'">
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="logo-container" id="logoContainer">
-            <img src="assets/images/superior-removebg-preview.png" alt="Superior Digital Logo" class="main-logo">
-        </div>
-    </div>
+   </div>
 </section>
+
 
 
 
@@ -1054,4 +1084,5 @@
       </owl-carousel-o>
     </div>
 </section> -->
+
 

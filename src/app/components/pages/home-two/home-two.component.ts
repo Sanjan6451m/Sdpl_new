@@ -53,9 +53,40 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private scrollListener: () => void;
 
+  clients1: string[] = [
+    'assets/images/marquee/hexnode-logo.png',
+    'assets/images/marquee/42Gears-logo.png',
+    'assets/images/marquee/logitech-logo.png',
+    'assets/images/marquee/alogic-logo.png',
+    'assets/images/marquee/belkin-logo.png',
+    'assets/images/marquee/honeywell-logo.png',
+    'assets/images/marquee/jebra-logo.png',
+    'assets/images/marquee/poly-logo.png',
+    'assets/images/marquee/stm-logo.png',
+    'assets/images/marquee/overview-JAMF.png',
+    'assets/images/marquee/samsung-logo.png',
+    'assets/images/marquee/lg-logo.png',
+    'assets/images/marquee/jumpcloud-logo.png',
+  ]
+  
+  clients2: string[] = [
+    'assets/images/marquee/seagate-logo.png',
+    'assets/images/marquee/sure-logo.png',
+    'assets/images/marquee/kingston-logo.png',
+    'assets/images/marquee/bose-logo.png',
+    'assets/images/marquee/corsair.png',
+    'assets/images/marquee/adobe-logo.png',
+    'assets/images/marquee/microsoft-logo.png',
+    'assets/images/marquee/kandgi-logo.png',
+    'assets/images/marquee/vmware-logo.png',
+    'assets/images/marquee/dell.png',
+    'assets/images/marquee/hp.png',
+    'assets/images/marquee/lenovo.png',
+    'assets/images/marquee/epson.png'
+  ];
+
     logos = [
       { src: 'assets/images/marquee/dell.png', alt: 'Client 23', scale: 1, opacity: 1 },
-
         { src: 'assets/images/marquee/hexnode-logo.png', alt: 'Client 1', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/42Gears-logo.png', alt: 'Client 2', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/logitech-logo.png', alt: 'Client 3', scale: 1, opacity: 1 },
@@ -78,7 +109,6 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         { src: 'assets/images/marquee/microsoft-logo.png', alt: 'Client 20', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/kandgi-logo.png', alt: 'Client 21', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/vmware-logo.png', alt: 'Client 22', scale: 1, opacity: 1 },
-
         { src: 'assets/images/marquee/hp.png', alt: 'Client 24', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/lenovo.png', alt: 'Client 25', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/epson.png', alt: 'Client 26', scale: 1, opacity: 1 }
