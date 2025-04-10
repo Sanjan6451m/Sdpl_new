@@ -54,6 +54,8 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
   private scrollListener: () => void;
 
     logos = [
+      { src: 'assets/images/marquee/dell.png', alt: 'Client 23', scale: 1, opacity: 1 },
+
         { src: 'assets/images/marquee/hexnode-logo.png', alt: 'Client 1', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/42Gears-logo.png', alt: 'Client 2', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/logitech-logo.png', alt: 'Client 3', scale: 1, opacity: 1 },
@@ -77,7 +79,6 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
         { src: 'assets/images/marquee/kandgi-logo.png', alt: 'Client 21', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/vmware-logo.png', alt: 'Client 22', scale: 1, opacity: 1 },
 
-        { src: 'assets/images/marquee/dell.png', alt: 'Client 23', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/hp.png', alt: 'Client 24', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/lenovo.png', alt: 'Client 25', scale: 1, opacity: 1 },
         { src: 'assets/images/marquee/epson.png', alt: 'Client 26', scale: 1, opacity: 1 }
