@@ -113,24 +113,24 @@ includes maintenance and support services to keep the equipment in optimal condi
 the end of the lease, organisations have the option to return the equipment, continue 
 leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
 usage.
-<br><br>
-<strong>Benefits to Organisations:</strong>
-<br><br>
-<strong>Cost Management:</strong> Leasing avoids the substantial initial cost associated with purchasing 
+
+Benefits to Organisations:
+
+Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
 IT devices, allowing businesses to conserve capital for other operational needs.
-<br><br>
-<strong>Technology Upgrades:</strong> Organisations can regularly upgrade to the latest technology 
+
+Technology Upgrades: Organisations can regularly upgrade to the latest technology 
 without the financial burden of replacing outdated equipment.
-<br><br>
-<strong>Predictable Expenses:</strong> Leasing provides fixed monthly payments, making it easier for 
+
+Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
 companies to budget and plan their financials.
-<br><br>
-<strong>Maintenance and Support:</strong> Leased IT devices often come with maintenance and support 
+
+Maintenance and Support: Leased IT devices often come with maintenance and support 
 services, reducing the need for in-house technical support and associated costs.
-<br><br>
-<strong>Flexibility and Scalability:</strong> Businesses can easily scale their IT infrastructure up or down 
+
+Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
 according to changing needs, without being stuck with obsolete equipment.
-<br><br>
+
 Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
 Finance to offer IT equipment on lease.`,
       isExpanded: false
@@ -146,24 +146,24 @@ includes maintenance and support services to keep the equipment in optimal condi
 the end of the lease, organisations have the option to return the equipment, continue 
 leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
 usage.
-<br><br>
-<strong>Benefits to Organisations:</strong>
-<br><br>
-<strong>Cost Management:</strong> Leasing avoids the substantial initial cost associated with purchasing 
+
+Benefits to Organisations:
+
+Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
 IT devices, allowing businesses to conserve capital for other operational needs.
-<br><br>
-<strong>Technology Upgrades:</strong> Organisations can regularly upgrade to the latest technology 
+
+Technology Upgrades: Organisations can regularly upgrade to the latest technology 
 without the financial burden of replacing outdated equipment.
-<br><br>
-<strong>Predictable Expenses:</strong> Leasing provides fixed monthly payments, making it easier for 
+
+Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
 companies to budget and plan their financials.
-<br><br>
-<strong>Maintenance and Support:</strong> Leased IT devices often come with maintenance and support 
+
+Maintenance and Support: Leased IT devices often come with maintenance and support 
 services, reducing the need for in-house technical support and associated costs.
-<br><br>
-<strong>Flexibility and Scalability:</strong> Businesses can easily scale their IT infrastructure up or down 
+
+Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
 according to changing needs, without being stuck with obsolete equipment.
-<br><br>
+
 Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
 Finance to offer IT equipment on lease.`,
       isExpanded: false
@@ -179,24 +179,24 @@ includes maintenance and support services to keep the equipment in optimal condi
 the end of the lease, organisations have the option to return the equipment, continue 
 leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
 usage.
-<br><br>
-<strong>Benefits to Organisations:</strong>
-<br><br>
-<strong>Cost Management:</strong> Leasing avoids the substantial initial cost associated with purchasing 
+
+Benefits to Organisations:
+
+Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
 IT devices, allowing businesses to conserve capital for other operational needs.
-<br><br>
-<strong>Technology Upgrades:</strong> Organisations can regularly upgrade to the latest technology 
+
+Technology Upgrades: Organisations can regularly upgrade to the latest technology 
 without the financial burden of replacing outdated equipment.
-<br><br>
-<strong>Predictable Expenses:</strong> Leasing provides fixed monthly payments, making it easier for 
+
+Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
 companies to budget and plan their financials.
-<br><br>
-<strong>Maintenance and Support:</strong> Leased IT devices often come with maintenance and support 
+
+Maintenance and Support: Leased IT devices often come with maintenance and support 
 services, reducing the need for in-house technical support and associated costs.
-<br><br>
-<strong>Flexibility and Scalability:</strong> Businesses can easily scale their IT infrastructure up or down 
+
+Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
 according to changing needs, without being stuck with obsolete equipment.
-<br><br>
+
 Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
 Finance to offer IT equipment on lease.`,
       isExpanded: false
@@ -212,24 +212,24 @@ includes maintenance and support services to keep the equipment in optimal condi
 the end of the lease, organisations have the option to return the equipment, continue 
 leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
 usage.
-<br><br>
-<strong>Benefits to Organisations:</strong>
-<br><br>
-<strong>Cost Management:</strong> Leasing avoids the substantial initial cost associated with purchasing 
+
+Benefits to Organisations:
+
+Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
 IT devices, allowing businesses to conserve capital for other operational needs.
-<br><br>
-<strong>Technology Upgrades:</strong> Organisations can regularly upgrade to the latest technology 
+
+Technology Upgrades: Organisations can regularly upgrade to the latest technology 
 without the financial burden of replacing outdated equipment.
-<br><br>
-<strong>Predictable Expenses:</strong> Leasing provides fixed monthly payments, making it easier for 
+
+Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
 companies to budget and plan their financials.
-<br><br>
-<strong>Maintenance and Support:</strong> Leased IT devices often come with maintenance and support 
+
+Maintenance and Support: Leased IT devices often come with maintenance and support 
 services, reducing the need for in-house technical support and associated costs.
-<br><br>
-<strong>Flexibility and Scalability:</strong> Businesses can easily scale their IT infrastructure up or down 
+
+Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
 according to changing needs, without being stuck with obsolete equipment.
-<br><br>
+
 Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
 Finance to offer IT equipment on lease.`,
       isExpanded: false
@@ -245,24 +245,24 @@ includes maintenance and support services to keep the equipment in optimal condi
 the end of the lease, organisations have the option to return the equipment, continue 
 leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
 usage.
-<br><br>
-<strong>Benefits to Organisations:</strong>
-<br><br>
-<strong>Cost Management:</strong> Leasing avoids the substantial initial cost associated with purchasing 
+
+Benefits to Organisations:
+
+Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
 IT devices, allowing businesses to conserve capital for other operational needs.
-<br><br>
-<strong>Technology Upgrades:</strong> Organisations can regularly upgrade to the latest technology 
+
+Technology Upgrades: Organisations can regularly upgrade to the latest technology 
 without the financial burden of replacing outdated equipment.
-<br><br>
-<strong>Predictable Expenses:</strong> Leasing provides fixed monthly payments, making it easier for 
+
+Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
 companies to budget and plan their financials.
-<br><br>
-<strong>Maintenance and Support:</strong> Leased IT devices often come with maintenance and support 
+
+Maintenance and Support: Leased IT devices often come with maintenance and support 
 services, reducing the need for in-house technical support and associated costs.
-<br><br>
-<strong>Flexibility and Scalability:</strong> Businesses can easily scale their IT infrastructure up or down 
+
+Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
 according to changing needs, without being stuck with obsolete equipment.
-<br><br>
+
 Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
 Finance to offer IT equipment on lease.`,
       isExpanded: false
