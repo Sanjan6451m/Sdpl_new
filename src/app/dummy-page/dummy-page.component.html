@@ -1,42 +1,42 @@
-<div class="services-layout">
-    <div class="service-wheel-container">
-        <div class="service-wheel">
+<div class="solutions-layout">
+    <div class="solution-wheel-container">
+        <div class="solution-wheel">
             <img src="../../assets/images/superior-removebg-preview.png" alt="Service Wheel" width="200">
             <div class="selection-marker"></div>
             <div class="floating-icons">
-              <div class="floating-icon icon1" (click)="selectService(1)" [class.active]="selectedService?.id === 1">
+              <div class="floating-icon icon1" (click)="selecteSolution(1)" [class.active]="selectedSolution?.id === 1">
                 <span class="icon-title">Cloud Solutions</span>
                 <img src="assets/images/cloud-removebg-preview.png" alt="Life Cycle Management Icon">
               </div>
-              <div class="floating-icon icon2" (click)="selectService(2)" [class.active]="selectedService?.id === 2">
+              <div class="floating-icon icon2" (click)="selecteSolution(2)" [class.active]="selectedSolution?.id === 2">
                 <span class="icon-title">IT Consulting</span>
                 <img src="assets/images/itsolutions-removebg-preview.png" alt="Service Icon">
               </div>
-              <div class="floating-icon icon3" (click)="selectService(3)" [class.active]="selectedService?.id === 3">
+              <div class="floating-icon icon3" (click)="selecteSolution(3)" [class.active]="selectedSolution?.id === 3">
                 <span class="icon-title">Repair and Support</span>
                 <img src="assets/images/repair-support-removebg-preview.png" alt="Service Icon">
               </div>
-              <div class="floating-icon icon4" (click)="selectService(4)" [class.active]="selectedService?.id === 4">
+              <div class="floating-icon icon4" (click)="selecteSolution(4)" [class.active]="selectedSolution?.id === 4">
                 <span class="icon-title">Leasing</span>
                 <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
               </div>
-              <div class="floating-icon icon5" (click)="selectService(5)" [class.active]="selectedService?.id === 5">
+              <div class="floating-icon icon5" (click)="selecteSolution(5)" [class.active]="selectedSolution?.id === 5">
                 <span class="icon-title">IT Lifecycle Management</span>
                 <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
               </div>
-              <div class="floating-icon icon6" (click)="selectService(6)" [class.active]="selectedService?.id === 6">
+              <div class="floating-icon icon6" (click)="selecteSolution(6)" [class.active]="selectedSolution?.id === 6">
                 <span class="icon-title">IT Assets Insurance</span>
                 <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
               </div>
-              <div class="floating-icon icon7" (click)="selectService(7)" [class.active]="selectedService?.id === 7">
+              <div class="floating-icon icon7" (click)="selecteSolution(7)" [class.active]="selectedSolution?.id === 7">
                 <span class="icon-title">Warehousing Solutions</span>
                 <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
               </div>
-              <div class="floating-icon icon8" (click)="selectService(8)" [class.active]="selectedService?.id === 8">
+              <div class="floating-icon icon8" (click)="selecteSolution(8)" [class.active]="selectedSolution?.id === 8">
                 <span class="icon-title">Operational / Supply Chain Services</span>
                 <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
               </div>
-              <div class="floating-icon icon9" (click)="selectService(9)" [class.active]="selectedService?.id === 9">
+              <div class="floating-icon icon9" (click)="selecteSolution(9)" [class.active]="selectedSolution?.id === 9">
                 <span class="icon-title">Asset Management</span>
                 <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
               </div>
@@ -44,15 +44,15 @@
         </div>
     </div>
     
-    <div class="service-content" [class.visible]="selectedService !== null" [class.has-expanded-description]="selectedService?.isExpanded">
+    <div class="service-content" [class.visible]="selectedSolution !== null" [class.has-expanded-description]="selectedSolution?.isExpanded">
         <h1 class="main-title">Our Services</h1>
-        <h2 class="service-title">{{selectedService?.title || 'Dedicated sPoC'}}</h2>
-        <!-- <h3 class="service-subtitle">{{selectedService?.subtitle || 'Dedicated Support, Seamless Experience'}}</h3> -->
+        <h2 class="service-title">{{selectedSolution?.title || 'Dedicated sPoC'}}</h2>
+        <!-- <h3 class="service-subtitle">{{selectedSolution?.subtitle || 'Dedicated Support, Seamless Experience'}}</h3> -->
         
-        <div class="service-description" [class.expanded]="selectedService?.isExpanded">
-            <div class="description-text">{{selectedService?.description || defaultDescription}}</div>
-            <button class="read-more-btn" *ngIf="selectedService" (click)="toggleDescription()">
-                {{ selectedService?.isExpanded ? 'Read Less' : 'Read More' }}
+        <div class="service-description" [class.expanded]="selectedSolution?.isExpanded">
+            <div class="description-text">{{selectedSolution?.description || defaultDescription}}</div>
+            <button class="read-more-btn" *ngIf="selectedSolution" (click)="toggleDescription()">
+                {{ selectedSolution?.isExpanded ? 'Read Less' : 'Read More' }}
             </button>
         </div>
     </div>

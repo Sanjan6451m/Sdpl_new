@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-interface Service {
+interface Solutionweb {
   id: number;
   title: string;
   subtitle: string;
@@ -21,14 +21,14 @@ export class DummyPageComponent implements OnInit {
   private lastScrollPosition = 0;
   private currentRotation = 0;
   private readonly ROTATION_SPEED = 2;
-  private readonly TOTAL_SERVICES = 9;
-  private readonly DEGREES_PER_SERVICE = 360 / this.TOTAL_SERVICES;
-  private lastServiceIndex = 1;
-  selectedService: Service | null = null;
+  private readonly TOTAL_SOLUTIONS = 9;
+  private readonly DEGREES_PER_SOLUTIONS = 360 / this.TOTAL_SOLUTIONS;
+  private lastSolutionIndex = 1;
+  selectedSolution: Solutionweb | null = null;
   defaultDescription = 'Each enterprise customer is assigned an Account Manager as their single point of contact for after-sales support, additional procurement, and value-added services. With quick turnaround times, proactive support, and priority service, we ensure an exceptional customer experience. Dedicated CRM and purchase/support portals are available upon request for 24/7 convenience. Our team prioritizes customer data security at every step.';
 
 
-  services: Service[] = [
+  Solutions: Solutionweb[] = [
     {
       id: 1,
       icon: 'assets/images/cloud-removebg-preview.png',
@@ -282,74 +282,17 @@ usage.`,
     }
   ];
 
-  /* services1: Service[] = [
-    {
-      id: 1,
-      title: 'Life Cycle Management',
-      subtitle: 'Complete Device Management Solution',
-      description: 'Our Life Cycle Management service provides end-to-end device management solutions, from procurement to retirement. We ensure optimal device performance and security throughout their lifecycle.'
-    },
-    {
-      id: 2,
-      title: 'IT Solutions',
-      subtitle: 'Comprehensive IT Infrastructure',
-      description: 'Custom IT solutions designed to meet your business needs. From network setup to software implementation, we provide complete IT infrastructure management.'
-    },
-    {
-      id: 3,
-      title: 'Repair & Support',
-      subtitle: 'Expert Technical Assistance',
-      description: 'Professional repair and support services for all your IT equipment. Our certified technicians provide quick turnaround times and reliable solutions.'
-    },
-    {
-      id: 4,
-      title: 'Leasing',
-      subtitle: 'Flexible Device Leasing Options',
-      description: 'Cost-effective leasing solutions for your IT equipment needs. Get access to the latest technology without the burden of ownership.'
-    },
-    {
-      id: 5,
-      title: 'Service 5',
-      subtitle: 'Service 5 Subtitle',
-      description: 'Description for Service 5 goes here.'
-    },
-    {
-      id: 6,
-      title: 'Service 6',
-      subtitle: 'Service 6 Subtitle',
-      description: 'Description for Service 6 goes here.'
-    },
-    {
-      id: 7,
-      title: 'Service 7',
-      subtitle: 'Service 7 Subtitle',
-      description: 'Description for Service 7 goes here.'
-    },
-    {
-      id: 8,
-      title: 'Service 8',
-      subtitle: 'Service 8 Subtitle',
-      description: 'Description for Service 8 goes here.'
-    },
-    {
-      id: 9,
-      title: 'Service 9',
-      subtitle: 'Service 9 Subtitle',
-      description: 'Description for Service 9 goes here.'
-    }
-  ]; */
-
   constructor() { }
 
   ngOnInit(): void {
     this.updateRotation(0);
-    this.selectService(1);
+    this.selecteSolution(1);
   }
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
     // Don't rotate if description is expanded
-    if (this.selectedService?.isExpanded) {
+    if (this.selectedSolution?.isExpanded) {
       return;
     }
 
@@ -363,13 +306,13 @@ usage.`,
     const direction = scrollDelta > 0 ? 1 : -1;
     
     // Calculate next service index based on current selection and direction
-    let nextIndex = this.lastServiceIndex + direction;
+    let nextIndex = this.lastSolutionIndex + direction;
     
     // Handle wrapping around
-    if (nextIndex > this.TOTAL_SERVICES) {
+    if (nextIndex > this.TOTAL_SOLUTIONS) {
       nextIndex = 1;
     } else if (nextIndex < 1) {
-      nextIndex = this.TOTAL_SERVICES;
+      nextIndex = this.TOTAL_SOLUTIONS;
     }
     
     // Update the rotation visually
@@ -377,8 +320,8 @@ usage.`,
     
     // Only update selection if we've scrolled enough
     if (Math.abs(scrollDelta) > 5) {
-      this.lastServiceIndex = nextIndex;
-      this.selectService(nextIndex);
+      this.lastSolutionIndex = nextIndex;
+      this.selecteSolution(nextIndex);
       this.lastScrollPosition = currentScrollPosition;
     }
   }
@@ -396,50 +339,46 @@ usage.`,
     }
   }
 
-  private updateSelectedServiceSequentially(direction: number) {
+  private updateselectedSolutionSequentially(direction: number) {
     // Calculate next service index based on direction
-    let nextIndex = this.lastServiceIndex + direction;
+    let nextIndex = this.lastSolutionIndex + direction;
     
     // Handle wrapping around
-    if (nextIndex > this.TOTAL_SERVICES) {
+    if (nextIndex > this.TOTAL_SOLUTIONS) {
       nextIndex = 1;
     } else if (nextIndex < 1) {
-      nextIndex = this.TOTAL_SERVICES;
+      nextIndex = this.TOTAL_SOLUTIONS;
     }
     
     // Only update if enough rotation has occurred
-    const rotationThreshold = Math.abs(this.currentRotation % this.DEGREES_PER_SERVICE);
-    if (rotationThreshold > this.DEGREES_PER_SERVICE / 2) {
-      this.lastServiceIndex = nextIndex;
-      this.selectService(nextIndex);
+    const rotationThreshold = Math.abs(this.currentRotation % this.DEGREES_PER_SOLUTIONS);
+    if (rotationThreshold > this.DEGREES_PER_SOLUTIONS / 2) {
+      this.lastSolutionIndex = nextIndex;
+      this.selecteSolution(nextIndex);
     }
   }
 
- /*  selectService(id: number) {
-    this.selectedService = this.services.find(service => service.id === id) || null;
-  } */
-
   toggleDescription() {
-    if (this.selectedService) {
-      this.selectedService.isExpanded = !this.selectedService.isExpanded;
+    if (this.selectedSolution) {
+      this.selectedSolution.isExpanded = !this.selectedSolution.isExpanded;
       
       // Reset scroll position when collapsing description
-      if (!this.selectedService.isExpanded) {
+      if (!this.selectedSolution.isExpanded) {
         this.lastScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
       }
     }
   }
 
-  selectService(id: number) {
-    const service = this.services.find(service => service.id === id);
-    if (service) {
+  selecteSolution(id: number) {
+    const solution = this.Solutions.find(solution => solution.id === id);
+    if (solution) {
       // Reset expansion state of previous service if different
-      if (this.selectedService && this.selectedService.id !== service.id) {
-        this.selectedService.isExpanded = false;
+      if (this.selectedSolution && this.selectedSolution.id !== solution.id) {
+        this.selectedSolution.isExpanded = false;
       }
-      this.selectedService = service;
+      this.selectedSolution = solution;
     } else {
-      this.selectedService = null;
+      this.selectedSolution = null;
     }
   }
 }
