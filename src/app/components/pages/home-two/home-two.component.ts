@@ -90,6 +90,9 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     'assets/images/marquee/samsung-logo.png',
     'assets/images/marquee/lg-logo.png',
     'assets/images/marquee/jumpcloud-logo.png',
+    'assets/images/marquee/yealink.png',
+    'assets/images/marquee/asus.png',
+    'assets/images/marquee/dlink.png',
   ]
 
   clients2: string[] = [
@@ -100,6 +103,10 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     'assets/images/marquee/corsair.png',
     'assets/images/marquee/adobe-logo.png',
     'assets/images/marquee/microsoft-logo.png',
+    'assets/images/marquee/cisco.png',
+    'assets/images/marquee/acer.png',
+    'assets/images/marquee/hikvision.png',
+     'assets/images/marquee/intel.png',
     'assets/images/marquee/kandgi-logo.png',
     'assets/images/marquee/vmware-logo.png',
     'assets/images/marquee/dell.png',
@@ -477,7 +484,7 @@ reliable, eﬃcient, and customised warehousing support.`,
     },
     {
       id: 8,
-      icon: 'assets/images/leaseing-removebg-preview.png',
+      icon: 'assets/images/asset_management.png',
       title: 'Supply Chain Services',
       subtitle: 'Supply Chain Services',
       description: `Superior Digital oﬀers comprehensive Operational and Supply Chain Services to streamline your
@@ -491,7 +498,7 @@ scalable operations.`,
     },
     {
       id: 9,
-      icon: 'assets/images/leaseing-removebg-preview.png',
+      icon: 'assets/images/asset_management.png',
       title: 'Asset Management & Tagging',
       subtitle: 'Asset Management & Tagging',
       description: `Superior Digital is committed to delivering reliable Asset Management services that keep your IT

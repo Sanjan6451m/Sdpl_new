@@ -1994,37 +1994,24 @@
 }
   .client-logo {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 100px !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 0; // Removed rounded edges
     transition: all 0.3s ease-out;
     transform-origin: center;
     overflow: hidden;
+    background: transparent !important;
+    padding: 8px;
 
     img {
-      width: 100%;
-      height: 100%;
+      width: 100% !important;
+      height: 100% !important;
       object-fit: contain;
       transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    }
-
-    &:hover {
-      transform: scale(1.1);
-      opacity: 1;
-    }
-
-    &.scrolled {
-      width: 60px;
-      height: 60px;
-      transform: scale(0.8);
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
+      background: transparent !important;
+      filter: none !important;
     }
   }
 
@@ -2066,20 +2053,18 @@
 
 
 @media (max-width: 991px) {
-  .client-logos {
-    .client-logo {
-      width: 60px;
-      height: 60px;
-    }
+  .client-logos .client-logo {
+    width: 60px !important;
+    height: 60px !important;
+    padding: 6px;
   }
 }
 
 @media (max-width: 767px) {
-  .client-logos {
-    .client-logo {
-      width: 50px;
-      height: 50px;
-    }
+  .client-logos .client-logo {
+    width: 50px !important;
+    height: 50px !important;
+    padding: 5px;
   }
 }
 
