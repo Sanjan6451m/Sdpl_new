@@ -25,30 +25,30 @@
                 'transform': 'scale(' + circleScale + ')',
                 'opacity': circleOpacity}">
                 <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/device1.png" alt="Devices">
+                    <img src="assets/images/homesolutions/device1.png" alt="Devices" class="logo-img">
 
                     <span class="circle-label">Devices</span>
                 </a>
     
                 <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/mdm.png" alt="MDM">
+                    <img src="assets/images/homesolutions/mdm.png" alt="MDM" class="logo-img">
                     <!-- <i class="bx bx-mobile-alt"></i> -->
                     <span class="circle-label">MDM</span>
                 </a>
     
                 <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/mobility.png" alt="Mobility">
+                    <img src="assets/images/homesolutions/mobility.png" alt="Mobility" class="logo-img">
 
                     <span class="circle-label">Mobility</span>
                 </a>
     
                 <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/networking1.png" alt="Networking" width="70">
+                    <img src="assets/images/homesolutions/networking1.png" alt="Networking" width="70" class="logo-img">
                     <span class="circle-label">Networking</span>
                 </a>
     
                 <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/avsol.png" alt="AV Solutions" width="70">
+                    <img src="assets/images/homesolutions/avsol.png" alt="AV Solutions" width="70" class="logo-img">
 
                     <span class="circle-label">AV Solutions</span>
                 </a>
@@ -240,12 +240,15 @@
         </div>
             <div class="cards-wrapper">
               <button class="nav-arrow left-arrow" (click)="prevSlide()">‹</button>
-              <div class="cards-container" (mouseleave)="onCardHover(false)">
+              <div class="cards-container" 
+                   (mouseenter)="onCardHover(true)" 
+                   (mouseleave)="onCardHover(false)">
                 <div class="card" 
                      *ngFor="let feature of features; let i = index"
                      [class.active]="i === activeIndex"
                      [class.prev]="i === (activeIndex - 1 + features.length) % features.length"
-                     [class.next]="i === (activeIndex + 1) % features.length">
+                     [class.next]="i === (activeIndex + 1) % features.length"
+                     (click)="onCardClick()">
                   <div class="card-content">
                     <div class="icon-container">
                       <img [src]="feature.image" [alt]="feature.title" width="100px" height="100px">
@@ -272,16 +275,24 @@
             <div class="solution-card-section">
                 <div class="scroll-container">
                     <button class="nav-arrow left-arrow" (click)="scrollLeftCards()" (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">❮</button>
-                    <div class="solution-card-container" #cardContainer (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">
-                        <div class="solution-card" *ngFor="let card of solutionCards">
+                    <div class="solution-card-container" 
+                         #cardContainer 
+                         (mouseenter)="onCardHover(true)" 
+                         (mouseleave)="onCardHover(false)">
+                        <div class="solution-card" 
+                             *ngFor="let card of solutionCards"
+                             (click)="onCardClick()">
                             <div class="solution-card-icon">
                                 <img [src]="card.icon" alt="service icon">
                             </div>
                             <div class="solution-card-content">
                                 <h3 class="solution-card-title">{{ card.title }}</h3>
                                 <div class="description-container">
-                                    <p class="solution-card-description" [class.truncated]="!card.isExpanded" [innerHTML]="card.description"></p>
-                                    <button class="read-more-btn" (click)="toggleReadMoresolution(card)">
+                                    <p class="solution-card-description" 
+                                       [class.truncated]="!card.isExpanded" 
+                                       [innerHTML]="card.description"></p>
+                                    <button class="read-more-btn" 
+                                            (click)="toggleReadMoresolution(card)">
                                         {{ card.isExpanded ? 'Read Less' : 'Read More' }}
                                     </button>
                                 </div>
@@ -292,7 +303,7 @@
                 </div>
             </div> 
         </div>
-        
+
         <div class="our-solutions_web">
             <div class="solutions-layout">
                 <div class="solution-wheel-container">

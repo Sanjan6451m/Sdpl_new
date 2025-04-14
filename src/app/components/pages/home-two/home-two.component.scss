@@ -853,15 +853,16 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(206, 32, 47, 0.1), rgba(206, 32, 47, 0.4));
-      border-radius: 50%;
+      background: transparent;
+      // background: linear-gradient(135deg, rgba(206, 32, 47, 0.1), rgba(206, 32, 47, 0.4));
+      // border-radius: 50%;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
     &:hover {
       transform: scale(1.1) !important;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      //box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 
       &::before {
         opacity: 1;
@@ -874,7 +875,7 @@
 
       .circle-label {
         color: black;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 600;
         line-height: 1.2;
         text-transform: capitalize;
@@ -2215,27 +2216,29 @@
 
 //Solution Cards start
 .solution-card-section {
-  padding: 60px 0;
+  padding: 40px 0;
   background-color: transparent;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .scroll-container {
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 20px;
 }
 
 .solution-card-container {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 30px;
+  // gap: 20px;
   padding: 20px 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  width: 100%;
 
   &::-webkit-scrollbar {
       display: none;
@@ -2243,7 +2246,7 @@
 }
 
 .solution-card {
-  flex: 0 0 800px;
+  flex: 0 0 300px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -2251,6 +2254,8 @@
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
   margin: 10px;
+  min-width: 300px;
+  max-width: 300px;
 
   &:hover {
       transform: translateY(-10px);
@@ -2259,7 +2264,7 @@
 }
 
 .solution-card-icon {
-  height: 200px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2275,29 +2280,26 @@
 }
 
 .solution-card-content {
-  padding: 25px;
+  padding: 20px;
   text-align: left;
+  height: auto;
+  min-height: 200px;
 }
 
 .solution-card-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #333;
   margin-bottom: 15px;
 }
 
-.description-container {
-  position: relative;
-  margin-bottom: 10px;
-}
-
 .solution-card-description {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: #000000;
   margin: 0;
-  transform: translateZ(10px);
   transition: max-height 0.3s ease;
+  overflow: hidden;
 
   &.truncated {
       display: -webkit-box;
@@ -2308,26 +2310,64 @@
   }
 }
 
-.read-more-btn {
-  background: none;
-  border: none;
-  color: #e41e31;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 5px 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.logo-img {
+  width: 60px;
+  height: 60px;
+}
 
-  &:hover {
-      color: #ff2d45;
-      transform: translateX(5px);
+@media (max-width: 768px) {
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .solution-card-section {
+      padding: 20px 0;
   }
 
-  &:focus {
-      outline: none;
+  .scroll-container {
+      padding: 0 10px;
+  }
+
+  .solution-card {
+      flex: 0 0 280px;
+      min-width: 310px !important;
+      max-width: 310px !important;
+  }
+
+  .solution-card-icon {
+      height: 120px;
+  }
+
+  .solution-card-content {
+      padding: 15px;
+      max-height: 510px;
+      overflow-y: auto;
+  }
+
+  .solution-card-title {
+      font-size: 18px;
+  }
+
+  .solution-card-description {
+      font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-card {
+      flex: 0 0 260px;
+      min-width: 260px;
+      max-width: 260px;
+  }
+
+  .solution-card-icon {
+      height: 100px;
+  }
+
+  .solution-card-content {
+      max-height: 510px;
+      overflow-y: auto;
   }
 }
 
@@ -2370,7 +2410,7 @@
   }
 
   .scroll-container {
-      padding: 0 40px;
+      padding: 0 15px;
   }
 
   .solution-card {

@@ -70,6 +70,9 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
   circleOpacity: number = 1;
   isHovered = false;
   intervalId: any;
+  private isAutoScrolling = true;
+  private readonly SCROLL_INTERVAL = 3000; // 3 seconds between scrolls
+  private scrollTimeout: any;
 
   private scrollListener: () => void;
 
@@ -248,6 +251,70 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
   Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
   Finance to offer IT equipment on lease.`,
       isExpanded: false
+    },
+    {
+      icon: 'assets/images/leaseing-removebg-preview.png',
+      title: 'IT Lifecycle Management',
+      description: `Superior Digital oﬀers end-to-end IT Lifecycle Management solutions to help businesses
+maximise the value of their technology investments. From procurement and deployment to
+maintenance and secure disposal, we manage every stage of your IT assets eﬃciently. Our
+approach ensures devices remain secure, up-to-date, and optimised for performance throughout
+their lifecycle. With expert support and strategic planning, we help reduce costs, minimise
+downtime, and enhance productivity. Trust Superior Digital to keep your IT infrastructure reliable,
+scalable, and future-ready.`,
+      isExpanded: false
+    },
+    {
+      icon: 'assets/images/leaseing-removebg-preview.png',
+      title: 'IT Assets Insurance',
+      description: `Superior Digital partners with leading insurance providers to oﬀer comprehensive IT Assets
+Insurance solutions for organisations. We help protect your valuable IT infrastructure against theft,
+damage, accidental loss, and unforeseen risks. Our tailored insurance plans ensure business
+continuity and peace of mind, no matter the scale of your operations. With streamlined claim
+processes and expert guidance, we make asset protection simple and stress-free. Safeguard your
+technology investments with Superior Digital's trusted insurance partnerships.`,
+      isExpanded: false
+    },
+    {
+      icon: 'assets/images/leaseing-removebg-preview.png',
+      title: 'Warehousing Solutions',
+      description: `Superior Digital is proud to oﬀer expert Warehousing Solutions tailored to meet your business
+needs. Whether it's short-term storage or long-term inventory management, we provide secure,
+organised, and scalable warehousing options. Our experienced team ensures seamless handling,
+tracking, and distribution of your IT assets. We're just a call away to meet you in person,
+understand your requirements, and design an eﬀective solution. Partner with Superior Digital for
+reliable, eﬃcient, and customised warehousing support.`,
+      isExpanded: false
+    },
+    {
+      icon: 'assets/images/leaseing-removebg-preview.png',
+      title: 'Supply Chain Services',
+      description: `Superior Digital oﬀers comprehensive Operational and Supply Chain Services to streamline your
+business processes and enhance eﬃciency. From procurement and logistics to inventory
+management and last-mile delivery, we ensure every link in your supply chain is optimised. Our
+solutions are designed to reduce costs, minimise delays, and improve overall operational
+performance. With real-time tracking and dedicated support, you gain full visibility and control
+over your supply chain. Let Superior Digital be your trusted partner in driving seamless and
+scalable operations.`,
+      isExpanded: false
+    },
+    {
+      icon: 'assets/images/leaseing-removebg-preview.png',
+      title: 'Asset Management & Tagging',
+      description: `Superior Digital is committed to delivering reliable Asset Management services that keep your IT
+infrastructure organised and eﬃcient. We provide detailed Inventory Reports, ensuring accurate
+tracking and visibility of all your devices. Our service includes Device Diagnostics during
+Reverse Pickup, helping identify issues quickly and reduce downtime. Comprehensive
+Reporting keeps you informed at every stage, from deployment to recovery. With Superior Digital,
+managing your IT assets becomes seamless, transparent, and hassle-free.
+
+Superior Digital oﬀers precise and professional Asset Tagging services to help you track and
+manage your IT equipment eﬀortlessly. Each asset is tagged with a unique identifier, enabling
+easy monitoring, maintenance, and auditing. Our tagging solutions support better inventory
+control, loss prevention, and compliance with organisational policies. Whether it's during
+deployment or ongoing operations, we ensure accurate tagging and data recording. Trust
+Superior Digital to bring structure and visibility to your asset management process.`,
+      isExpanded: false
     }
   ];
 
@@ -373,32 +440,13 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
       icon: 'assets/images/leaseing-removebg-preview.png',
       title: 'IT Lifecycle Management',
       subtitle: 'IT Lifecycle Management',
-      description: `Leasing technology equipment enables organisations to access the latest technology 
-  without incurring a significant upfront cost, and offers flexibility for upgrades. It generally 
-  includes maintenance and support services to keep the equipment in optimal condition. At 
-  the end of the lease, organisations have the option to return the equipment, continue 
-  leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
-  usage.
-  
-  Benefits to Organisations:
-  
-  Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
-  IT devices, allowing businesses to conserve capital for other operational needs.
-  
-  Technology Upgrades: Organisations can regularly upgrade to the latest technology 
-  without the financial burden of replacing outdated equipment.
-  
-  Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
-  companies to budget and plan their financials.
-  
-  Maintenance and Support: Leased IT devices often come with maintenance and support 
-  services, reducing the need for in-house technical support and associated costs.
-  
-  Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
-  according to changing needs, without being stuck with obsolete equipment.
-  
-  Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
-  Finance to offer IT equipment on lease.`,
+      description: `Superior Digital oﬀers end-to-end IT Lifecycle Management solutions to help businesses
+maximise the value of their technology investments. From procurement and deployment to
+maintenance and secure disposal, we manage every stage of your IT assets eﬃciently. Our
+approach ensures devices remain secure, up-to-date, and optimised for performance throughout
+their lifecycle. With expert support and strategic planning, we help reduce costs, minimise
+downtime, and enhance productivity. Trust Superior Digital to keep your IT infrastructure reliable,
+scalable, and future-ready.`,
       isExpanded: false
     },
     {
@@ -406,32 +454,12 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
       icon: 'assets/images/leaseing-removebg-preview.png',
       title: 'IT Assets Insurance',
       subtitle: 'IT Assets Insurance',
-      description: `Leasing technology equipment enables organisations to access the latest technology 
-  without incurring a significant upfront cost, and offers flexibility for upgrades. It generally 
-  includes maintenance and support services to keep the equipment in optimal condition. At 
-  the end of the lease, organisations have the option to return the equipment, continue 
-  leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
-  usage.
-  
-  Benefits to Organisations:
-  
-  Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
-  IT devices, allowing businesses to conserve capital for other operational needs.
-  
-  Technology Upgrades: Organisations can regularly upgrade to the latest technology 
-  without the financial burden of replacing outdated equipment.
-  
-  Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
-  companies to budget and plan their financials.
-  
-  Maintenance and Support: Leased IT devices often come with maintenance and support 
-  services, reducing the need for in-house technical support and associated costs.
-  
-  Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
-  according to changing needs, without being stuck with obsolete equipment.
-  
-  Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
-  Finance to offer IT equipment on lease.`,
+      description: `Superior Digital partners with leading insurance providers to oﬀer comprehensive IT Assets
+Insurance solutions for organisations. We help protect your valuable IT infrastructure against theft,
+damage, accidental loss, and unforeseen risks. Our tailored insurance plans ensure business
+continuity and peace of mind, no matter the scale of your operations. With streamlined claim
+processes and expert guidance, we make asset protection simple and stress-free. Safeguard your
+technology investments with Superior Digital's trusted insurance partnerships.`,
       isExpanded: false
     },
     {
@@ -439,78 +467,46 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
       icon: 'assets/images/leaseing-removebg-preview.png',
       title: 'Warehousing Solutions',
       subtitle: 'Warehousing Solutions',
-      description: `Leasing technology equipment enables organisations to access the latest technology 
-  without incurring a significant upfront cost, and offers flexibility for upgrades. It generally 
-  includes maintenance and support services to keep the equipment in optimal condition. At 
-  the end of the lease, organisations have the option to return the equipment, continue 
-  leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
-  usage.
-  
-  Benefits to Organisations:
-  
-  Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
-  IT devices, allowing businesses to conserve capital for other operational needs.
-  
-  Technology Upgrades: Organisations can regularly upgrade to the latest technology 
-  without the financial burden of replacing outdated equipment.
-  
-  Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
-  companies to budget and plan their financials.
-  
-  Maintenance and Support: Leased IT devices often come with maintenance and support 
-  services, reducing the need for in-house technical support and associated costs.
-  
-  Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
-  according to changing needs, without being stuck with obsolete equipment.
-  
-  Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
-  Finance to offer IT equipment on lease.`,
+      description: `Superior Digital is proud to oﬀer expert Warehousing Solutions tailored to meet your business
+needs. Whether it's short-term storage or long-term inventory management, we provide secure,
+organised, and scalable warehousing options. Our experienced team ensures seamless handling,
+tracking, and distribution of your IT assets. We're just a call away to meet you in person,
+understand your requirements, and design an eﬀective solution. Partner with Superior Digital for
+reliable, eﬃcient, and customised warehousing support.`,
       isExpanded: false
     },
     {
       id: 8,
       icon: 'assets/images/leaseing-removebg-preview.png',
-      title: 'Operational / Supply Chain Services',
-      subtitle: 'Operational / Supply Chain Services',
-      description: `Leasing technology equipment enables organisations to access the latest technology 
-  without incurring a significant upfront cost, and offers flexibility for upgrades. It generally 
-  includes maintenance and support services to keep the equipment in optimal condition. At 
-  the end of the lease, organisations have the option to return the equipment, continue 
-  leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
-  usage.
-  
-  Benefits to Organisations:
-  
-  Cost Management: Leasing avoids the substantial initial cost associated with purchasing 
-  IT devices, allowing businesses to conserve capital for other operational needs.
-  
-  Technology Upgrades: Organisations can regularly upgrade to the latest technology 
-  without the financial burden of replacing outdated equipment.
-  
-  Predictable Expenses: Leasing provides fixed monthly payments, making it easier for 
-  companies to budget and plan their financials.
-  
-  Maintenance and Support: Leased IT devices often come with maintenance and support 
-  services, reducing the need for in-house technical support and associated costs.
-  
-  Flexibility and Scalability: Businesses can easily scale their IT infrastructure up or down 
-  according to changing needs, without being stuck with obsolete equipment.
-  
-  Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
-  Finance to offer IT equipment on lease.`,
+      title: 'Supply Chain Services',
+      subtitle: 'Supply Chain Services',
+      description: `Superior Digital oﬀers comprehensive Operational and Supply Chain Services to streamline your
+business processes and enhance eﬃciency. From procurement and logistics to inventory
+management and last-mile delivery, we ensure every link in your supply chain is optimised. Our
+solutions are designed to reduce costs, minimise delays, and improve overall operational
+performance. With real-time tracking and dedicated support, you gain full visibility and control
+over your supply chain. Let Superior Digital be your trusted partner in driving seamless and
+scalable operations.`,
       isExpanded: false
     },
     {
       id: 9,
       icon: 'assets/images/leaseing-removebg-preview.png',
-      title: 'Asset Management',
-      subtitle: 'Asset Management',
-      description: `Leasing technology equipment enables organisations to access the latest technology 
-  without incurring a significant upfront cost, and offers flexibility for upgrades. It generally 
-  includes maintenance and support services to keep the equipment in optimal condition. At 
-  the end of the lease, organisations have the option to return the equipment, continue 
-  leasing, or purchase it, which helps in managing cash flow and aligning expenses with 
-  usage.`,
+      title: 'Asset Management & Tagging',
+      subtitle: 'Asset Management & Tagging',
+      description: `Superior Digital is committed to delivering reliable Asset Management services that keep your IT
+infrastructure organised and eﬃcient. We provide detailed Inventory Reports, ensuring accurate
+tracking and visibility of all your devices. Our service includes Device Diagnostics during
+Reverse Pickup, helping identify issues quickly and reduce downtime. Comprehensive
+Reporting keeps you informed at every stage, from deployment to recovery. With Superior Digital,
+managing your IT assets becomes seamless, transparent, and hassle-free.
+
+Superior Digital oﬀers precise and professional Asset Tagging services to help you track and
+manage your IT equipment eﬀortlessly. Each asset is tagged with a unique identifier, enabling
+easy monitoring, maintenance, and auditing. Our tagging solutions support better inventory
+control, loss prevention, and compliance with organisational policies. Whether it's during
+deployment or ongoing operations, we ensure accurate tagging and data recording. Trust
+Superior Digital to bring structure and visibility to your asset management process.`,
       isExpanded: false
     }
   ];
@@ -592,7 +588,9 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     window.removeEventListener('resize', this.handleResize.bind(this));
     window.removeEventListener('scroll', this.scrollListener);
     this.stopAutoSlide();
-    this.stopAutoScroll();
+    if (this.scrollTimeout) {
+      clearTimeout(this.scrollTimeout);
+    }
   }
 
   scrollToSection(sectionId: string) {
@@ -1127,32 +1125,24 @@ Finance to offer IT equipment on lease.`
   }
 
   startAutoScroll() {
-    this.autoScrollInterval = setInterval(() => {
-      if (this.cardContainer) {
+    if (!this.isHovered) {
+      this.autoScrollInterval = setInterval(() => {
         const container = this.cardContainer.nativeElement;
-        const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth;
-        const isAtStart = container.scrollLeft <= 0;
-
-        // Change direction if we reach the end or start
-        if (isAtEnd) {
-          this.scrollDirection = 'left';
-        } else if (isAtStart) {
-          this.scrollDirection = 'right';
+        const scrollAmount = container.clientWidth;
+        container.scrollLeft += scrollAmount;
+        
+        // Reset to start if reached end
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+          container.scrollLeft = 0;
         }
-
-        // Scroll in the current direction
-        if (this.scrollDirection === 'right') {
-          this.scrollRightCards();
-        } else {
-          this.scrollLeftCards();
-        }
-      }
-    }, 3000); // Scroll every 3 seconds
+      }, 5000); // Scroll every 5 seconds
+    }
   }
 
   stopAutoScroll() {
     if (this.autoScrollInterval) {
       clearInterval(this.autoScrollInterval);
+      this.autoScrollInterval = null;
     }
   }
 
@@ -1240,4 +1230,11 @@ Finance to offer IT equipment on lease.`
     }
   }
 
+  onCardClick() {
+    this.stopAutoScroll();
+    // Resume auto-scroll after 5 seconds
+    this.scrollTimeout = setTimeout(() => {
+      this.startAutoScroll();
+    }, 5000);
+  }
 }
