@@ -145,7 +145,21 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     { src: 'assets/images/marquee/vmware-logo.png', alt: 'Client 22', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/hp.png', alt: 'Client 24', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/lenovo.png', alt: 'Client 25', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/epson.png', alt: 'Client 26', scale: 1, opacity: 1 }
+    { src: 'assets/images/marquee/epson.png', alt: 'Client 26', scale: 1, opacity: 1 },
+
+    { src: 'assets/images/marquee/cisco.png', alt: 'Client 27', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/yealink.png', alt: 'Client 28', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/asus.png', alt: 'Client 29', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/intel.png', alt: 'Client 30', scale: 1, opacity: 1 },
+
+    { src: 'assets/images/marquee/acer.png', alt: 'Client 31', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/dlink.png', alt: 'Client 32', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/hikvision.png', alt: 'Client 33', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/opengear.png', alt: 'Client 34', scale: 1, opacity: 1 },
+
+    { src: 'assets/images/marquee/jbl.png', alt: 'Client 35', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/synology.png', alt: 'Client 36', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/jabra.png', alt: 'Client 37', scale: 1, opacity: 1 },
   ];
 
 
