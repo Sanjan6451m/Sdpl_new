@@ -588,9 +588,9 @@ Superior Digital to bring structure and visibility to your asset management proc
 
   @HostListener('wheel', ['$event'])
   onWheel(event: WheelEvent) {
-    // Check if the event target is within the our-solutions_web section
-    const solutionsWeb = document.querySelector('.our-solutions_web');
-    if (!solutionsWeb?.contains(event.target as Node)) {
+    // Check if the event target is within the solution wheel section
+    const solutionWheel = document.querySelector('.solution-wheel');
+    if (!solutionWheel?.contains(event.target as Node)) {
       return;
     }
 
@@ -604,7 +604,7 @@ Superior Digital to bring structure and visibility to your asset management proc
     this.currentRotation += deltaY;
     
     // Apply the rotation to the floating icons container
-    const iconsContainer = document.querySelector('.our-solutions_web .floating-icons') as HTMLElement;
+    const iconsContainer = document.querySelector('.solution-wheel .floating-icons') as HTMLElement;
     if (iconsContainer) {
       iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
       
