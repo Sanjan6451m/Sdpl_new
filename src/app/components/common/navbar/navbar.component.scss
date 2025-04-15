@@ -2,3 +2,35 @@
     color: red; /* Change this to your desired highlight color */
     font-weight: bold; /* Optional: make the text bold */
   }
+
+  @media (max-width: 767px) {
+    .box-btn {
+        padding: 10px 10px !important;
+    }
+}
+
+@media (min-width: 768px) {
+  .box-btn {
+      padding: 10px 10px !important;
+  }
+}
+
+.nav-item .box-btn {
+  display: none; /* Hidden by default */
+}
+
+/* Show in mobile view */
+@media (max-width: 768px) {
+  .nav-item .box-btn {
+    display: inline-block;
+  }
+  .navbar-area .main-nav .navbar .navbar-nav .nav-item {
+    padding-bottom: 0 !important;
+}
+
+}
+
+/* Exception for Apple @Superior button */
+.nav-item a[href*="superiorsystems.in/apple"] {
+  display: inline-block !important; /* Always show this button */
+}
