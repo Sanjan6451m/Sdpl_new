@@ -652,7 +652,13 @@ Superior Digital to bring structure and visibility to your asset management proc
     // Check if the event target is within the solution wheel section
     const solutionWheel = document.querySelector('.solution-wheel');
     if (!solutionWheel?.contains(event.target as Node)) {
-      return; // Allow normal page scrolling outside solution wheel
+      // Check if the event target is within the our-solutions_web section
+      const ourSolutionsWeb = document.querySelector('.our-solutions_web');
+      if (ourSolutionsWeb?.contains(event.target as Node)) {
+        // Allow normal page scrolling when over our-solutions_web but outside solution wheel
+        return;
+      }
+      return; // Allow normal page scrolling outside our-solutions_web
     }
 
     // Only prevent default and handle rotation if we're over the solution wheel

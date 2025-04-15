@@ -1,65 +1,65 @@
 <a href="https://superiorsystems.in/apple" target="_blank" class="floating-coin">
-  <div class="coin">
-    <div class="front">
-      <img src="assets/images/superior.png" alt="Logo">
+    <div class="coin">
+        <div class="front">
+            <img src="assets/images/superior.png" alt="Logo">
+        </div>
+        <div class="back">
+            <img src="assets/images/authorized.png" alt="Logo">
+        </div>
     </div>
-    <div class="back">
-      <img src="assets/images/authorized.png" alt="Logo">
-    </div>
-  </div>
 </a>
 
 <section class="hero-section" id="heroSection">
-   <div class="column-container">
-    <div class="container">
+    <div class="column-container">
+        <div class="container">
             <div class="client-logos" id="clientLogos">
                 <div class="client-logo" *ngFor="let logo of logos">
                     <img [src]="logo.src" [alt]="logo.alt" [ngStyle]="{
                        
                         'opacity': logo.opacity
                     }">
-                     <!-- 'transform': 'scale(' + logo.scale + ')', -->
+                    <!-- 'transform': 'scale(' + logo.scale + ')', -->
                 </div>
             </div>
-    
+
             <div class="circles-container" id="circlesContainer" [ngStyle]="{
                 'transform': 'scale(' + circleScale + ')',
                 'opacity': circleOpacity}">
-            <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
+                <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/device1.png" alt="Devices" class="logo-img">
 
-                <span class="circle-label">Devices</span>
-            </a>
-                
-            <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
+                    <span class="circle-label">Devices</span>
+                </a>
+
+                <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/mdm.png" alt="MDM" class="logo-img">
                     <!-- <i class="bx bx-mobile-alt"></i> -->
-                <span class="circle-label">MDM</span>
-            </a>
-                
-            <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
+                    <span class="circle-label">MDM</span>
+                </a>
+
+                <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/mobility.png" alt="Mobility" class="logo-img">
 
-                <span class="circle-label">Mobility</span>
-            </a>
-                
-            <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
+                    <span class="circle-label">Mobility</span>
+                </a>
+
+                <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/networking1.png" alt="Networking" width="70" class="logo-img">
-                <span class="circle-label">Networking</span>
-            </a>
-                
-            <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
+                    <span class="circle-label">Networking</span>
+                </a>
+
+                <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/avsol.png" alt="AV Solutions" width="70" class="logo-img">
 
-                <span class="circle-label">AV Solutions</span>
-            </a>
-        </div>
-        
+                    <span class="circle-label">AV Solutions</span>
+                </a>
+            </div>
+
             <div class="logo-container" id="logoContainer">
                 <img src="assets/images/superior-removebg-preview.png" alt="Superior Digital Logo" class="main-logo">
             </div>
         </div>
-      <!--   <br>
+        <!--   <br>
         <br> -->
         <div class="marquee-container">
             <div class="marquee right-to-left">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <div class="marquee left-to-right">
                 <div class="marquee-content">
                     <div class="client-item" *ngFor="let client of clients2">
@@ -95,22 +95,23 @@
 <!-- Cards start -->
 <section class="product-card-section" id="nextSection">
     <div class="product-card-layout">
-      <h1 style="text-align: center;">13+ years of expertise and IT SHOWS!</h1>
-      <br><br>
-      <div class="product-card-container">
-        <div class="product-card" *ngFor="let item of cardItems">
-          <div class="product-card-icon">
-            <img [src]="item.icon" alt="{{ item.title }} Icon" class="product-card-icon-img">
-          </div>
-          <div class="product-card-content">
-            <h1 class="product-card-title">{{ item.targetValue > 0 ? (item.currentValue | number:'1.0-0') + '+' : item.title }}</h1>
-            <h3 class="product-card-description">{{ item.description }}</h3>
-          </div>
+        <h1 style="text-align: center;">13+ years of expertise and IT SHOWS!</h1>
+        <br><br>
+        <div class="product-card-container">
+            <div class="product-card" *ngFor="let item of cardItems">
+                <div class="product-card-icon">
+                    <img [src]="item.icon" alt="{{ item.title }} Icon" class="product-card-icon-img">
+                </div>
+                <div class="product-card-content">
+                    <h1 class="product-card-title">{{ item.targetValue > 0 ? (item.currentValue | number:'1.0-0') + '+'
+                        : item.title }}</h1>
+                    <h3 class="product-card-description">{{ item.description }}</h3>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  <!-- Cards end -->
+</section>
+<!-- Cards end -->
 
 <section class="home-case ptb-100 bg-color about-us-section" id="about-us">
     <div class="container">
@@ -124,9 +125,9 @@
                 <div class="services-img mb-qc ios-content">
                     <div class="circular-layout">
                         <div class="image-container">
-                          <img src="assets/images/superior-story.jpg" alt="image" class="image-container-img"/>
+                            <img src="assets/images/superior-story.jpg" alt="image" class="image-container-img" />
                         </div>
-                      </div>
+                    </div>
 
                     <!-- <div class="image-wrapper">
                         <div class="background-shape shape1"></div>
@@ -139,29 +140,32 @@
             <div class="col-lg-6">
                 <div class="about-section">
                     <h3>Superior Story</h3>
-                    <p>We started our journey in 2013 with a passionate team of three, driven by a commitment to 
-                    excellence and innovation. Through dedication and visionary leadership, we have grown into a 
-                    team of over 100 skilled professionals, delivering exceptional solutions. Today, we proudly serve 
-                    more than 900 enterprise customers, providing tailored services that enhance productivity and 
-                    efficiency.</p>
-                    
-                    <p>With strong partnerships across 30+ premium brands, we continue to expand our industry 
-                    presence, offering cutting-edge technology solutions. Our success is reflected in the trust of over 
-                    1,000 satisfied customers who have remained loyal to Superior over the years. As we grow, our 
-                    focus remains on delivering quality, innovation, and customer-centric solutions that drive 
-                    businesses forward.</p>
+                    <p>We started our journey in 2013 with a passionate team of three, driven by a commitment to
+                        excellence and innovation. Through dedication and visionary leadership, we have grown into a
+                        team of over 100 skilled professionals, delivering exceptional solutions. Today, we proudly
+                        serve
+                        more than 900 enterprise customers, providing tailored services that enhance productivity and
+                        efficiency.</p>
+
+                    <p>With strong partnerships across 30+ premium brands, we continue to expand our industry
+                        presence, offering cutting-edge technology solutions. Our success is reflected in the trust of
+                        over
+                        1,000 satisfied customers who have remained loyal to Superior over the years. As we grow, our
+                        focus remains on delivering quality, innovation, and customer-centric solutions that drive
+                        businesses forward.</p>
                 </div>
             </div>
         </div>
-        
+
         <br>
         <br>
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="about-section">
                     <h3>Our Approach</h3>
-                    <p>Our approach to addressing customer IT Infrastructure challenges begins with a clear 
-                        understanding of their specific needs. We ensure top-notch quality and reliability in every solution, 
+                    <p>Our approach to addressing customer IT Infrastructure challenges begins with a clear
+                        understanding of their specific needs. We ensure top-notch quality and reliability in every
+                        solution,
                         fostering a long-term business relationship built on trust and mutual respect.</p>
                 </div>
             </div>
@@ -169,9 +173,9 @@
                 <div class="services-img mb-qc ios-content">
                     <div class="circular-layout">
                         <div class="image-container">
-                          <img src="assets/images/approach.jpg" alt="image" class="image-container-img"/>
+                            <img src="assets/images/approach.jpg" alt="image" class="image-container-img" />
                         </div>
-                      </div>
+                    </div>
 
                     <!-- <div class="image-wrapper">
                         <div class="background-shape shape1"></div>
@@ -182,50 +186,50 @@
             </div>
 
         </div>
-       
+
         <br>
         <br>
         <br>
-        
+
         <div class="row approach-cards">
             <div class="col-lg-4 col-md-6">
                 <div class="single-case">
                     <div class="case-img">
                         <i class="bx bx-rupee"></i>
                     </div>
-        
+
                     <div class="content">
                         <h3>Cost-Effective Solutions</h3>
-                        <p>Our services are designed to fit within a competitive budget, ensuring 
-                        affordability without sacrificing quality.</p>
+                        <p>Our services are designed to fit within a competitive budget, ensuring
+                            affordability without sacrificing quality.</p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-4 col-md-6">
                 <div class="single-case">
                     <div class="case-img">
                         <i class="bx bx-time-five"></i>
                     </div>
-        
+
                     <div class="content">
                         <h3>Long-Term Benefits</h3>
-                        <p>We focus on providing durable and sustainable IT infrastructure solutions 
-                        that offer long-lasting advantages.</p>
+                        <p>We focus on providing durable and sustainable IT infrastructure solutions
+                            that offer long-lasting advantages.</p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-4 col-md-6">
                 <div class="single-case">
                     <div class="case-img">
                         <i class="bx bx-medal"></i>
                     </div>
-        
+
                     <div class="content">
                         <h3>Commitment to Excellence</h3>
-                        <p>We are dedicated to delivering outstanding service, ensuring 
-                        reliability and trust as your IT infrastructure partner.</p>
+                        <p>We are dedicated to delivering outstanding service, ensuring
+                            reliability and trust as your IT infrastructure partner.</p>
                     </div>
                 </div>
             </div>
@@ -237,70 +241,61 @@
     <div class="container">
         <div class="features-section">
             <div class="section-title">
-            <h2>Our Services</h2>
-        </div>
-            <div class="cards-wrapper">
-              <button class="nav-arrow left-arrow" (click)="prevSlide()">‹</button>
-              <div class="cards-container" 
-                   (mouseenter)="onCardHover(true)" 
-                   (mouseleave)="onCardHover(false)">
-                <div class="card" 
-                     *ngFor="let feature of features; let i = index"
-                     [class.active]="i === activeIndex"
-                     [class.prev]="i === (activeIndex - 1 + features.length) % features.length"
-                     [class.next]="i === (activeIndex + 1) % features.length"
-                     (click)="onCardClick()">
-                  <div class="card-content">
-                    <div class="icon-container">
-                      <img [src]="feature.image" [alt]="feature.title" width="100px" height="100px">
-                    </div>
-                    <h3>{{feature.title}}</h3>
-                    <p>{{feature.description}}</p>
-                  </div>
-                </div>
-              </div>
-              <button class="nav-arrow right-arrow" (click)="nextSlide()">›</button>
+                <h2>Our Services</h2>
             </div>
-        </div> 
+            <div class="cards-wrapper">
+                <button class="nav-arrow left-arrow" (click)="prevSlide()">‹</button>
+                <div class="cards-container" (mouseenter)="onCardHover(true)" (mouseleave)="onCardHover(false)">
+                    <div class="card" *ngFor="let feature of features; let i = index" [class.active]="i === activeIndex"
+                        [class.prev]="i === (activeIndex - 1 + features.length) % features.length"
+                        [class.next]="i === (activeIndex + 1) % features.length" (click)="onCardClick()">
+                        <div class="card-content">
+                            <div class="icon-container">
+                                <img [src]="feature.image" [alt]="feature.title" width="100px" height="100px">
+                            </div>
+                            <h3>{{feature.title}}</h3>
+                            <p>{{feature.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="nav-arrow right-arrow" (click)="nextSlide()">›</button>
+            </div>
+        </div>
     </div>
 </section>
-    
+
 
 <section class="home-case ptb-100 bg-color" id="solutions">
     <div class="container1">
         <div class="section-title">
             <h2>Our Solutions</h2>
         </div>
-        
+
         <div class="content-container">
             <div class="solution-card-section">
                 <div class="scroll-container">
-                    <button class="nav-arrow left-arrow" (click)="scrollLeftCards()" (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">❮</button>
-                    <div class="solution-card-container" 
-                         #cardContainer 
-                         (mouseenter)="onCardHover(true)" 
-                         (mouseleave)="onCardHover(false)">
-                        <div class="solution-card" 
-                             *ngFor="let card of solutionCards"
-                             (click)="onCardClick()">
+                    <button class="nav-arrow left-arrow" (click)="scrollLeftCards()" (mouseenter)="stopAutoScroll()"
+                        (mouseleave)="startAutoScroll()">❮</button>
+                    <div class="solution-card-container" #cardContainer (mouseenter)="onCardHover(true)"
+                        (mouseleave)="onCardHover(false)">
+                        <div class="solution-card" *ngFor="let card of solutionCards" (click)="onCardClick()">
                             <div class="solution-card-icon">
                                 <img [src]="card.icon" alt="service icon">
                             </div>
                             <div class="solution-card-content">
                                 <h3 class="solution-card-title">{{ card.title }}</h3>
                                 <div class="description-container">
-                                    <p class="solution-card-description" 
-                                       [class.truncated]="!card.isExpanded" 
-                                       [innerHTML]="card.description"></p>
-                                    <button class="read-more-btn" 
-                                            (click)="toggleReadMoresolution(card)">
+                                    <p class="solution-card-description" [class.truncated]="!card.isExpanded"
+                                        [innerHTML]="card.description"></p>
+                                    <button class="read-more-btn" (click)="toggleReadMoresolution(card)">
                                         {{ card.isExpanded ? 'Read Less' : 'Read More' }}
                                     </button>
-                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <button class="nav-arrow right-arrow" (click)="scrollRightCards()" (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">❯</button>
+                    <button class="nav-arrow right-arrow" (click)="scrollRightCards()" (mouseenter)="stopAutoScroll()"
+                        (mouseleave)="startAutoScroll()">❯</button>
                 </div>
             </div>
         </div>
@@ -312,51 +307,61 @@
                         <img src="../../assets/images/superior-removebg-preview.png" alt="Service Wheel" width="200">
                         <div class="selection-marker"></div>
                         <div class="floating-icons">
-                          <div class="floating-icon icon1" (click)="selecteSolution(1)" [class.active]="selectedSolution?.id === 1">
-                            <span class="icon-title">Cloud Solutions</span>
-                            <img src="assets/images/cloud-removebg-preview.png" alt="Life Cycle Management Icon">
-                </div>
-                          <div class="floating-icon icon2" (click)="selecteSolution(2)" [class.active]="selectedSolution?.id === 2">
-                            <span class="icon-title">IT Consulting</span>
-                            <img src="assets/images/itsolutions-removebg-preview.png" alt="Service Icon">
-            </div>
-                          <div class="floating-icon icon3" (click)="selecteSolution(3)" [class.active]="selectedSolution?.id === 3">
-                            <span class="icon-title">Repair and Support</span>
-                            <img src="assets/images/repair-support-removebg-preview.png" alt="Service Icon">
-        </div>
-                          <div class="floating-icon icon4" (click)="selecteSolution(4)" [class.active]="selectedSolution?.id === 4">
-                            <span class="icon-title">Leasing</span>
-                            <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
-        </div>
-                          <div class="floating-icon icon5" (click)="selecteSolution(5)" [class.active]="selectedSolution?.id === 5">
-                            <span class="icon-title">IT Lifecycle Management</span>
-                            <img src="assets/images/cycle.png" alt="Service Icon">
-    </div>
-                          <div class="floating-icon icon6" (click)="selecteSolution(6)" [class.active]="selectedSolution?.id === 6">
-                            <span class="icon-title">IT Assets Insurance</span>
-                            <img src="assets/images/insurance.png" alt="Service Icon">
-    </div>
-                          <div class="floating-icon icon7" (click)="selecteSolution(7)" [class.active]="selectedSolution?.id === 7">
-                            <span class="icon-title">Warehousing Solutions</span>
-                            <img src="assets/images/warehouse.png" alt="Service Icon">
-        </div>
-                          <div class="floating-icon icon8" (click)="selecteSolution(8)" [class.active]="selectedSolution?.id === 8">
-                            <span class="icon-title">Supply Chain Services</span>
-                            <img src="assets/images/supply.png" alt="Service Icon">
+                            <div class="floating-icon icon1" (click)="selecteSolution(1)"
+                                [class.active]="selectedSolution?.id === 1">
+                                <span class="icon-title">Cloud Solutions</span>
+                                <img src="assets/images/cloud-removebg-preview.png" alt="Life Cycle Management Icon">
+                            </div>
+                            <div class="floating-icon icon2" (click)="selecteSolution(2)"
+                                [class.active]="selectedSolution?.id === 2">
+                                <span class="icon-title">IT Consulting</span>
+                                <img src="assets/images/itsolutions-removebg-preview.png" alt="Service Icon">
+                            </div>
+                            <div class="floating-icon icon3" (click)="selecteSolution(3)"
+                                [class.active]="selectedSolution?.id === 3">
+                                <span class="icon-title">Repair and Support</span>
+                                <img src="assets/images/repair-support-removebg-preview.png" alt="Service Icon">
+                            </div>
+                            <div class="floating-icon icon4" (click)="selecteSolution(4)"
+                                [class.active]="selectedSolution?.id === 4">
+                                <span class="icon-title">Leasing</span>
+                                <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
+                            </div>
+                            <div class="floating-icon icon5" (click)="selecteSolution(5)"
+                                [class.active]="selectedSolution?.id === 5">
+                                <span class="icon-title">IT Lifecycle Management</span>
+                                <img src="assets/images/cycle.png" alt="Service Icon">
+                            </div>
+                            <div class="floating-icon icon6" (click)="selecteSolution(6)"
+                                [class.active]="selectedSolution?.id === 6">
+                                <span class="icon-title">IT Assets Insurance</span>
+                                <img src="assets/images/insurance.png" alt="Service Icon">
+                            </div>
+                            <div class="floating-icon icon7" (click)="selecteSolution(7)"
+                                [class.active]="selectedSolution?.id === 7">
+                                <span class="icon-title">Warehousing Solutions</span>
+                                <img src="assets/images/warehouse.png" alt="Service Icon">
+                            </div>
+                            <div class="floating-icon icon8" (click)="selecteSolution(8)"
+                                [class.active]="selectedSolution?.id === 8">
+                                <span class="icon-title">Supply Chain Services</span>
+                                <img src="assets/images/supply.png" alt="Service Icon">
+                            </div>
+                            <div class="floating-icon icon9" (click)="selecteSolution(9)"
+                                [class.active]="selectedSolution?.id === 9">
+                                <span class="icon-title">Asset Management</span>
+                                <img src="assets/images/asset.png" alt="Service Icon">
+                            </div>
+                        </div>
                     </div>
-                          <div class="floating-icon icon9" (click)="selecteSolution(9)" [class.active]="selectedSolution?.id === 9">
-                            <span class="icon-title">Asset Management</span>
-                            <img src="assets/images/asset.png" alt="Service Icon">
                 </div>
-                    </div>
-                </div>
-            </div>
 
-                <div class="service-content" [class.visible]="selectedSolution !== null" [class.has-expanded-description]="selectedSolution?.isExpanded">
+                <div class="service-content" [class.visible]="selectedSolution !== null"
+                    [class.has-expanded-description]="selectedSolution?.isExpanded">
                     <!-- <h1 class="main-title">Our Services</h1> -->
                     <h2 class="service-title">{{selectedSolution?.title || 'Dedicated sPoC'}}</h2>
                     <!-- <h3 class="service-subtitle">{{selectedSolution?.subtitle || 'Dedicated Support, Seamless Experience'}}</h3> -->
-                    
+
                     <div class="service-description" [class.expanded]="selectedSolution?.isExpanded">
                         <div class="description-text">{{selectedSolution?.description || defaultDescription}}</div>
                         <button class="read-more-btn" *ngIf="selectedSolution" (click)="toggleDescription()">
@@ -370,39 +375,41 @@
 </section>
 
 <section class="home-contact-area home-2-contact ptb-100" id="contact-us">
-    
-        <div class="section-title">
-            <h2>Contact Us</h2>
-        </div>
 
-        <div class="contact-container">
-            <div class="blurbg">
-                <div class="left-section">
-                    <h1>Let us<br />contact you!</h1>
-                    <p>Submit your request in minutes,<br />no matter your need.</p>
-                </div>
-        
-                <div class="right-section">
-                    <form class="form-box" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-                        <!-- <input type="text" name="name" id="name" class="form-control" required
+    <div class="section-title">
+        <h2>Contact Us</h2>
+    </div>
+
+    <div class="contact-container">
+        <div class="blurbg">
+            <div class="left-section">
+                <h1>Let us<br />contact you!</h1>
+                <p>Submit your request in minutes,<br />no matter your need.</p>
+            </div>
+
+            <div class="right-section">
+                <form class="form-box" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <!-- <input type="text" name="name" id="name" class="form-control" required
                         placeholder="Your Name" formControlName="name" /> -->
-                        <input type="text" name="name" id="name" placeholder="Name"
-                         formControlName="name"/>
-        
-                        <!-- <div class="row"> -->
-                            <input type="email" placeholder="Email" name="email" id="email" formControlName="email"/>
-                            <input type="tel" placeholder="Mobile" name="mobile" id="mobile" formControlName="mobile"/>
-                        <!-- </div> -->
-        
-                        <input type="text" placeholder="Industry" name="industry" id="industry" formControlName="industry"/>
-                        <textarea placeholder="Whats on your Mind?" name="message" id="message" formControlName="message"></textarea>
-                        <div *ngIf="message" class="alert" [ngClass]="{'alert-success': message.includes('successfully'), 'alert-danger': message.includes('Error')}">
-                            {{ message }}
-                        </div>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
+                    <input type="text" name="name" id="name" placeholder="Name" formControlName="name" />
+
+                    <!-- <div class="row"> -->
+                    <input type="email" placeholder="Email" name="email" id="email" formControlName="email" />
+                    <input type="tel" placeholder="Mobile" name="mobile" id="mobile" formControlName="mobile" />
+                    <!-- </div> -->
+
+                    <input type="text" placeholder="Industry" name="industry" id="industry"
+                        formControlName="industry" />
+                    <textarea placeholder="Whats on your Mind?" name="message" id="message"
+                        formControlName="message"></textarea>
+                    <div *ngIf="message" class="alert"
+                        [ngClass]="{'alert-success': message.includes('successfully'), 'alert-danger': message.includes('Error')}">
+                        {{ message }}
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
-    
+    </div>
+
 </section>
