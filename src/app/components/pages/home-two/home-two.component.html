@@ -11,7 +11,7 @@
 
 <section class="hero-section" id="heroSection">
    <div class="column-container">
-        <div class="container">
+    <div class="container">
             <div class="client-logos" id="clientLogos">
                 <div class="client-logo" *ngFor="let logo of logos">
                     <img [src]="logo.src" [alt]="logo.alt" [ngStyle]="{
@@ -25,36 +25,36 @@
             <div class="circles-container" id="circlesContainer" [ngStyle]="{
                 'transform': 'scale(' + circleScale + ')',
                 'opacity': circleOpacity}">
-                <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
+            <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/device1.png" alt="Devices" class="logo-img">
 
-                    <span class="circle-label">Devices</span>
-                </a>
-    
-                <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
+                <span class="circle-label">Devices</span>
+            </a>
+                
+            <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/mdm.png" alt="MDM" class="logo-img">
                     <!-- <i class="bx bx-mobile-alt"></i> -->
-                    <span class="circle-label">MDM</span>
-                </a>
-    
-                <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
+                <span class="circle-label">MDM</span>
+            </a>
+                
+            <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/mobility.png" alt="Mobility" class="logo-img">
 
-                    <span class="circle-label">Mobility</span>
-                </a>
-    
-                <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
+                <span class="circle-label">Mobility</span>
+            </a>
+                
+            <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/networking1.png" alt="Networking" width="70" class="logo-img">
-                    <span class="circle-label">Networking</span>
-                </a>
-    
-                <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
+                <span class="circle-label">Networking</span>
+            </a>
+                
+            <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
                     <img src="assets/images/homesolutions/avsol.png" alt="AV Solutions" width="70" class="logo-img">
 
-                    <span class="circle-label">AV Solutions</span>
-                </a>
-            </div>
-    
+                <span class="circle-label">AV Solutions</span>
+            </a>
+        </div>
+        
             <div class="logo-container" id="logoContainer">
                 <img src="assets/images/superior-removebg-preview.png" alt="Superior Digital Logo" class="main-logo">
             </div>
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </div>
-   </div>
+    </div>
 </section>
 
 
@@ -103,7 +103,7 @@
             <img [src]="item.icon" alt="{{ item.title }} Icon" class="product-card-icon-img">
           </div>
           <div class="product-card-content">
-            <h1 class="product-card-title">{{ item.title }}</h1>
+            <h1 class="product-card-title">{{ item.targetValue > 0 ? (item.currentValue | number:'1.0-0') + '+' : item.title }}</h1>
             <h3 class="product-card-description">{{ item.description }}</h3>
           </div>
         </div>
@@ -271,7 +271,7 @@
         <div class="section-title">
             <h2>Our Solutions</h2>
         </div>
-
+        
         <div class="content-container">
             <div class="solution-card-section">
                 <div class="scroll-container">
@@ -296,13 +296,13 @@
                                             (click)="toggleReadMoresolution(card)">
                                         {{ card.isExpanded ? 'Read Less' : 'Read More' }}
                                     </button>
-                                </div>
+                    </div>
                             </div>
                         </div>
                     </div>
                     <button class="nav-arrow right-arrow" (click)="scrollRightCards()" (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">❯</button>
                 </div>
-            </div> 
+            </div>
         </div>
 
         <div class="our-solutions_web">
@@ -315,43 +315,43 @@
                           <div class="floating-icon icon1" (click)="selecteSolution(1)" [class.active]="selectedSolution?.id === 1">
                             <span class="icon-title">Cloud Solutions</span>
                             <img src="assets/images/cloud-removebg-preview.png" alt="Life Cycle Management Icon">
-                          </div>
+                </div>
                           <div class="floating-icon icon2" (click)="selecteSolution(2)" [class.active]="selectedSolution?.id === 2">
                             <span class="icon-title">IT Consulting</span>
                             <img src="assets/images/itsolutions-removebg-preview.png" alt="Service Icon">
-                          </div>
+            </div>
                           <div class="floating-icon icon3" (click)="selecteSolution(3)" [class.active]="selectedSolution?.id === 3">
                             <span class="icon-title">Repair and Support</span>
                             <img src="assets/images/repair-support-removebg-preview.png" alt="Service Icon">
-                          </div>
+        </div>
                           <div class="floating-icon icon4" (click)="selecteSolution(4)" [class.active]="selectedSolution?.id === 4">
                             <span class="icon-title">Leasing</span>
                             <img src="assets/images/leaseing-removebg-preview.png" alt="Service Icon">
-                          </div>
+        </div>
                           <div class="floating-icon icon5" (click)="selecteSolution(5)" [class.active]="selectedSolution?.id === 5">
                             <span class="icon-title">IT Lifecycle Management</span>
                             <img src="assets/images/cycle.png" alt="Service Icon">
-                          </div>
+    </div>
                           <div class="floating-icon icon6" (click)="selecteSolution(6)" [class.active]="selectedSolution?.id === 6">
                             <span class="icon-title">IT Assets Insurance</span>
                             <img src="assets/images/insurance.png" alt="Service Icon">
-                          </div>
+    </div>
                           <div class="floating-icon icon7" (click)="selecteSolution(7)" [class.active]="selectedSolution?.id === 7">
                             <span class="icon-title">Warehousing Solutions</span>
                             <img src="assets/images/warehouse.png" alt="Service Icon">
-                          </div>
+        </div>
                           <div class="floating-icon icon8" (click)="selecteSolution(8)" [class.active]="selectedSolution?.id === 8">
                             <span class="icon-title">Supply Chain Services</span>
                             <img src="assets/images/supply.png" alt="Service Icon">
-                          </div>
+                    </div>
                           <div class="floating-icon icon9" (click)="selecteSolution(9)" [class.active]="selectedSolution?.id === 9">
                             <span class="icon-title">Asset Management</span>
                             <img src="assets/images/asset.png" alt="Service Icon">
-                          </div>
-                        </div>
+                </div>
                     </div>
                 </div>
-                
+            </div>
+
                 <div class="service-content" [class.visible]="selectedSolution !== null" [class.has-expanded-description]="selectedSolution?.isExpanded">
                     <!-- <h1 class="main-title">Our Services</h1> -->
                     <h2 class="service-title">{{selectedSolution?.title || 'Dedicated sPoC'}}</h2>
