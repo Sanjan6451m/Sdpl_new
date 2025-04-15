@@ -604,12 +604,58 @@ Superior Digital to bring structure and visibility to your asset management proc
 
   @HostListener('wheel', ['$event'])
   onWheel(event: WheelEvent) {
-    // Check if the event target is within the solution wheel section
-    const solutionWheel = document.querySelector('.solution-wheel');
-    if (!solutionWheel?.contains(event.target as Node)) {
+    // Check if the event target is within the service content section
+    const serviceContent = document.querySelector('.service-content');
+    if (serviceContent?.contains(event.target as Node)) {
+      // Allow slow rotation when over service content
+      event.preventDefault();
+      
+      // Reduce the rotation speed even more for service content area
+      const rotationSpeed = 0.04; // Further reduced for very slow rotation
+      const deltaY = event.deltaY * rotationSpeed;
+      
+      // Update the rotation angle with the reduced speed
+      this.currentRotation += deltaY;
+      
+      // Apply the rotation to the floating icons container
+      const iconsContainer = document.querySelector('.solution-wheel .floating-icons') as HTMLElement;
+      if (iconsContainer) {
+        iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
+        
+        // Rotate each icon in the opposite direction to keep them upright
+        const icons = iconsContainer.querySelectorAll('.floating-icon') as NodeListOf<HTMLElement>;
+        icons.forEach(icon => {
+          icon.style.transform = `rotate(${-this.currentRotation}deg)`;
+        });
+
+        // Calculate which icon should be selected based on rotation
+        const degreesPerIcon = 360 / this.TOTAL_SOLUTIONS;
+        let currentIndex = Math.round((this.currentRotation % 360) / degreesPerIcon);
+        
+        // Adjust for negative rotation
+        if (currentIndex < 0) {
+          currentIndex = this.TOTAL_SOLUTIONS + (currentIndex % this.TOTAL_SOLUTIONS);
+        }
+        
+        // Convert to 1-based index and handle wrap-around
+        let nextIndex = (currentIndex % this.TOTAL_SOLUTIONS) + 1;
+        
+        // Update the selected solution if it has changed
+        if (nextIndex !== this.lastSolutionIndex) {
+          this.lastSolutionIndex = nextIndex;
+          this.selecteSolution(nextIndex);
+        }
+      }
       return;
     }
 
+    // Check if the event target is within the solution wheel section
+    const solutionWheel = document.querySelector('.solution-wheel');
+    if (!solutionWheel?.contains(event.target as Node)) {
+      return; // Allow normal page scrolling outside solution wheel
+    }
+
+    // Only prevent default and handle rotation if we're over the solution wheel
     event.preventDefault();
     
     // Reduce the rotation speed and make it smoother
@@ -648,7 +694,7 @@ Superior Digital to bring structure and visibility to your asset management proc
         this.selecteSolution(nextIndex);
       }
     }
-    }
+  }
 
     ngAfterViewInit() {
         this.route.fragment.subscribe(fragment => {
