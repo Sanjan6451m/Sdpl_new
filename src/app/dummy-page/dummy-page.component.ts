@@ -289,6 +289,48 @@ usage.`,
     this.selecteSolution(1);
   }
 
+  @HostListener('wheel', ['$event'])
+  onWheel(event: WheelEvent) {
+    event.preventDefault();
+    
+    // Reduce the rotation speed by dividing the delta by a larger number
+    const rotationSpeed = 0.1; // Decreased from default
+    const deltaY = event.deltaY * rotationSpeed;
+    
+    // Update the rotation angle with the reduced speed
+    this.currentRotation += deltaY;
+    
+    // Apply the rotation to the floating icons container
+    const iconsContainer = document.querySelector('.floating-icons') as HTMLElement;
+    if (iconsContainer) {
+      iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
+      
+      // Rotate each icon in the opposite direction to keep them upright
+      const icons = iconsContainer.querySelectorAll('.floating-icon') as NodeListOf<HTMLElement>;
+      icons.forEach(icon => {
+        icon.style.transform = `rotate(${-this.currentRotation}deg)`;
+      });
+
+      // Calculate which icon should be selected based on rotation
+      const degreesPerIcon = 360 / this.TOTAL_SOLUTIONS;
+      let currentIndex = Math.round((this.currentRotation % 360) / degreesPerIcon);
+      
+      // Adjust for negative rotation
+      if (currentIndex < 0) {
+        currentIndex = this.TOTAL_SOLUTIONS + (currentIndex % this.TOTAL_SOLUTIONS);
+      }
+      
+      // Convert to 1-based index and handle wrap-around
+      let nextIndex = (currentIndex % this.TOTAL_SOLUTIONS) + 1;
+      
+      // Update the selected solution if it has changed
+      if (nextIndex !== this.lastSolutionIndex) {
+        this.lastSolutionIndex = nextIndex;
+        this.selecteSolution(nextIndex);
+      }
+    }
+  }
+
   @HostListener('window:scroll', ['$event'])
   onScroll() {
     // Don't rotate if description is expanded

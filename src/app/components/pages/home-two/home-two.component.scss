@@ -2520,7 +2520,7 @@
       margin-bottom: 5px;
       color: #333;
       font-weight: 200;
-      opacity: 0;
+      opacity: 1;
       transition: opacity 0.3s ease;
       pointer-events: none;
   }
@@ -2695,7 +2695,7 @@
 }
 .service-description {
   position: relative;
-  max-height: 100px;
+  max-height: 350px;
   overflow: hidden;
   transition: all 0.3s ease;
   margin-bottom: 20px;

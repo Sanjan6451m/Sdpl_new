@@ -93,6 +93,8 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     'assets/images/marquee/yealink.png',
     'assets/images/marquee/asus.png',
     'assets/images/marquee/dlink.png',
+    'assets/images/marquee/opengear.png',
+    'assets/images/marquee/synology.png',
   ]
 
   clients2: string[] = [
@@ -112,7 +114,9 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     'assets/images/marquee/dell.png',
     'assets/images/marquee/hp.png',
     'assets/images/marquee/lenovo.png',
-    'assets/images/marquee/epson.png'
+    'assets/images/marquee/epson.png',
+     'assets/images/marquee/jabra.png',
+    'assets/images/marquee/jbl.png'
   ];
 
   logos = [
@@ -581,6 +585,55 @@ Superior Digital to bring structure and visibility to your asset management proc
     });
   }
 
+
+  @HostListener('wheel', ['$event'])
+  onWheel(event: WheelEvent) {
+    // Check if the event target is within the our-solutions_web section
+    const solutionsWeb = document.querySelector('.our-solutions_web');
+    if (!solutionsWeb?.contains(event.target as Node)) {
+      return;
+    }
+
+    event.preventDefault();
+    
+    // Reduce the rotation speed and make it smoother
+    const rotationSpeed = 0.05; // Further reduced for smoother rotation
+    const deltaY = event.deltaY * rotationSpeed;
+    
+    // Update the rotation angle with the reduced speed
+    this.currentRotation += deltaY;
+    
+    // Apply the rotation to the floating icons container
+    const iconsContainer = document.querySelector('.our-solutions_web .floating-icons') as HTMLElement;
+    if (iconsContainer) {
+      iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
+      
+      // Rotate each icon in the opposite direction to keep them upright
+      const icons = iconsContainer.querySelectorAll('.floating-icon') as NodeListOf<HTMLElement>;
+      icons.forEach(icon => {
+        icon.style.transform = `rotate(${-this.currentRotation}deg)`;
+      });
+
+      // Calculate which icon should be selected based on rotation
+      const degreesPerIcon = 360 / this.TOTAL_SOLUTIONS;
+      let currentIndex = Math.round((this.currentRotation % 360) / degreesPerIcon);
+      
+      // Adjust for negative rotation
+      if (currentIndex < 0) {
+        currentIndex = this.TOTAL_SOLUTIONS + (currentIndex % this.TOTAL_SOLUTIONS);
+      }
+      
+      // Convert to 1-based index and handle wrap-around
+      let nextIndex = (currentIndex % this.TOTAL_SOLUTIONS) + 1;
+      
+      // Update the selected solution if it has changed
+      if (nextIndex !== this.lastSolutionIndex) {
+        this.lastSolutionIndex = nextIndex;
+        this.selecteSolution(nextIndex);
+      }
+    }
+  }
+  
   ngAfterViewInit() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
