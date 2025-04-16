@@ -528,16 +528,22 @@ scalable operations.`,
     {
       id: 9,
       icon: 'assets/images/asset_management.png',
-      title: 'Asset Management & Tagging',
-      subtitle: 'Asset Management & Tagging',
+      title: 'Asset Management',
+      subtitle: 'Asset Management',
       description: `Superior Digital is committed to delivering reliable Asset Management services that keep your IT
 infrastructure organised and eﬃcient. We provide detailed Inventory Reports, ensuring accurate
 tracking and visibility of all your devices. Our service includes Device Diagnostics during
 Reverse Pickup, helping identify issues quickly and reduce downtime. Comprehensive
 Reporting keeps you informed at every stage, from deployment to recovery. With Superior Digital,
-managing your IT assets becomes seamless, transparent, and hassle-free.
-
-Superior Digital oﬀers precise and professional Asset Tagging services to help you track and
+managing your IT assets becomes seamless, transparent, and hassle-free.`,
+      isExpanded: false
+    },
+    {
+      id: 10,
+      icon: 'assets/images/asset_management.png',
+      title: 'Asset Tagging',
+      subtitle: 'Asset Tagging',
+      description: `Superior Digital oﬀers precise and professional Asset Tagging services to help you track and
 manage your IT equipment eﬀortlessly. Each asset is tagged with a unique identifier, enabling
 easy monitoring, maintenance, and auditing. Our tagging solutions support better inventory
 control, loss prevention, and compliance with organisational policies. Whether it's during

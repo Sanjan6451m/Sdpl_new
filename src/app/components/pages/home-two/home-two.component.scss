@@ -1907,6 +1907,7 @@
 
   .form-box {
     max-width: 100%;
+     padding: 0rem !important;
   }
 }
 
@@ -2522,31 +2523,166 @@
 }
 
 .solution-wheel-container {
-  flex: 1;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px;
+  
+  .solution-wheel {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Center logo
+    > img {
+      position: absolute;
+      z-index: 2;
+      width: 150px;
+      height: auto;
+      transform: scale(1.2);
+    }
+
+    .floating-icons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-out;
+
+      .floating-icon {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+        }
+
+        .icon-title {
+          position: absolute;
+          bottom: -25px;
+          font-size: 12px;
+          text-align: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          white-space: nowrap;
+          color: #333;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          
+          .icon-title {
+            opacity: 1;
+          }
+          
+          img {
+            transform: scale(1.1);
+          }
+        }
+
+        &.active {
+          transform: scale(1.2);
+          
+          .icon-title {
+            opacity: 1;
+            font-weight: bold;
+          }
+          
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      // Position icons in a circle
+      .icon1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+      .icon2 { top: 12%; right: 12%; transform: translate(50%, -50%); }
+      .icon3 { top: 60%; right: 2%; transform: translate(50%, -50%); }
+      .icon4 { bottom: 8%; right: 22%; transform: translate(50%, 50%); }
+      .icon5 { bottom: 0%; left: 38%; transform: translate(-50%, 50%); }
+      .icon6 { bottom: 12%; left: 12%; transform: translate(-50%, 50%); }
+      .icon7 { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+      .icon8 { top: 25%; left: 5%; transform: translate(-50%, -50%); }
+      .icon9 { top: 7%; left: 25%; transform: translate(-50%, -50%); }
+      .icon10 { top: 36%; left: 84%; transform: translate(-50%, -50%); }
+    }
+  }
 }
 
-.solution-wheel {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// Media queries for responsiveness
+@media (max-width: 768px) {
+  .solution-wheel-container {
+    padding: 20px;
+    
+    .solution-wheel {
+      width: 400px;
+      height: 400px;
 
-  img {
-      width: 30%;
-      height: 25%;
-      object-fit: contain;
-      // animation: rotate 30s linear infinite;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      > img {
+        width: 100px;
+      }
+
+      .floating-icons {
+        .floating-icon {
+          width: 60px;
+          height: 60px;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+
+          .icon-title {
+            font-size: 10px;
+            bottom: -20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-wheel-container {
+    padding: 10px;
+    
+    .solution-wheel {
+      width: 300px;
+      height: 300px;
+
+      > img {
+        width: 80px;
+      }
+
+      .floating-icons {
+        .floating-icon {
+          width: 50px;
+          height: 50px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+
+          .icon-title {
+            font-size: 9px;
+            bottom: -18px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -2633,7 +2769,7 @@
   }
 }
 
-// Position floating icons in a perfect circle (9 icons, 40 degrees apart)
+/* // Position floating icons in a perfect circle (9 icons, 40 degrees apart)
 .icon1 { top: 0; left: 49%; transform: translate(-50%, 0); }
 .icon2 { top: 10%; right: 8%; transform: translate(0, 0); }
 .icon3 { top: 35%; right: 0%; transform: translate(0, 0); }
@@ -2641,9 +2777,9 @@
 .icon5 { bottom: 20%; right: 12%; transform: translate(0, 0); }
 .icon6 { bottom: 5%; left: 46%; transform: translate(-50%, 0); }
 .icon7 { bottom: 12%; left: 20%; transform: translate(0, 0); }
-.icon8 { bottom: 34%; left: 5%; transform: translate(0, 0); }
+.icon8 { bottom: 25%; left: 5%; transform: translate(0, 0); }
 .icon9 { top: 20%; left: 5%; transform: translate(0, 0); }
-
+ */
 .service-content {
   flex: 1;
   max-width: 600px;
@@ -3089,4 +3225,21 @@
       margin-top: 240px;
     }
   }
+}
+
+@media (min-width: 383px) and (max-width: 401px) {
+  .circles-container {
+    position: relative !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .circle {
+    flex: 0 0 30%; /* roughly 2 in a row with spacing */
+  }
+
+  
 }

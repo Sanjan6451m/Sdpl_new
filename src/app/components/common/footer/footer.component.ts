@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit {
         'assets/images/marquee/alogic-logo.png',
         'assets/images/marquee/belkin-logo.png',
         'assets/images/marquee/honeywell-logo.png',
-        'assets/images/marquee/jebra-logo.png',
+        'assets/images/marquee/jabra.png',
         'assets/images/marquee/poly-logo.png',
         'assets/images/marquee/stm-logo.png',
         'assets/images/marquee/overview-JAMF.png',
