@@ -690,11 +690,11 @@
     }
     
     p {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1.7;
       color: #666;
-      margin-bottom: 15px;
-      text-align: justify;
+      margin-bottom: 1px !important;
+      // text-align: justify;
       padding: 10px;
     }
   }
