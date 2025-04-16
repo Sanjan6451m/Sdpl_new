@@ -2923,9 +2923,10 @@
 
 @media (max-width: 768px) {
   .solutions-layout {
-      flex-direction: column;
+      // flex-direction: column;
       padding: 20px;
       text-align: center;
+      display: none;
   }
 
   .solution-wheel {
