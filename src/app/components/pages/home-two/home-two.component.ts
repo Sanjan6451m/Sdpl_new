@@ -324,7 +324,7 @@ reliable, eﬃcient, and customised warehousing support.`,
     },
     {
       icon: 'assets/images/leaseing-removebg-preview.png',
-      title: 'Supply Chain Services',
+      title: 'Supply Chain',
       description: `Superior Digital oﬀers comprehensive Operational and Supply Chain Services to streamline your
 business processes and enhance eﬃciency. From procurement and logistics to inventory
 management and last-mile delivery, we ensure every link in your supply chain is optimised. Our
@@ -514,8 +514,8 @@ reliable, eﬃcient, and customised warehousing support.`,
     {
       id: 8,
       icon: 'assets/images/asset_management.png',
-      title: 'Supply Chain Services',
-      subtitle: 'Supply Chain Services',
+      title: 'Supply Chain',
+      subtitle: 'Supply Chain',
       description: `Superior Digital oﬀers comprehensive Operational and Supply Chain Services to streamline your
 business processes and enhance eﬃciency. From procurement and logistics to inventory
 management and last-mile delivery, we ensure every link in your supply chain is optimised. Our

@@ -2553,8 +2553,8 @@
 
       .floating-icon {
         position: absolute;
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -2570,14 +2570,24 @@
         }
 
         .icon-title {
-          position: absolute;
-          bottom: -25px;
-          font-size: 12px;
+         /*  position: absolute;
+          bottom: -25px; */
+         /*  font-size: 12px;
           text-align: center;
           opacity: 0;
           transition: opacity 0.3s ease;
           white-space: nowrap;
-          color: #333;
+          text-wrap-mode: wrap;
+          color: #333; */
+          font-size: 12px;
+    text-align: center;
+    /* opacity: 0; */
+    transition: opacity 0.3s ease;
+    white-space: normal;
+    /* text-wrap-mode: wrap; */
+    color: #333;
+    /* margin-bottom: -22px; */
+    margin-top: -10px;
         }
 
         &:hover {
@@ -2610,7 +2620,7 @@
       .icon1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
       .icon2 { top: 12%; right: 12%; transform: translate(50%, -50%); }
       .icon3 { top: 60%; right: 2%; transform: translate(50%, -50%); }
-      .icon4 { bottom: 8%; right: 22%; transform: translate(50%, 50%); }
+      .icon4 { bottom: 5%; right: 20%; transform: translate(50%, 50%); }
       .icon5 { bottom: 0%; left: 38%; transform: translate(-50%, 50%); }
       .icon6 { bottom: 12%; left: 12%; transform: translate(-50%, 50%); }
       .icon7 { top: 50%; left: 0%; transform: translate(-50%, -50%); }
@@ -2710,7 +2720,6 @@
       inset -2px -2px 5px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(4px);
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2718,68 +2727,84 @@
   padding: 10px;
   transition: all 0.3s ease;
   transform-origin: center;
-  opacity: 0.5;
+  opacity: 0.8;
   cursor: pointer;
 
   .icon-title {
-      font-size: 12px;
-      text-align: center;
-      margin-bottom: 5px;
-      color: #333;
-      font-weight: 200;
-      opacity: 1;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      line-height: normal;
+    font-size: 12px;
+    text-align: center;
+    color: #333;
+    font-weight: 200;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    line-height: normal;
+    margin-top: 5px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   img {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      pointer-events: none;
-      margin-top: 25px;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    pointer-events: none;
   }
 
   &:hover,
-  &:focus,
-  &:active,
   &.active {
-      transform: scale(1.1);
-      opacity: 1;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      background: linear-gradient(360deg, #ffffff 0%, #d5d5d5 100%);
-      box-shadow: 
-          -10px -10px 20px rgba(255, 255, 255, 0.8),
-          10px 10px 20px rgba(0, 0, 0, 0.1),
-          inset 2px 2px 5px rgba(255, 255, 255, 0.5),
-          inset -2px -2px 5px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(0);
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 
+        -10px -10px 20px rgba(255, 255, 255, 0.8),
+        10px 10px 20px rgba(0, 0, 0, 0.2);
 
-      .icon-title {
-          opacity: 1;
-    font-weight: 600;
-          line-height: normal;
-      }
+    .icon-title {
+      opacity: 1;
+      font-weight: 600;
+    }
   }
 
   &.active {
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      border: 2px solid #e41e31;
+    border: 2px solid #e41e31;
   }
 }
 
-/* // Position floating icons in a perfect circle (9 icons, 40 degrees apart)
-.icon1 { top: 0; left: 49%; transform: translate(-50%, 0); }
-.icon2 { top: 10%; right: 8%; transform: translate(0, 0); }
-.icon3 { top: 35%; right: 0%; transform: translate(0, 0); }
-.icon4 { left: 24%; top: 4%; transform: translate(0, 0); }
-.icon5 { bottom: 20%; right: 12%; transform: translate(0, 0); }
-.icon6 { bottom: 5%; left: 46%; transform: translate(-50%, 0); }
-.icon7 { bottom: 12%; left: 20%; transform: translate(0, 0); }
-.icon8 { bottom: 25%; left: 5%; transform: translate(0, 0); }
-.icon9 { top: 20%; left: 5%; transform: translate(0, 0); }
- */
+// Media queries for responsiveness
+@media (max-width: 768px) {
+  .floating-icon {
+    width: 80px;
+    height: 80px;
+    
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .icon-title {
+      font-size: 10px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-icon {
+    width: 60px;
+    height: 60px;
+    
+    img {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .icon-title {
+      font-size: 9px;
+    }
+  }
+}
+
 .service-content {
   flex: 1;
   max-width: 600px;
@@ -2903,7 +2928,7 @@
 }
 .service-description {
   position: relative;
-  max-height: 350px;
+  max-height: 180px;
   overflow: hidden;
   transition: all 0.3s ease;
   margin-bottom: 20px;
