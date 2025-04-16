@@ -1393,25 +1393,11 @@ Finance to offer IT equipment on lease.`
   
   toggleDescription() {
     if (this.selectedSolution) {
-      // Toggle the expanded state
       this.selectedSolution.isExpanded = !this.selectedSolution.isExpanded;
       
-      // Get the description element
-      const descriptionElement = document.querySelector('.service-description') as HTMLElement;
-      if (descriptionElement) {
-        if (!this.selectedSolution.isExpanded) {
-          // When collapsing (Read Less)
-          descriptionElement.classList.remove('expanded');
-          descriptionElement.style.maxHeight = '200px';
-          descriptionElement.scrollTop = 0;
-          
-          // Force a reflow to ensure the transition works
-          void descriptionElement.offsetWidth;
-        } else {
-          // When expanding (Read More)
-          descriptionElement.classList.add('expanded');
-          descriptionElement.style.maxHeight = '1000px';
-        }
+      // Reset scroll position when collapsing description
+      if (!this.selectedSolution.isExpanded) {
+        this.lastScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
       }
     }
   }

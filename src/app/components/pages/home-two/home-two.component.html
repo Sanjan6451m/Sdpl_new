@@ -359,6 +359,7 @@
                     [class.has-expanded-description]="selectedSolution?.isExpanded">
                     <!-- <h1 class="main-title">Our Services</h1> -->
                     <h2 class="service-title">{{selectedSolution?.title || 'Dedicated sPoC'}}</h2>
+                    
                     <!-- <h3 class="service-subtitle">{{selectedSolution?.subtitle || 'Dedicated Support, Seamless Experience'}}</h3> -->
 
                     <div class="service-description" [class.expanded]="selectedSolution?.isExpanded">
@@ -367,9 +368,6 @@
                             {{ selectedSolution?.isExpanded ? 'Read Less' : 'Read More' }}
                         </button>
                     </div>
-                    <!-- <button class="read-more-btn" (click)="toggleReadMoresolution(card)">
-                        {{ card.isExpanded ? 'Read Less' : 'Read More' }}
-                    </button> -->
                 </div>
             </div>
         </div>
