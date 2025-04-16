@@ -76,19 +76,22 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private scrollListener: () => void;
 
+  private scrollCount = 0;
+  private readonly SCROLL_THRESHOLD = 10;
+
   clients1: string[] = [
-    'assets/images/marquee/hexnode-logo.png',
+    'assets/images/marquee/hexnode_new.png',
     'assets/images/marquee/42Gears-logo.png',
     'assets/images/marquee/logitech-logo.png',
-    'assets/images/marquee/alogic-logo.png',
-    'assets/images/marquee/belkin-logo.png',
+    'assets/images/marquee/alogic.png',
+    'assets/images/marquee/belkin.png',
     'assets/images/marquee/honeywell-logo.png',
-    'assets/images/marquee/jebra-logo.png',
+    'assets/images/marquee/jabra.png',
     'assets/images/marquee/poly-logo.png',
     'assets/images/marquee/stm-logo.png',
     'assets/images/marquee/overview-JAMF.png',
-    'assets/images/marquee/samsung-logo.png',
-    'assets/images/marquee/lg-logo.png',
+    'assets/images/marquee/samsung.png',
+    'assets/images/marquee/lg.png',
     'assets/images/marquee/jumpcloud-logo.png',
     'assets/images/marquee/yealink.png',
     'assets/images/marquee/asus.png',
@@ -98,14 +101,14 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
   ]
 
   clients2: string[] = [
-    'assets/images/marquee/seagate-logo.png',
-    'assets/images/marquee/sure-logo.png',
+    'assets/images/marquee/seagate.png',
+    'assets/images/marquee/shure.png',
     'assets/images/marquee/kingston-logo.png',
     'assets/images/marquee/bose-logo.png',
     'assets/images/marquee/corsair.png',
     'assets/images/marquee/adobe-logo.png',
-    'assets/images/marquee/microsoft-logo.png',
-    'assets/images/marquee/cisco.png',
+    'assets/images/marquee/microsoft.png',
+    'assets/images/marquee/cisco_new.png',
     'assets/images/marquee/acer.png',
     'assets/images/marquee/hikvision.png',
      'assets/images/marquee/intel.png',
@@ -113,7 +116,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     'assets/images/marquee/vmware-logo.png',
     'assets/images/marquee/dell.png',
     'assets/images/marquee/hp.png',
-    'assets/images/marquee/lenovo.png',
+    'assets/images/marquee/lenovo_new.png',
     'assets/images/marquee/epson.png',
      'assets/images/marquee/jabra.png',
     'assets/images/marquee/jbl.png'
@@ -121,33 +124,33 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   logos = [
     { src: 'assets/images/marquee/dell.png', alt: 'Client 23', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/hexnode-logo.png', alt: 'Client 1', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/hexnode_new.png', alt: 'Client 1', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/42Gears-logo.png', alt: 'Client 2', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/logitech-logo.png', alt: 'Client 3', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/alogic-logo.png', alt: 'Client 4', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/belkin-logo.png', alt: 'Client 5', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/alogic.png', alt: 'Client 4', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/belkin.png', alt: 'Client 5', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/honeywell-logo.png', alt: 'Client 6', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/jebra-logo.png', alt: 'Client 7', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/jabra.png', alt: 'Client 7', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/poly-logo.png', alt: 'Client 8', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/stm-logo.png', alt: 'Client 9', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/overview-JAMF.png', alt: 'Client 10', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/samsung-logo.png', alt: 'Client 11', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/lg-logo.png', alt: 'Client 12', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/samsung.png', alt: 'Client 11', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/lg.png', alt: 'Client 12', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/jumpcloud-logo.png', alt: 'Client 13', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/seagate-logo.png', alt: 'Client 14', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/sure-logo.png', alt: 'Client 15', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/seagate.png', alt: 'Client 14', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/shure.png', alt: 'Client 15', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/kingston-logo.png', alt: 'Client 16', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/bose-logo.png', alt: 'Client 17', scale: 1, opacity: 1 },
-    { src: 'assets/images/corsair_new.png', alt: 'Client 18', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/corsair.png', alt: 'Client 18', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/adobe-logo.png', alt: 'Client 19', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/microsoft-logo.png', alt: 'Client 20', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/microsoft.png', alt: 'Client 20', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/kandgi-logo.png', alt: 'Client 21', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/vmware-logo.png', alt: 'Client 22', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/hp.png', alt: 'Client 24', scale: 1, opacity: 1 },
-    { src: 'assets/images/marquee/lenovo.png', alt: 'Client 25', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/lenovo_new.png', alt: 'Client 25', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/epson.png', alt: 'Client 26', scale: 1, opacity: 1 },
 
-    { src: 'assets/images/marquee/cisco.png', alt: 'Client 27', scale: 1, opacity: 1 },
+    { src: 'assets/images/marquee/cisco_new.png', alt: 'Client 27', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/yealink.png', alt: 'Client 28', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/asus.png', alt: 'Client 29', scale: 1, opacity: 1 },
     { src: 'assets/images/marquee/intel.png', alt: 'Client 30', scale: 1, opacity: 1 },
@@ -170,10 +173,18 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     ) {
         this.contactForm = this.fb.group({
           name: ['', [Validators.required]],
-          email: ['', [Validators.required, Validators.email]],
+          email: ['', [
+            Validators.required,
+            Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')
+          ]],
           message: ['', [Validators.required]],
-          mobile: ['', [Validators.required]],
-      industry: ['', [Validators.required]]
+          mobile: ['', [
+            Validators.required, 
+            Validators.pattern('^[0-9]{10}$'),
+            Validators.minLength(10),
+            Validators.maxLength(10)
+          ]],
+          industry: ['', [Validators.required]]
         });
         emailjs.init("PTmfxUAnOlAZlyhRB");
     }
@@ -536,7 +547,7 @@ Superior Digital to bring structure and visibility to your asset management proc
     }
   ];
 
-  ngOnInit() {
+    ngOnInit() {
     this.updateRotation(0);
     this.selecteSolution(1);
     this.startAutoScroll();
@@ -602,105 +613,7 @@ Superior Digital to bring structure and visibility to your asset management proc
   }
 
 
-  @HostListener('wheel', ['$event'])
-  onWheel(event: WheelEvent) {
-    // Check if the event target is within the service content section
-    const serviceContent = document.querySelector('.service-content');
-    if (serviceContent?.contains(event.target as Node)) {
-      // Allow slow rotation when over service content
-      event.preventDefault();
-      
-      // Reduce the rotation speed even more for service content area
-      const rotationSpeed = 0.04; // Further reduced for very slow rotation
-      const deltaY = event.deltaY * rotationSpeed;
-      
-      // Update the rotation angle with the reduced speed
-      this.currentRotation += deltaY;
-      
-      // Apply the rotation to the floating icons container
-      const iconsContainer = document.querySelector('.solution-wheel .floating-icons') as HTMLElement;
-      if (iconsContainer) {
-        iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
-        
-        // Rotate each icon in the opposite direction to keep them upright
-        const icons = iconsContainer.querySelectorAll('.floating-icon') as NodeListOf<HTMLElement>;
-        icons.forEach(icon => {
-          icon.style.transform = `rotate(${-this.currentRotation}deg)`;
-        });
-
-        // Calculate which icon should be selected based on rotation
-        const degreesPerIcon = 360 / this.TOTAL_SOLUTIONS;
-        let currentIndex = Math.round((this.currentRotation % 360) / degreesPerIcon);
-        
-        // Adjust for negative rotation
-        if (currentIndex < 0) {
-          currentIndex = this.TOTAL_SOLUTIONS + (currentIndex % this.TOTAL_SOLUTIONS);
-        }
-        
-        // Convert to 1-based index and handle wrap-around
-        let nextIndex = (currentIndex % this.TOTAL_SOLUTIONS) + 1;
-        
-        // Update the selected solution if it has changed
-        if (nextIndex !== this.lastSolutionIndex) {
-          this.lastSolutionIndex = nextIndex;
-          this.selecteSolution(nextIndex);
-        }
-      }
-      return;
-    }
-
-    // Check if the event target is within the solution wheel section
-    const solutionWheel = document.querySelector('.solution-wheel');
-    if (!solutionWheel?.contains(event.target as Node)) {
-      // Check if the event target is within the our-solutions_web section
-      const ourSolutionsWeb = document.querySelector('.our-solutions_web');
-      if (ourSolutionsWeb?.contains(event.target as Node)) {
-        // Allow normal page scrolling when over our-solutions_web but outside solution wheel
-        return;
-      }
-      return; // Allow normal page scrolling outside our-solutions_web
-    }
-
-    // Only prevent default and handle rotation if we're over the solution wheel
-    event.preventDefault();
-    
-    // Reduce the rotation speed and make it smoother
-    const rotationSpeed = 0.05; // Further reduced for smoother rotation
-    const deltaY = event.deltaY * rotationSpeed;
-    
-    // Update the rotation angle with the reduced speed
-    this.currentRotation += deltaY;
-    
-    // Apply the rotation to the floating icons container
-    const iconsContainer = document.querySelector('.solution-wheel .floating-icons') as HTMLElement;
-    if (iconsContainer) {
-      iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
-      
-      // Rotate each icon in the opposite direction to keep them upright
-      const icons = iconsContainer.querySelectorAll('.floating-icon') as NodeListOf<HTMLElement>;
-      icons.forEach(icon => {
-        icon.style.transform = `rotate(${-this.currentRotation}deg)`;
-      });
-
-      // Calculate which icon should be selected based on rotation
-      const degreesPerIcon = 360 / this.TOTAL_SOLUTIONS;
-      let currentIndex = Math.round((this.currentRotation % 360) / degreesPerIcon);
-      
-      // Adjust for negative rotation
-      if (currentIndex < 0) {
-        currentIndex = this.TOTAL_SOLUTIONS + (currentIndex % this.TOTAL_SOLUTIONS);
-      }
-      
-      // Convert to 1-based index and handle wrap-around
-      let nextIndex = (currentIndex % this.TOTAL_SOLUTIONS) + 1;
-      
-      // Update the selected solution if it has changed
-      if (nextIndex !== this.lastSolutionIndex) {
-        this.lastSolutionIndex = nextIndex;
-        this.selecteSolution(nextIndex);
-      }
-    }
-  }
+ 
 
     ngAfterViewInit() {
         this.route.fragment.subscribe(fragment => {
@@ -737,58 +650,181 @@ Superior Digital to bring structure and visibility to your asset management proc
         }
     }
 
-    @HostListener('window:scroll', ['$event'])
-    onScroll() {
-      const scrollPosition = window.scrollY;
+    @HostListener('wheel', ['$event'])
+    onWheel(event: WheelEvent) {
+      // Check if the event target is within the our-solutions_web section
+      const ourSolutionsWeb = document.querySelector('.our-solutions_web');
+      if (ourSolutionsWeb?.contains(event.target as Node)) {
+        // Allow slow rotation when over our-solutions_web
+        event.preventDefault();
+        
+        // Set very slow rotation speed for our-solutions_web area
+        const rotationSpeed = 0.1; // Very slow rotation
+        const deltaY = event.deltaY * rotationSpeed;
+        
+        // Update the rotation angle with the reduced speed
+        this.currentRotation += deltaY;
+        
+        // Apply the rotation to the floating icons container
+        const iconsContainer = document.querySelector('.solution-wheel .floating-icons') as HTMLElement;
+        if (iconsContainer) {
+          iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
+          
+          // Rotate each icon in the opposite direction to keep them upright
+          const icons = iconsContainer.querySelectorAll('.floating-icon') as NodeListOf<HTMLElement>;
+          icons.forEach(icon => {
+            icon.style.transform = `rotate(${-this.currentRotation}deg)`;
+          });
 
-    // Handle circle scaling
-      if (scrollPosition > 100) {
-        document.querySelectorAll('.circle').forEach(circle => {
-          (circle as HTMLElement).style.transform = `scale(${1 + (scrollPosition * 0.001)})`;
-        });
+          // Calculate which icon should be selected based on rotation
+          const degreesPerIcon = 360 / this.TOTAL_SOLUTIONS;
+          let currentIndex = Math.round((this.currentRotation % 360) / degreesPerIcon);
+          
+          // Adjust for negative rotation
+          if (currentIndex < 0) {
+            currentIndex = this.TOTAL_SOLUTIONS + (currentIndex % this.TOTAL_SOLUTIONS);
+          }
+          
+          // Convert to 1-based index and handle wrap-around
+          let nextIndex = (currentIndex % this.TOTAL_SOLUTIONS) + 1;
+          
+          // Update the selected solution if it has changed
+          if (nextIndex !== this.lastSolutionIndex) {
+            this.lastSolutionIndex = nextIndex;
+            this.selecteSolution(nextIndex);
+          }
+
+          // Calculate slow page scroll
+          const scrollSpeed = 0.1; // Very slow scroll speed
+          const scrollAmount = event.deltaY * scrollSpeed;
+          
+          // Smoothly scroll the page
+          window.scrollBy({
+            top: scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+        return;
       }
 
-    // Handle solution rotation (only if description is not expanded)
-    if (!this.selectedSolution?.isExpanded) {
-      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      const scrollDelta = currentScrollPosition - this.lastScrollPosition;
+      // Check if the event target is within the service content section
+      const serviceContent = document.querySelector('.service-content');
+      if (serviceContent?.contains(event.target as Node)) {
+        // Allow slow rotation when over service content
+        event.preventDefault();
+        
+        // Reduce the rotation speed even more for service content area
+        const rotationSpeed = 0.1; // Further reduced for very slow rotation
+        const deltaY = event.deltaY * rotationSpeed;
+        
+        // Update the rotation angle with the reduced speed
+        this.currentRotation += deltaY;
+        
+        // Apply the rotation to the floating icons container
+        const iconsContainer = document.querySelector('.solution-wheel .floating-icons') as HTMLElement;
+        if (iconsContainer) {
+          iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
+          
+          // Rotate each icon in the opposite direction to keep them upright
+          const icons = iconsContainer.querySelectorAll('.floating-icon') as NodeListOf<HTMLElement>;
+          icons.forEach(icon => {
+            icon.style.transform = `rotate(${-this.currentRotation}deg)`;
+          });
 
-      // Update rotation based on scroll direction
-      this.currentRotation += scrollDelta * this.ROTATION_SPEED;
+          // Calculate which icon should be selected based on rotation
+          const degreesPerIcon = 360 / this.TOTAL_SOLUTIONS;
+          let currentIndex = Math.round((this.currentRotation % 360) / degreesPerIcon);
+          
+          // Adjust for negative rotation
+          if (currentIndex < 0) {
+            currentIndex = this.TOTAL_SOLUTIONS + (currentIndex % this.TOTAL_SOLUTIONS);
+          }
+          
+          // Convert to 1-based index and handle wrap-around
+          let nextIndex = (currentIndex % this.TOTAL_SOLUTIONS) + 1;
+          
+          // Update the selected solution if it has changed
+          if (nextIndex !== this.lastSolutionIndex) {
+            this.lastSolutionIndex = nextIndex;
+            this.selecteSolution(nextIndex);
+          }
 
-      // Determine scroll direction (-1 for up, 1 for down)
-      const direction = scrollDelta > 0 ? 1 : -1;
-
-      // Calculate next service index based on current selection and direction
-      let nextIndex = this.lastSolutionIndex + direction;
-
-      // Handle wrapping around
-      if (nextIndex > this.TOTAL_SOLUTIONS) {
-        nextIndex = 1;
-      } else if (nextIndex < 1) {
-        nextIndex = this.TOTAL_SOLUTIONS;
+          // Calculate slow page scroll
+          const scrollSpeed = 0.1; // Very slow scroll speed
+          const scrollAmount = event.deltaY * scrollSpeed;
+          
+          // Smoothly scroll the page
+          window.scrollBy({
+            top: scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+        return;
       }
 
-      // Update the rotation visually
-      this.updateRotation(this.currentRotation);
+      // Check if the event target is within the solution wheel section
+      const solutionWheel = document.querySelector('.solution-wheel');
+      if (solutionWheel?.contains(event.target as Node)) {
+        // Only prevent default and handle rotation if we're over the solution wheel
+        event.preventDefault();
+        
+        // Reduce the rotation speed and make it smoother
+        const rotationSpeed = 0.1; // Further reduced for smoother rotation
+        const deltaY = event.deltaY * rotationSpeed;
+        
+        // Update the rotation angle with the reduced speed
+        this.currentRotation += deltaY;
+        
+        // Apply the rotation to the floating icons container
+        const iconsContainer = document.querySelector('.solution-wheel .floating-icons') as HTMLElement;
+        if (iconsContainer) {
+          iconsContainer.style.transform = `rotate(${this.currentRotation}deg)`;
+          
+          // Rotate each icon in the opposite direction to keep them upright
+          const icons = iconsContainer.querySelectorAll('.floating-icon') as NodeListOf<HTMLElement>;
+          icons.forEach(icon => {
+            icon.style.transform = `rotate(${-this.currentRotation}deg)`;
+          });
 
-      // Only update selection if we've scrolled enough
-      if (Math.abs(scrollDelta) > 5) {
-        this.lastSolutionIndex = nextIndex;
-        this.selecteSolution(nextIndex);
-        this.lastScrollPosition = currentScrollPosition;
-      }
+          // Calculate which icon should be selected based on rotation
+          const degreesPerIcon = 360 / this.TOTAL_SOLUTIONS;
+          let currentIndex = Math.round((this.currentRotation % 360) / degreesPerIcon);
+          
+          // Adjust for negative rotation
+          if (currentIndex < 0) {
+            currentIndex = this.TOTAL_SOLUTIONS + (currentIndex % this.TOTAL_SOLUTIONS);
+          }
+          
+          // Convert to 1-based index and handle wrap-around
+          let nextIndex = (currentIndex % this.TOTAL_SOLUTIONS) + 1;
+          
+          // Update the selected solution if it has changed
+          if (nextIndex !== this.lastSolutionIndex) {
+            this.lastSolutionIndex = nextIndex;
+            this.selecteSolution(nextIndex);
+          }
+
+          // Calculate slow page scroll
+          const scrollSpeed = 0.1; // Very slow scroll speed
+          const scrollAmount = event.deltaY * scrollSpeed;
+          
+          // Smoothly scroll the page
+          window.scrollBy({
+            top: scrollAmount,
+            behavior: 'smooth'
+          });
+        }
       }
     }
 
     images: string[] = [
-        'assets/images/marquee/hexnode-logo.png',
+        'assets/images/marquee/hexnode_new.png',
         'assets/images/marquee/42Gears-logo.png',
         'assets/images/marquee/logitech-logo.png',
-        'assets/images/marquee/alogic-logo.png',
-        'assets/images/marquee/belkin-logo.png',
+        'assets/images/marquee/alogic.png',
+        'assets/images/marquee/belkin.png',
         'assets/images/marquee/honeywell-logo.png',
-        'assets/images/marquee/jebra-logo.png',
+        'assets/images/marquee/jabra.png',
         'assets/images/marquee/poly-logo.png',
         'assets/images/marquee/stm-logo.png'
       ];
@@ -1181,6 +1217,7 @@ Finance to offer IT equipment on lease.`
 
       onSubmit() {
         if (this.contactForm.valid) {
+          console.log('Form submitted:', this.contactForm.value);
           emailjs.send("service_kuiothp", "template_g8fkwgh", {
             to_name: "SDPL",
             from_name: this.contactForm.value.name,
@@ -1197,6 +1234,12 @@ Finance to offer IT equipment on lease.`
             .catch((error) => {
               this.message = 'Error sending message. Try again later.';
             });
+        } else {
+          // Mark all fields as touched to trigger validation display
+          Object.keys(this.contactForm.controls).forEach(key => {
+            const control = this.contactForm.get(key);
+            control?.markAsTouched();
+          });
         }
       }
 
@@ -1234,6 +1277,9 @@ Finance to offer IT equipment on lease.`
       toggleReadMore(): void {
         this.isExpanded = !this.isExpanded;
       }
+      /* toggleReadMore(): void {
+        this.isExpanded = !this.isExpanded;
+      } */
 
   animateLogos() {
     setInterval(() => {
@@ -1344,13 +1390,28 @@ Finance to offer IT equipment on lease.`
     }
   }
 
+  
   toggleDescription() {
     if (this.selectedSolution) {
+      // Toggle the expanded state
       this.selectedSolution.isExpanded = !this.selectedSolution.isExpanded;
-
-      // Reset scroll position when collapsing description
-      if (!this.selectedSolution.isExpanded) {
-        this.lastScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Get the description element
+      const descriptionElement = document.querySelector('.service-description') as HTMLElement;
+      if (descriptionElement) {
+        if (!this.selectedSolution.isExpanded) {
+          // When collapsing (Read Less)
+          descriptionElement.classList.remove('expanded');
+          descriptionElement.style.maxHeight = '200px';
+          descriptionElement.scrollTop = 0;
+          
+          // Force a reflow to ensure the transition works
+          void descriptionElement.offsetWidth;
+        } else {
+          // When expanding (Read More)
+          descriptionElement.classList.add('expanded');
+          descriptionElement.style.maxHeight = '1000px';
+        }
       }
     }
   }
@@ -1396,5 +1457,39 @@ Finance to offer IT equipment on lease.`
     };
 
     requestAnimationFrame(animate);
+  }
+
+  // Getter for easy access in template
+  get emailControl() {
+    return this.contactForm.get('email');
+  }
+
+  // Email validation error messages
+  getEmailErrorMessage() {
+    if (this.emailControl?.hasError('required')) {
+      return 'Email is required';
+    }
+    if (this.emailControl?.hasError('pattern')) {
+      return 'Please enter a valid email address';
+    }
+    return '';
+  }
+
+  // Getter for mobile control
+  get mobileControl() {
+    return this.contactForm.get('mobile');
+  }
+
+  // Mobile validation error messages
+  getMobileErrorMessage() {
+    if (this.mobileControl?.hasError('required')) {
+      return 'Mobile number is required';
+    }
+    if (this.mobileControl?.hasError('pattern') || 
+        this.mobileControl?.hasError('minLength') || 
+        this.mobileControl?.hasError('maxLength')) {
+      return 'Please enter a valid 10-digit mobile number';
+    }
+    return '';
   }
 }

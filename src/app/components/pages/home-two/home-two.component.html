@@ -149,8 +149,7 @@
 
                     <p>With strong partnerships across 30+ premium brands, we continue to expand our industry
                         presence, offering cutting-edge technology solutions. Our success is reflected in the trust of
-                        over
-                        1,000 satisfied customers who have remained loyal to Superior over the years. As we grow, our
+                        over 1,000 satisfied customers who have remained loyal to Superior over the years. As we grow, our
                         focus remains on delivering quality, innovation, and customer-centric solutions that drive
                         businesses forward.</p>
                 </div>
@@ -368,6 +367,9 @@
                             {{ selectedSolution?.isExpanded ? 'Read Less' : 'Read More' }}
                         </button>
                     </div>
+                    <!-- <button class="read-more-btn" (click)="toggleReadMoresolution(card)">
+                        {{ card.isExpanded ? 'Read Less' : 'Read More' }}
+                    </button> -->
                 </div>
             </div>
         </div>
@@ -394,8 +396,28 @@
                     <input type="text" name="name" id="name" placeholder="Name" formControlName="name" />
 
                     <!-- <div class="row"> -->
-                    <input type="email" placeholder="Email" name="email" id="email" formControlName="email" />
-                    <input type="tel" placeholder="Mobile" name="mobile" id="mobile" formControlName="mobile" />
+                    <input 
+                        type="email" 
+                        placeholder="Email" 
+                        name="email" 
+                        id="email" 
+                        formControlName="email"
+                        [class.invalid]="emailControl?.invalid && emailControl?.touched"
+                    />
+                    <div class="error-message" *ngIf="emailControl?.invalid && emailControl?.touched">
+                        {{ getEmailErrorMessage() }}
+                    </div>
+                    <input 
+                        type="tel" 
+                        placeholder="Mobile" 
+                        name="mobile" 
+                        id="mobile" 
+                        formControlName="mobile"
+                        [class.invalid]="mobileControl?.invalid && mobileControl?.touched"
+                    />
+                    <div class="error-message" *ngIf="mobileControl?.invalid && mobileControl?.touched">
+                        {{ getMobileErrorMessage() }}
+                    </div>
                     <!-- </div> -->
 
                     <input type="text" placeholder="Industry" name="industry" id="industry"
@@ -406,7 +428,9 @@
                         [ngClass]="{'alert-success': message.includes('successfully'), 'alert-danger': message.includes('Error')}">
                         {{ message }}
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" [disabled]="contactForm.invalid || contactForm.pristine">
+                        {{ contactForm.invalid || contactForm.pristine ? 'Please fill all fields' : 'Submit' }}
+                    </button>
                 </form>
             </div>
         </div>
