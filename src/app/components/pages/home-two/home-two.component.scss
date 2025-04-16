@@ -1932,7 +1932,7 @@
   cursor: pointer;
   perspective: 1000px;
   transition: transform 0.3s ease;
-
+  
   &:hover {
     transform: scale(1.1);
   }
@@ -2060,7 +2060,7 @@
     border-radius: 0; // Removed rounded edges
     transition: all 0.3s ease-out;
     transform-origin: center;
-    overflow: hidden;
+  overflow: hidden;
     background: transparent !important;
     padding: 8px;
 
@@ -2210,7 +2210,7 @@
     flex-direction: column;
 
     @media (max-width: 768px) {
-        display: flex;
+  display: flex;
     }
 
     .marquee {
@@ -2232,7 +2232,7 @@
                 height: 40px;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+  justify-content: center;
                 background: white;
                 border-radius: 4px;
                 padding: 5px;
@@ -2403,7 +2403,7 @@
   }
 
   .solution-card-title {
-      font-size: 18px;
+  font-size: 18px;
   }
 
   .solution-card-description {
@@ -2520,6 +2520,42 @@
   margin: 0 auto;
   min-height: 100vh;
   gap: 50px;
+  position: relative; // Add this for absolute positioning of the button
+}
+
+.down-arrow-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 10;
+
+  &:hover {
+    transform: translateX(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  i {
+    font-size: 24px;
+    color: #333;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover i {
+    transform: translateY(3px);
+  }
 }
 
 .solution-wheel-container {
@@ -2554,7 +2590,7 @@
       .floating-icon {
         position: absolute;
         width: 100px;
-        height: 100px;
+  height: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -2646,8 +2682,8 @@
 
       .floating-icons {
         .floating-icon {
-          width: 60px;
-          height: 60px;
+  width: 60px;
+  height: 60px;
 
           img {
             width: 40px;
@@ -3138,7 +3174,7 @@
         justify-content: center;
     }
 
-    .product-card {
+  .product-card {
       flex: 1 1 45% !important;
         margin: 10px;
     }

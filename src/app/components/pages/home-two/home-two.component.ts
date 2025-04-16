@@ -1245,7 +1245,7 @@ Finance to offer IT equipment on lease.`
           Object.keys(this.contactForm.controls).forEach(key => {
             const control = this.contactForm.get(key);
             control?.markAsTouched();
-          });
+            });
         }
       }
 
@@ -1483,5 +1483,12 @@ Finance to offer IT equipment on lease.`
       return 'Please enter a valid 10-digit mobile number';
     }
     return '';
+      }
+
+  public scrollToContact(): void {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
