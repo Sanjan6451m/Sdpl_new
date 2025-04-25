@@ -915,34 +915,40 @@ Superior Digital to bring structure and visibility to your asset management proc
     }
     teamSlides: OwlOptions = {
 		loop: true,
-        margin: 20,
+        margin: 0,
         dots: true,
         autoplay: true,
         autoplayHoverPause: true,
         responsive: {
             0: {
                 items: 1,
+                margin: 0,
             },
             575: {
                 items: 2,
+                margin: 0,
             },
             576: {
                 items: 2,
+                margin: 0,
             },
             768: {
                 items: 3,
+                margin: 0,
             },
             992: {
                 items: 3,
+                margin: 0,
             },
             1200: {
                 items: 4,
+                margin: 0,
             }
         }
     }
     clientWrap: OwlOptions = {
     loop: true,
-    margin: 30,
+    margin: 0,
     nav: false,
 		mouseDrag: true,
     items: 1,
@@ -955,20 +961,23 @@ Superior Digital to bring structure and visibility to your asset management proc
     responsive: {
       0: {
         items: 1,
-				margin: 10,
+				margin: 0,
 			},
       576: {
         items: 1,
+        margin: 0,
 			},
       768: {
         items: 2,
-				margin: 20,
+				margin: 0,
 			},
       992: {
         items: 2,
+        margin: 0,
       },
       1200: {
         items: 2,
+        margin: 0,
       }
     }
   }
@@ -1578,7 +1587,7 @@ customOptions: OwlOptions = {
   autoplayHoverPause: true,
   autoplaySpeed: 1000,
   slideTransition: 'linear',
-  margin: 20
+  margin: 0
 };
 
 @ViewChild('owlCarousel') owlCarousel: any;
