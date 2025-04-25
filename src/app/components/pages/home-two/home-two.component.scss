@@ -3354,8 +3354,74 @@
 }
 
 .hero-section {
-    padding: 60px 0;
+    padding: 30px 0;
     background-color: #f8f9fa;
+
+    .banner-content {
+        position: relative;
+        height: 500px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 5px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+            color: #fff;
+            max-width: 100%;
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.6;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 20px 0;
+        
+        .banner-content {
+            height: 400px;
+            margin: 3px;
+
+            .banner-text {
+                max-width: 100%;
+                padding: 20px;
+
+                h1 {
+                    font-size: 28px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
 
 .hero-cards-container {
@@ -3527,7 +3593,7 @@
 }
 
 .hero-section {
-  padding: 60px 0;
+  padding: 50px 0;
   background-color: #f8f9fa;
 }
 
@@ -3623,4 +3689,33 @@
 
 .hero-card-description:hover {
   color: #ede8e8;
+}
+
+::ng-deep {
+  .owl-theme {
+    .owl-dots {
+      .owl-dot {
+        span {
+          width: 12px;
+          height: 12px;
+          margin: 5px 7px;
+          background: #d6d6d6;
+          transition: all 0.3s ease;
+        }
+
+        &.active {
+          span {
+            background: #ff0000 !important;
+            transform: scale(1.2);
+          }
+        }
+
+        &:hover {
+          span {
+            background: #ff0000;
+          }
+        }
+      }
+    }
+  }
 }

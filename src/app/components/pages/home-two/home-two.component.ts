@@ -871,7 +871,7 @@ Superior Digital to bring structure and visibility to your asset management proc
     
       owlCarouselOptions = {
         loop: true,
-        margin: 10,
+        // margin: 10,
         autoplay: true,
         autoplayTimeout: 5000,
         responsive: {
@@ -888,7 +888,7 @@ Superior Digital to bring structure and visibility to your asset management proc
         items: 1,
         loop: true,
         autoplay: true,
-        dots: false,
+        dots: true,
         nav: true,
         autoHeight: true,
         autoplaySpeed: 800,
@@ -946,7 +946,7 @@ Superior Digital to bring structure and visibility to your asset management proc
     nav: false,
 		mouseDrag: true,
     items: 1,
-		dots: false,
+		dots: true,
 		autoHeight: true,
 		autoplay: true,
 		smartSpeed: 800,
@@ -1555,7 +1555,7 @@ customOptions: OwlOptions = {
   mouseDrag: true,
   touchDrag: true,
   pullDrag: true,
-  dots: false,
+  dots: true,
   navSpeed: 700,
   navText: ['', ''],
   responsive: {
@@ -1566,10 +1566,10 @@ customOptions: OwlOptions = {
       items: 1
     },
     740: {
-      items: 1
+      items: 2
     },
     940: {
-      items: 1
+      items: 2
     }
   },
   nav: false,
@@ -1577,7 +1577,8 @@ customOptions: OwlOptions = {
   autoplayTimeout: 5000,
   autoplayHoverPause: true,
   autoplaySpeed: 1000,
-  slideTransition: 'linear'
+  slideTransition: 'linear',
+  margin: 20
 };
 
 @ViewChild('owlCarousel') owlCarousel: any;
@@ -1653,7 +1654,15 @@ navigateToService(route: string) {
 
 goToSlide(index: number): void {
     this.currentSlideIndex = index;
-    // You can also trigger the carousel to go to the specific slide if needed
-    // this.carousel.to(index);
+    if (this.owlCarousel) {
+      this.owlCarousel.to(index);
+  }
 }
+
+onSlideChanged(event: any): void {
+  if (event && event.startPosition !== undefined) {
+    this.currentSlideIndex = event.startPosition;
+  }
+}
+
 }
