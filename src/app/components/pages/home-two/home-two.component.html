@@ -28,7 +28,7 @@
 <br>
 <br>
     <div class="hero-cards-container">
-        <div class="hero-card" *ngFor="let card of heroCards">
+        <div class="hero-card" *ngFor="let card of heroCards" (click)="navigateToService(card.routerLink)">
             <div class="hero-card-icon">
                 <img [src]="card.icon" [alt]="card.title" class="hero-card-icon-img">
             </div>
@@ -36,7 +36,7 @@
                 <h3 class="hero-card-title">{{card.title}}</h3>
                 <p class="hero-card-description">{{card.description}}</p>
                 <div class="banner-btn">
-                    <a [href]="card.routerLink" class="box-btn border-btn" target="_blank">Know More</a>
+                    <a class="box-btn border-btn">Know More</a>
                 </div>
             </div>
         </div>

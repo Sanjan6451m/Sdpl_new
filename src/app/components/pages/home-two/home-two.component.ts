@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import emailjs from '@emailjs/browser';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface FeatureCard {
     title: string;
@@ -173,7 +173,8 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
     constructor(
         private fb: FormBuilder, 
         private http: HttpClient,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private router: Router
     ) {
         this.contactForm = this.fb.group({
           name: ['', [Validators.required]],
@@ -1509,31 +1510,31 @@ Finance to offer IT equipment on lease.`
   heroCards = [
     {
         title: 'Networking',
-        description: 'Comprehensive IT services tailored to your business needs',
+        description: 'Build fast, reliable, and secure networks tailored for your organisation.',
         icon: 'assets/images/homesolutions/networking1.png',
         routerLink: '/networking'
     },
     {
         title: 'Mobility',
-        description: 'Scalable cloud solutions for modern businesses',
+        description: 'Enable secure and seamless mobile workforces with Apple mobility solutions.',
         icon: 'assets/images/homesolutions/mobility.png',
         routerLink: '/mobility'
     },
     {
         title: 'Devices',
-        description: 'Efficient tracking and management of IT assets',
+        description: 'Superior Digital partners with top brands like Apple, HP, Dell, and Lenovo to deliver the perfect tech solutions with expert guidance and support.',
         icon: 'assets/images/homesolutions/device1.png',
         routerLink: '/devices'
     },
     {
         title: 'AV Solutions',
-        description: '24/7 technical support and maintenance services',
-        icon: 'assets/images/avsolIg.png',
+        description: 'Transform your spaces with professional AV solutions for clear communication.',
+        icon: 'assets/images/avsolutions12.png',
         routerLink: '/audiovideo-solutions'
     },
     {
         title: 'MDM',
-        description: 'Streamlined IT procurement and logistics solutions',
+        description: 'Simplify management with industry-leading Mobile Device Management.',
         icon: 'assets/images/homesolutions/mdm.png',
         routerLink: '/mdm'
     },
@@ -1640,4 +1641,10 @@ slides = [
   },
 
 ];
+
+navigateToService(route: string) {
+    if (route) {
+        this.router.navigate([route]);
+    }
+}
 }
