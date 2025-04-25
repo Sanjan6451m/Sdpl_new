@@ -80,8 +80,7 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
   private scrollCount = 0;
   private readonly SCROLL_THRESHOLD = 10;
 
-
-
+  currentSlideIndex = 0;
 
   clients1: string[] = [
     'assets/images/marquee/hexnode_new.png',
@@ -644,6 +643,11 @@ Superior Digital to bring structure and visibility to your asset management proc
         });
         this.contactForm.patchValue({ device: null });
         emailjs.init("PTmfxUAnOlAZlyhRB");
+        if (this.owlCarousel) {
+            this.owlCarousel.changed.subscribe((event: any) => {
+                this.currentSlideIndex = event.startPosition;
+            });
+        }
     }
 
     ngOnDestroy() {
@@ -1548,36 +1552,35 @@ Finance to offer IT equipment on lease.`
 
 customOptions: OwlOptions = {
   loop: true,
-  margin: 30,
-  nav: false,
   mouseDrag: true,
-  items: 1,
+  touchDrag: true,
+  pullDrag: true,
   dots: false,
-  autoHeight: true,
-  autoplay: true,
-  smartSpeed: 800,
-  autoplayHoverPause: true,
-  center: false,
+  navSpeed: 700,
+  navText: ['', ''],
   responsive: {
     0: {
-      items: 1,
-      margin: 10,
+      items: 1
     },
-    576: {
-      items: 1,
+    400: {
+      items: 1
     },
-    768: {
-      items: 2,
-      margin: 20,
+    740: {
+      items: 1
     },
-    992: {
-      items: 2,
-    },
-    1200: {
-      items: 2,
+    940: {
+      items: 1
     }
-  }
+  },
+  nav: false,
+  autoplay: true,
+  autoplayTimeout: 5000,
+  autoplayHoverPause: true,
+  autoplaySpeed: 1000,
+  slideTransition: 'linear'
 };
+
+@ViewChild('owlCarousel') owlCarousel: any;
 
 /* slides = [
   {
@@ -1646,5 +1649,11 @@ navigateToService(route: string) {
     if (route) {
         this.router.navigate([route]);
     }
+}
+
+goToSlide(index: number): void {
+    this.currentSlideIndex = index;
+    // You can also trigger the carousel to go to the specific slide if needed
+    // this.carousel.to(index);
 }
 }
