@@ -30,8 +30,9 @@
     </div>
 </section>
 
-<div class="hero-cards-container">
-    <div class="hero-card" *ngFor="let card of heroCards" (click)="navigateToService(card.routerLink)">
+<div class="hero-cards-container mt-5">
+    <div class="hero-card" *ngFor="let card of heroCards" (click)="navigateToService(card.routerLink)" 
+    style="cursor: pointer;">
         <div class="hero-card-icon">
             <img [src]="card.icon" [alt]="card.title" class="hero-card-icon-img">
         </div>
