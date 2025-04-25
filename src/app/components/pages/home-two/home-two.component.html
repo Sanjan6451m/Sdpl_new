@@ -10,81 +10,33 @@
 </a>
 
 <section class="hero-section" id="heroSection">
-    <div class="column-container">
-    <div class="container">
-            <div class="client-logos" id="clientLogos">
-                <div class="client-logo" *ngFor="let logo of logos">
-                    <img [src]="logo.src" [alt]="logo.alt" [ngStyle]="{
-                       
-                        'opacity': logo.opacity
-                    }">
-                    <!-- 'transform': 'scale(' + logo.scale + ')', -->
+    <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let slide of slides">
+            <ng-template carouselSlide [id]="slide.id">
+                <div class="banner-content" [style.background-image]="'url(' + slide.img + ')'">
+                    <div class="banner-text">
+                        <h1>{{slide.title}}</h1>
+                        <h3 style="color: white; font-size: 16px; font-weight: 400;">{{slide.description}}</h3>
+                        <!-- <div class="banner-btn">
+                            <a [href]="slide.pageLink" class="box-btn border-btn" target="_blank">Know More</a>
+                        </div> -->
+                    </div>
                 </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+<br>
+<br>
+    <div class="hero-cards-container">
+        <div class="hero-card" *ngFor="let card of heroCards">
+            <div class="hero-card-icon">
+                <img [src]="card.icon" [alt]="card.title" class="hero-card-icon-img">
             </div>
-
-            <div class="circles-container" id="circlesContainer" [ngStyle]="{
-                'transform': 'scale(' + circleScale + ')',
-                'opacity': circleOpacity}">
-            <a routerLink="/devices" class="circle circle-1" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/device1.png" alt="Devices" class="logo-img">
-
-                <span class="circle-label">Devices</span>
-            </a>
-                
-            <a routerLink="/mdm" class="circle circle-2" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/mdm.png" alt="MDM" class="logo-img">
-                    <!-- <i class="bx bx-mobile-alt"></i> -->
-                <span class="circle-label">MDM</span>
-            </a>
-                
-            <a routerLink="/mobility" class="circle circle-3" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/mobility.png" alt="Mobility" class="logo-img">
-
-                <span class="circle-label">Mobility</span>
-            </a>
-                
-            <a routerLink="/networking" class="circle circle-4" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/networking1.png" alt="Networking" width="70" class="logo-img">
-                <span class="circle-label">Networking</span>
-            </a>
-                
-            <a routerLink="/audiovideo-solutions" class="circle circle-5" [@circleAnimation]="circleState">
-                    <img src="assets/images/homesolutions/avsol.png" alt="AV Solutions" width="70" class="logo-img">
-
-                <span class="circle-label">AV Solutions</span>
-            </a>
-        </div>
-        
-            <div class="logo-container" id="logoContainer">
-                <img src="assets/images/superior-removebg-preview.png" alt="Superior Digital Logo" class="main-logo">
-            </div>
-        </div>
-        <!--   <br>
-        <br> -->
-        <div class="marquee-container">
-            <div class="marquee right-to-left">
-                <div class="marquee-content">
-                    <div class="client-item" *ngFor="let client of clients1">
-                        <img [src]="client" [alt]="client.split('/').pop()?.split('-')[0] || 'Client'">
-                    </div>
-                </div>
-                <div class="marquee-content">
-                    <div class="client-item" *ngFor="let client of clients2">
-                        <img [src]="client" [alt]="client.split('/').pop()?.split('-')[0] || 'Client'">
-                    </div>
-                </div>
-            </div>
-
-            <div class="marquee left-to-right">
-                <div class="marquee-content">
-                    <div class="client-item" *ngFor="let client of clients2">
-                        <img [src]="client" [alt]="client.split('/').pop()?.split('-')[0] || 'Client'">
-                    </div>
-                </div>
-                <div class="marquee-content">
-                    <div class="client-item" *ngFor="let client of clients1">
-                        <img [src]="client" [alt]="client.split('/').pop()?.split('-')[0] || 'Client'">
-                    </div>
+            <div class="hero-card-content">
+                <h3 class="hero-card-title">{{card.title}}</h3>
+                <p class="hero-card-description">{{card.description}}</p>
+                <div class="banner-btn">
+                    <a [href]="card.routerLink" class="box-btn border-btn" target="_blank">Know More</a>
                 </div>
             </div>
         </div>
@@ -94,23 +46,24 @@
 
 <!-- Cards start -->
 <section class="product-card-section" id="nextSection">
+    <h1 style="text-align: center;">13+ years of expertise and IT SHOWS!</h1>
     <div class="product-card-layout">
-        <h1 style="text-align: center;">13+ years of expertise and IT SHOWS!</h1>
-      <br><br>
-      <div class="product-card-container">
-        <div class="product-card" *ngFor="let item of cardItems">
-          <div class="product-card-icon">
-            <img [src]="item.icon" alt="{{ item.title }} Icon" class="product-card-icon-img">
-          </div>
-          <div class="product-card-content">
+
+        <br><br>
+        <div class="product-card-container">
+            <div class="product-card" *ngFor="let item of cardItems">
+                <div class="product-card-icon">
+                    <img [src]="item.icon" alt="{{ item.title }} Icon" class="product-card-icon-img">
+                </div>
+                <div class="product-card-content">
                     <h1 class="product-card-title">{{ item.targetValue > 0 ? (item.currentValue | number:'1.0-0') + '+'
                         : item.title }}</h1>
-            <h3 class="product-card-description">{{ item.description }}</h3>
-          </div>
+                    <h3 class="product-card-description">{{ item.description }}</h3>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
   <!-- Cards end -->
 
 <section class="home-case ptb-100 bg-color about-us-section" id="about-us">
@@ -361,17 +314,20 @@
 
             <div class="service-content" [class.visible]="selectedSolution !== null"
                 [class.has-expanded-description]="selectedSolution?.isExpanded">
-                <!-- <h1 class="main-title">Our Services</h1> -->
                 <h2 class="service-title">{{selectedSolution?.title || 'Dedicated sPoC'}}</h2>
                 
-                <!-- <h3 class="service-subtitle">{{selectedSolution?.subtitle || 'Dedicated Support, Seamless Experience'}}</h3> -->
-
                 <div class="service-description" [class.expanded]="selectedSolution?.isExpanded">
                     <div class="description-text">{{selectedSolution?.description || defaultDescription}}</div>
                     <button class="read-more-btn" *ngIf="selectedSolution" (click)="toggleDescription()">
                         {{ selectedSolution?.isExpanded ? 'Read Less' : 'Read More' }}
                     </button>
                 </div>
+                
+               <!--  <div class="know-more-container">
+                    <a [href]="selectedSolution?.pageLink || '/services'" class="box-btn border-btn" target="_blank">
+                        Know More
+                    </a>
+                </div> -->
             </div>
             <!-- <button class="down-arrow-button" (click)="scrollToContact()">
                 <i class="fas fa-chevron-down"></i>

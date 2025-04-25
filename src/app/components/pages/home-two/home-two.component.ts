@@ -33,6 +33,7 @@ interface Solutionweb {
   description: string;
   icon: string;
   isExpanded?: boolean;
+  pageLink?: string;
 }
 
 
@@ -78,6 +79,9 @@ export class HomeTwoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private scrollCount = 0;
   private readonly SCROLL_THRESHOLD = 10;
+
+
+
 
   clients1: string[] = [
     'assets/images/marquee/hexnode_new.png',
@@ -397,7 +401,8 @@ Superior Digital to bring structure and visibility to your asset management proc
   Disaster Recovery and Backup: Cloud solutions provide reliable data backup and disaster 
   recovery options. In the event of a system failure or any disaster, organisations can quickly recover 
   their data without losing valuable information, ensuring business continuity.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/cloud-solutions'
     },
     {
       id: 2,
@@ -411,7 +416,8 @@ Superior Digital to bring structure and visibility to your asset management proc
   to align with your business goals, driving efficiency and growth. 
   
   Partner with us to transform your technology strategies and stay ahead in the competitive market.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/it-consulting'
     },
     {
       id: 3,
@@ -436,7 +442,8 @@ Superior Digital to bring structure and visibility to your asset management proc
   Scheduled Free Health Checkups: Take advantage of planned health checkups to 
   proactively identify potential issues before they impact your operations, ensuring 
   continuous optimal performance.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/repair-and-support'
     },
     {
       id: 4,
@@ -469,7 +476,8 @@ Superior Digital to bring structure and visibility to your asset management proc
   
   Superior Digital collaborates with renowned finance entities like TATA Capital and HP 
   Finance to offer IT equipment on lease.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/leasing'
     },
     {
       id: 5,
@@ -483,7 +491,8 @@ approach ensures devices remain secure, up-to-date, and optimised for performanc
 their lifecycle. With expert support and strategic planning, we help reduce costs, minimise
 downtime, and enhance productivity. Trust Superior Digital to keep your IT infrastructure reliable,
 scalable, and future-ready.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/it-lifecycle-management'
     },
     {
       id: 6,
@@ -496,7 +505,8 @@ damage, accidental loss, and unforeseen risks. Our tailored insurance plans ensu
 continuity and peace of mind, no matter the scale of your operations. With streamlined claim
 processes and expert guidance, we make asset protection simple and stress-free. Safeguard your
 technology investments with Superior Digital's trusted insurance partnerships.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/it-assets-insurance'
     },
     {
       id: 7,
@@ -509,7 +519,8 @@ organised, and scalable warehousing options. Our experienced team ensures seamle
 tracking, and distribution of your IT assets. We're just a call away to meet you in person,
 understand your requirements, and design an eﬀective solution. Partner with Superior Digital for
 reliable, eﬃcient, and customised warehousing support.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/warehousing-solutions'
     },
     {
       id: 8,
@@ -523,7 +534,8 @@ solutions are designed to reduce costs, minimise delays, and improve overall ope
 performance. With real-time tracking and dedicated support, you gain full visibility and control
 over your supply chain. Let Superior Digital be your trusted partner in driving seamless and
 scalable operations.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/supply-chain'
     },
     {
       id: 9,
@@ -536,7 +548,8 @@ tracking and visibility of all your devices. Our service includes Device Diagnos
 Reverse Pickup, helping identify issues quickly and reduce downtime. Comprehensive
 Reporting keeps you informed at every stage, from deployment to recovery. With Superior Digital,
 managing your IT assets becomes seamless, transparent, and hassle-free.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/asset-management'
     },
     {
       id: 10,
@@ -549,7 +562,8 @@ easy monitoring, maintenance, and auditing. Our tagging solutions support better
 control, loss prevention, and compliance with organisational policies. Whether it's during
 deployment or ongoing operations, we ensure accurate tagging and data recording. Trust
 Superior Digital to bring structure and visibility to your asset management process.`,
-      isExpanded: false
+      isExpanded: false,
+      pageLink: '/asset-tagging'
     }
   ];
 
@@ -1491,4 +1505,139 @@ Finance to offer IT equipment on lease.`
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  heroCards = [
+    {
+        title: 'Networking',
+        description: 'Comprehensive IT services tailored to your business needs',
+        icon: 'assets/images/homesolutions/networking1.png',
+        routerLink: '/networking'
+    },
+    {
+        title: 'Mobility',
+        description: 'Scalable cloud solutions for modern businesses',
+        icon: 'assets/images/homesolutions/mobility.png',
+        routerLink: '/mobility'
+    },
+    {
+        title: 'Devices',
+        description: 'Efficient tracking and management of IT assets',
+        icon: 'assets/images/homesolutions/device1.png',
+        routerLink: '/devices'
+    },
+    {
+        title: 'AV Solutions',
+        description: '24/7 technical support and maintenance services',
+        icon: 'assets/images/avsolIg.png',
+        routerLink: '/audiovideo-solutions'
+    },
+    {
+        title: 'MDM',
+        description: 'Streamlined IT procurement and logistics solutions',
+        icon: 'assets/images/homesolutions/mdm.png',
+        routerLink: '/mdm'
+    },
+    {
+      title: 'Logistics',
+      description: 'Logistics support, reverse pickup facility from user locations across India with transit insurance.',
+      icon: 'assets/images/logisticsimg.png',
+      routerLink: '/logistics'
+  }
+];
+
+customOptions: OwlOptions = {
+  loop: true,
+  margin: 30,
+  nav: false,
+  mouseDrag: true,
+  items: 1,
+  dots: false,
+  autoHeight: true,
+  autoplay: true,
+  smartSpeed: 800,
+  autoplayHoverPause: true,
+  center: false,
+  responsive: {
+    0: {
+      items: 1,
+      margin: 10,
+    },
+    576: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+      margin: 20,
+    },
+    992: {
+      items: 2,
+    },
+    1200: {
+      items: 2,
+    }
+  }
+};
+
+/* slides = [
+  {
+    id: 1,
+    img: 'assets/images/enterprise.png',
+    title: 'Welcome to Superior Systems',
+    pageLink: '/about'
+  }
+]; */
+
+
+slides = [
+ 
+  {
+      id: 1,
+      title: 'MDM Solutions',
+      description: 'Easily manage laptops, mobile devices, and tablets with top-tier Mobile Device Management solutions. Control, secure, and monitor all devices—right from your desk.',
+      img: 'assets/images/mdm_ban1.png',
+      alt: 'MDM Solutions',
+      pageLink: '/mdm'
+  },
+  {
+      id: 2,
+      title: 'Audio Video Setup',
+      description: 'Upgrade your space with smart AV solutions for clear, powerful meetings and smooth collaboration.',            
+      img: 'assets/images/avsolIg.png',
+      alt: 'Audio Video Setup',
+      pageLink: '/avsolution'
+  },
+  {
+      id: 3,
+      title: 'Networking Solutions',
+      description: 'Build fast, secure, and reliable networks for your business. No more weak Wi-Fi or messy cables. Get enterprise-grade speed, stability, and scalability.',           
+      img: 'assets/images/network_ban1.png',
+      alt: 'Networking Solutions',
+      pageLink: '/networking'
+  },
+  {
+      id: 4,
+      title: 'Mobility Solutions',
+      description: 'Secure, seamless mobile work with Apple solutions. Work from anywhere—safely and efficiently. Boost productivity with mobile-first Apple tools.',         
+      img: 'assets/images/mobility_main.png',
+      alt: 'Mobility',
+      pageLink: '/mobility'
+  },
+  {
+      id: 5,
+      title: 'Devices',
+      description: 'Superior Digital partners with top brands like Apple, HP, Dell, and Lenovo to offer the perfect laptops, tablets, and phones for every need. We deliver expert guidance, premium devices, and reliable support—all in one place.',
+      img: 'assets/images/devicesImg.png',
+      alt: 'Leasing Services',
+      pageLink: '/leasing'
+  },
+  {
+      id: 6,
+      title: 'Logistics Solutions',
+      description: 'Logistics support, reverse pickup facility from user locations across India with transit insurance.',
+      img: 'assets/images/logistics&reversepickup.png',
+      alt: 'Logistics Solutions',
+      pageLink: ''
+  },
+
+];
 }

@@ -34,6 +34,7 @@ import { HardwareComponent } from './components/pages/hardware/hardware.componen
 import { SoftwareComponent } from './components/pages/software/software.component';
 import { DummyPageComponent } from './dummy-page/dummy-page.component';
 import { ContactFormComponent } from './components/pages/contact-form/contact-form.component';
+import { LogisticsComponent } from './components/pages/logistics/logistics.component';
 
 const routes: Routes = [
     {path: 'home-one', component: HomeOneComponent},
@@ -70,6 +71,7 @@ const routes: Routes = [
     {path: 'software', component: SoftwareComponent},
     {path: 'dummy-page', component: DummyPageComponent},
     {path: 'contact-form', component: ContactFormComponent},
+    {path: 'logistics', component: LogisticsComponent},
 
     // Here add new pages component
 
