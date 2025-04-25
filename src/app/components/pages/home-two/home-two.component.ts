@@ -1620,7 +1620,7 @@ slides = [
       alt: 'Audio Video Setup',
       pageLink: '/avsolution'
   },
-  {
+ /*  {
       id: 3,
       title: 'Networking Solutions',
       description: 'Build fast, secure, and reliable networks for your business. No more weak Wi-Fi or messy cables. Get enterprise-grade speed, stability, and scalability.',           
@@ -1651,7 +1651,7 @@ slides = [
       img: 'assets/images/logistics&reversepickup.png',
       alt: 'Logistics Solutions',
       pageLink: ''
-  },
+  }, */
 
 ];
 
